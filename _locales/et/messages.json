@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Toetab platvorme nagu GitHub、GitLab、Bitbucket、npm、Docker ja teisi platvorme, sisestades aadressiribale kiirühenduse"
+  },
+  "options_title": {
+    "message": "OpenIn Seadistused"
+  },
+  "options_subtitle": {
+    "message": "Koodirepositorite ümbersuunamine"
+  },
+  "default_platform": {
+    "message": "Vaikimisi platvorm"
+  },
+  "default_platform_info": {
+    "message": "Kui sisestus ei sisalda platvormi märksõnu, kasutatakse vaikimisi seda platvormi."
+  },
+  "feature_switches": {
+    "message": "Funktsioonilülitid"
+  },
+  "enable_omnibox": {
+    "message": "Luba aadressiriba kiirkäsk (open + tühik)"
+  },
+  "enable_search_redirect": {
+    "message": "Luba otsingul automaatset suunamist"
+  },
+  "auto_jump": {
+    "message": "Automaatne ümbersuunamine, vajutage Tab-klahvi tagasi"
+  },
+  "tab_jump": {
+    "message": "Tab-klahvi abil ümbersuunamine"
+  },
+  "new_tab": {
+    "message": "Ava uuel vahelehel"
+  },
+  "enable_dns_intercept": {
+    "message": "Automaatne ümbersuunamine – tuvastab linkidena olevad hoidlad"
+  },
+  "advanced_settings": {
+    "message": "Täiustatud seaded"
+  },
+  "advanced_info": {
+    "message": "Järgnevad domeeninimed või märksõnad ei käivita automaatset ümbersuunamist."
+  },
+  "placeholder_pattern": {
+    "message": "Sisesta domeeninimi või märksõna (nt localhost)"
+  },
+  "add_btn": {
+    "message": "Lisa"
+  },
+  "default_whitelist": {
+    "message": "Vaikimisi valge nimekiri"
+  },
+  "visit_homepage": {
+    "message": "Külasta kodulehte"
+  },
+  "no_custom_rules": {
+    "message": "Kohandatud reegleid pole"
+  },
+  "delete": {
+    "message": "Kustuta"
+  },
+  "saved_success": {
+    "message": "Seaded on salvestatud"
+  },
+  "enter_pattern_error": {
+    "message": "Sisestage välistamiseks aadressimuster."
+  },
+  "omnibox_default_suggestion": {
+    "message": "Sisestage hoidla nime või pakendi nime"
+  },
+  "detected_repo": {
+    "message": "Tuvastatud hoidla:"
+  },
+  "press_tab_to_jump": {
+    "message": "Vajutage Tab-klahvi, et hüpata ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Otsingust suunatud $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Tagasi otsingusse (Tab)"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Soporta plataformas como GitHub, GitLab, Bitbucket, npm, Docker, etc.; escribe en la barra de direcciones para saltar rápidamente"
+  },
+  "options_title": {
+    "message": "OpenIn Configuración"
+  },
+  "options_subtitle": {
+    "message": "Navegación entre repositorios de código"
+  },
+  "default_platform": {
+    "message": "Plataforma predeterminada"
+  },
+  "default_platform_info": {
+    "message": "Cuando la entrada no contenga palabras clave de plataforma, se utilizará esta plataforma por defecto."
+  },
+  "feature_switches": {
+    "message": "Conmutadores de funciones"
+  },
+  "enable_omnibox": {
+    "message": "Habilitar comandos rápidos en la barra de direcciones (open + Espacio)"
+  },
+  "enable_search_redirect": {
+    "message": "Habilitar redirección automática al buscar"
+  },
+  "auto_jump": {
+    "message": "Saltos automáticos, pulsa Tab para volver"
+  },
+  "tab_jump": {
+    "message": "Saltos al presionar la tecla Tab"
+  },
+  "new_tab": {
+    "message": "Abrir en una nueva pestaña"
+  },
+  "enable_dns_intercept": {
+    "message": "Saltos automáticos: reconocer repositorios que sean enlaces"
+  },
+  "advanced_settings": {
+    "message": "Configuración avanzada"
+  },
+  "advanced_info": {
+    "message": "A continuación, los siguientes dominios o palabras clave no dispararán el salto automático."
+  },
+  "placeholder_pattern": {
+    "message": "Introduce un dominio o palabra clave (p. ej.: localhost)"
+  },
+  "add_btn": {
+    "message": "Agregar"
+  },
+  "default_whitelist": {
+    "message": "Lista blanca predeterminada"
+  },
+  "visit_homepage": {
+    "message": "Visitar página de inicio"
+  },
+  "no_custom_rules": {
+    "message": "Sin reglas personalizadas"
+  },
+  "delete": {
+    "message": "Eliminar"
+  },
+  "saved_success": {
+    "message": "La configuración ha sido guardada"
+  },
+  "enter_pattern_error": {
+    "message": "Ingrese el patrón de dirección para excluir"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Introduce el nombre del repositorio o del paquete"
+  },
+  "detected_repo": {
+    "message": "Repositorio detectado:"
+  },
+  "press_tab_to_jump": {
+    "message": "Presiona Tab para saltar ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Saltó desde la búsqueda a $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Volver a la búsqueda (Tab)"
+  }
+}

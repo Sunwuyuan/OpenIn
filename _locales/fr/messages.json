@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Prend en charge des plateformes telles que GitHub, GitLab, Bitbucket, npm, Docker, etc.; saisissez rapidement dans la barre d'adresse pour accéder directement."
+  },
+  "options_title": {
+    "message": "OpenIn paramètres"
+  },
+  "options_subtitle": {
+    "message": "Navigation des dépôts de code"
+  },
+  "default_platform": {
+    "message": "Plateforme par défaut"
+  },
+  "default_platform_info": {
+    "message": "Si l'entrée ne contient pas de mot-clé de plateforme, cette plateforme sera utilisée par défaut."
+  },
+  "feature_switches": {
+    "message": "Commutateurs de fonctionnalités"
+  },
+  "enable_omnibox": {
+    "message": "Activer les commandes rapides de la barre d'adresse (open + espace)"
+  },
+  "enable_search_redirect": {
+    "message": "Activer la redirection automatique lors de la recherche"
+  },
+  "auto_jump": {
+    "message": "Saut automatique, appuyez sur la touche Tab pour revenir"
+  },
+  "tab_jump": {
+    "message": "Navigation par la touche Tab"
+  },
+  "new_tab": {
+    "message": "Ouvrir dans un nouvel onglet"
+  },
+  "enable_dns_intercept": {
+    "message": "Redirection automatique : reconnaître les dépôts comme liens"
+  },
+  "advanced_settings": {
+    "message": "Paramètres avancés"
+  },
+  "advanced_info": {
+    "message": "Les noms de domaine ou mots-clés suivants ne déclencheront pas la redirection automatique."
+  },
+  "placeholder_pattern": {
+    "message": "Saisissez un nom de domaine ou un mot-clé (p.ex. : localhost)"
+  },
+  "add_btn": {
+    "message": "Ajouter"
+  },
+  "default_whitelist": {
+    "message": "Liste blanche par défaut"
+  },
+  "visit_homepage": {
+    "message": "Visiter la page d'accueil"
+  },
+  "no_custom_rules": {
+    "message": "Aucune règle personnalisée"
+  },
+  "delete": {
+    "message": "Supprimer"
+  },
+  "saved_success": {
+    "message": "Paramètres enregistrés"
+  },
+  "enter_pattern_error": {
+    "message": "Veuillez saisir le motif d'adresse à exclure"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Saisissez le nom du dépôt ou du package"
+  },
+  "detected_repo": {
+    "message": "Dépôt détecté :"
+  },
+  "press_tab_to_jump": {
+    "message": "Appuyez sur Tab pour sauter ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Redirigé depuis la recherche vers $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Retour à la recherche (Tab)"
+  }
+}

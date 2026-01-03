@@ -1,0 +1,37 @@
+{
+  "name": "openin",
+  "version": "1.0.0",
+  "description": "支持 GitHub、GitLab、Bitbucket、npm、Docker 等平台，在地址栏输入快速跳转",
+  "private": true,
+  "scripts": {
+    "translate": "node scripts/translate.js",
+    "build": "node scripts/build.js"
+  },
+  "keywords": [
+    "chrome-extension",
+    "github",
+    "gitlab",
+    "bitbucket",
+    "npm",
+    "docker",
+    "repository",
+    "navigation"
+  ],
+  "author": "孙悟元 <wuyuan.dev>",
+  "license": "AGPL-3.0-only",
+  "devDependencies": {
+    "archiver": "^7.0.1",
+    "eslint": "^8.57.0",
+    "nodemon": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sunwuyuan/OpenIn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sunwuyuan/OpenIn/issues"
+  }
+}

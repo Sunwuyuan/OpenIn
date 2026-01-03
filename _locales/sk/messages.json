@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Podporuje platformy ako GitHub, GitLab, Bitbucket, npm, Docker a ďalšie; rýchle presmerovanie pri zadávaní do adresného riadku"
+  },
+  "options_title": {
+    "message": "Nastavenia OpenIn"
+  },
+  "options_subtitle": {
+    "message": "Presmerovanie repozitárov kódu"
+  },
+  "default_platform": {
+    "message": "Predvolená platforma"
+  },
+  "default_platform_info": {
+    "message": "Keď vstup neobsahuje kľúčové slová platformy, použije sa ako predvolená táto platforma."
+  },
+  "feature_switches": {
+    "message": "Funkčné prepínače"
+  },
+  "enable_omnibox": {
+    "message": "Povoliť príkazy v adresnom riadku (open + medzera)"
+  },
+  "enable_search_redirect": {
+    "message": "Povoliť automatické presmerovanie pri vyhľadávaní"
+  },
+  "auto_jump": {
+    "message": "Automatické presmerovanie, stlačením Tab sa vrátite späť"
+  },
+  "tab_jump": {
+    "message": "Presun pomocou klávesy Tab"
+  },
+  "new_tab": {
+    "message": "Otvoriť v novej karte"
+  },
+  "enable_dns_intercept": {
+    "message": "Automatické presmerovanie: rozpoznávanie repozitárov ako odkazov"
+  },
+  "advanced_settings": {
+    "message": "Rozšírené nastavenia"
+  },
+  "advanced_info": {
+    "message": "Nižšie uvedené domény alebo kľúčové slová nebudú spúšťať automatické presmerovanie."
+  },
+  "placeholder_pattern": {
+    "message": "Zadajte doménu alebo kľúčové slovo (napr. localhost)"
+  },
+  "add_btn": {
+    "message": "Pridať"
+  },
+  "default_whitelist": {
+    "message": "Predvolený zoznam povolených adries"
+  },
+  "visit_homepage": {
+    "message": "Navštíviť domovskú stránku"
+  },
+  "no_custom_rules": {
+    "message": "Žiadne vlastné pravidlá"
+  },
+  "delete": {
+    "message": "Odstrániť"
+  },
+  "saved_success": {
+    "message": "Nastavenia boli uložené"
+  },
+  "enter_pattern_error": {
+    "message": "Zadajte vzor adries na vylúčenie"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Zadajte názov repozitára alebo balíka"
+  },
+  "detected_repo": {
+    "message": "Zistený repozitár:"
+  },
+  "press_tab_to_jump": {
+    "message": "Stlačte Tab pre presmerovanie ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Z vyhľadávania na $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "Späť na vyhľadávanie (Tab)"
+  }
+}

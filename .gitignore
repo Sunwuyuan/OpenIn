@@ -1,0 +1,14 @@
+# 构建输出
+node_modules/
+dist/
+build/
+
+# 日志文件
+*.log
+
+# 系统文件
+.DS_Store
+
+# 环境变量
+.env
+.env.local

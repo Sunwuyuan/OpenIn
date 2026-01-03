@@ -1,0 +1,51 @@
+name: Validate
+
+on:
+  pull_request:
+    paths:
+      - '**.js'
+      - 'manifest.json'
+      - '_locales/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 检查 JSON 文件格式
+        run: |
+          echo "检查 manifest.json..."
+          node -e "JSON.parse(require('fs').readFileSync('manifest.json', 'utf8'))"
+
+          echo "检查 _locales 文件..."
+          for file in _locales/*/messages.json; do
+            if [ -f "$file" ]; then
+              echo "验证 $file"
+              node -e "JSON.parse(require('fs').readFileSync('$file', 'utf8'))"
+            fi
+          done
+
+      - name: 检查 JavaScript 语法
+        run: |
+          echo "检查 JavaScript 文件..."
+          for file in *.js; do
+            if [ -f "$file" ]; then
+              echo "验证 $file"
+              node -c "$file"
+            fi
+          done
+
+      - name: 检查缓存文件
+        run: |
+          if [ -f "scripts/translation-cache.json" ]; then
+            echo "验证缓存文件..."
+            node -e "JSON.parse(require('fs').readFileSync('scripts/translation-cache.json', 'utf8'))"
+          fi

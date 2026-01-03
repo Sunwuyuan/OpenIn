@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "תומך בפלטפורמות GitHub, GitLab, Bitbucket, npm, Docker ועוד; הקלד בשורת הכתובת כדי לנווט במהירות"
+  },
+  "options_title": {
+    "message": "הגדרות OpenIn"
+  },
+  "options_subtitle": {
+    "message": "ניווט למאגרים של קוד"
+  },
+  "default_platform": {
+    "message": "הפלטפורמה ברירת מחדל"
+  },
+  "default_platform_info": {
+    "message": "כאשר הקלט אינו כולל מילת מפתח לפלטפורמה, הפלטפורמה הזו תישאר כברירת מחדל."
+  },
+  "feature_switches": {
+    "message": "הפעלת תכונות"
+  },
+  "enable_omnibox": {
+    "message": "הפעל פקודות מהשורת הכתובת (open + רווח)"
+  },
+  "enable_search_redirect": {
+    "message": "הפעל הפניית חיפוש אוטומטית"
+  },
+  "auto_jump": {
+    "message": "מעבר אוטומטי, לחיצה על Tab מחזיר"
+  },
+  "tab_jump": {
+    "message": "קפיצה באמצעות Tab"
+  },
+  "new_tab": {
+    "message": "פתח בכרטיסיה חדשה"
+  },
+  "enable_dns_intercept": {
+    "message": "הפעל זיהוי אוטומטי של מאגר שנראה כקישור והפוך אותו למעבר"
+  },
+  "advanced_settings": {
+    "message": "הגדרות מתקדמות"
+  },
+  "advanced_info": {
+    "message": "הדומיינים או מילות המפתח הבאים לא יפעילו מעבר אוטומטי."
+  },
+  "placeholder_pattern": {
+    "message": "הקלד שם דומיין או מילת מפתח (למשל: localhost)"
+  },
+  "add_btn": {
+    "message": "הוסף"
+  },
+  "default_whitelist": {
+    "message": "רשימת לבנים ברירת מחדל"
+  },
+  "visit_homepage": {
+    "message": "בקר בדף הבית"
+  },
+  "no_custom_rules": {
+    "message": "אין כללים מותאמים אישית"
+  },
+  "delete": {
+    "message": "מחק"
+  },
+  "saved_success": {
+    "message": "ההגדרות נשמרו בהצלחה"
+  },
+  "enter_pattern_error": {
+    "message": "הזן תבנית כתובת שיש להחריג"
+  },
+  "omnibox_default_suggestion": {
+    "message": "הקלד שם מאגר או שם חבילה"
+  },
+  "detected_repo": {
+    "message": "זוהה מאגר:"
+  },
+  "press_tab_to_jump": {
+    "message": "הקש Tab כדי לעבור ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 הופנה מהחיפוש ל-$PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← חזרה לחיפוש (Tab)"
+  }
+}

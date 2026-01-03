@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Stöd för plattformar som GitHub, GitLab, Bitbucket, npm, Docker med snabb navigering i adressfältet."
+  },
+  "options_title": {
+    "message": "OpenIn Inställningar"
+  },
+  "options_subtitle": {
+    "message": "Omdirigering av kodförråd"
+  },
+  "default_platform": {
+    "message": "Standardplattform"
+  },
+  "default_platform_info": {
+    "message": "Om inmatningen inte innehåller någon plattformsnyckelord kommer denna plattform att användas som standard."
+  },
+  "feature_switches": {
+    "message": "Funktioner"
+  },
+  "enable_omnibox": {
+    "message": "Aktivera adressfältets snabbkommando (open + mellanslag)"
+  },
+  "enable_search_redirect": {
+    "message": "Aktivera automatisk omdirigering vid sökning"
+  },
+  "auto_jump": {
+    "message": "Automatisk omdirigering, tryck Tab för att gå tillbaka"
+  },
+  "tab_jump": {
+    "message": "Gå till omdirigering med Tab-tangenten"
+  },
+  "new_tab": {
+    "message": "Öppna i ny flik"
+  },
+  "enable_dns_intercept": {
+    "message": "Automatisk omdirigering identifierar länkar till repositories"
+  },
+  "advanced_settings": {
+    "message": "Avancerade inställningar"
+  },
+  "advanced_info": {
+    "message": "Följande domäner eller nyckelord kommer inte att utlösa automatisk omdirigering."
+  },
+  "placeholder_pattern": {
+    "message": "Ange domännamn eller nyckelord (t.ex. localhost)"
+  },
+  "add_btn": {
+    "message": "Lägg till"
+  },
+  "default_whitelist": {
+    "message": "Standard vitlista"
+  },
+  "visit_homepage": {
+    "message": "Besök hemsidan"
+  },
+  "no_custom_rules": {
+    "message": "Inga anpassade regler för närvarande"
+  },
+  "delete": {
+    "message": "Ta bort"
+  },
+  "saved_success": {
+    "message": "Inställningarna har sparats"
+  },
+  "enter_pattern_error": {
+    "message": "Ange ett mönster för adresser som ska uteslutas."
+  },
+  "omnibox_default_suggestion": {
+    "message": "Ange förrådsnamn eller paketnamn"
+  },
+  "detected_repo": {
+    "message": "Upptäckt repository:"
+  },
+  "press_tab_to_jump": {
+    "message": "Tryck Tab för att hoppa ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Omdirigerad från sökning till $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Tillbaka till sökningen (Tab)"
+  }
+}

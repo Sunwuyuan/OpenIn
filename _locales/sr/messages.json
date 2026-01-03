@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Podržava platforme kao što su GitHub, GitLab, Bitbucket, npm, Docker i druge; brzo preusmeravanje unosom u adresnu traku."
+  },
+  "options_title": {
+    "message": "OpenIn podešavanja"
+  },
+  "options_subtitle": {
+    "message": "Preusmeravanje repozitorijuma koda"
+  },
+  "default_platform": {
+    "message": "Podrazumevana platforma"
+  },
+  "default_platform_info": {
+    "message": "Kada unos ne sadrži ključne reči platforme, koristi se podrazumevana platforma."
+  },
+  "feature_switches": {
+    "message": "Funkcijski prekidači"
+  },
+  "enable_omnibox": {
+    "message": "Omogući brze komande u adresnoj traci (open + space)"
+  },
+  "enable_search_redirect": {
+    "message": "Omogući automatsko preusmeravanje pri pretrazi"
+  },
+  "auto_jump": {
+    "message": "Automatsko preusmeravanje, vraćanje pritiskom na Tab"
+  },
+  "tab_jump": {
+    "message": "Skok pritiskom na Tab"
+  },
+  "new_tab": {
+    "message": "Otvori u novom tabu"
+  },
+  "enable_dns_intercept": {
+    "message": "Automatsko prepoznavanje linkova koji vode do repozitorijuma"
+  },
+  "advanced_settings": {
+    "message": "Napredne postavke"
+  },
+  "advanced_info": {
+    "message": "Sledeći domeni ili ključne reči neće pokretati automatsko preusmeravanje."
+  },
+  "placeholder_pattern": {
+    "message": "Unesite domen ili ključnu reč (npr. localhost)"
+  },
+  "add_btn": {
+    "message": "Dodaj"
+  },
+  "default_whitelist": {
+    "message": "Podrazumevana bela lista"
+  },
+  "visit_homepage": {
+    "message": "Posetite početnu stranu"
+  },
+  "no_custom_rules": {
+    "message": "Nema prilagođenih pravila"
+  },
+  "delete": {
+    "message": "Obriši"
+  },
+  "saved_success": {
+    "message": "Postavke su sačuvane"
+  },
+  "enter_pattern_error": {
+    "message": "Unesite obrazac adrese koji treba isključiti"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Unesite naziv repozitorijuma ili paketa"
+  },
+  "detected_repo": {
+    "message": "Otkriven repozitorijum:"
+  },
+  "press_tab_to_jump": {
+    "message": "Pritisnite Tab za skok ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Preusmeren iz pretrage na $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Vratite se na pretragu (Tab)"
+  }
+}

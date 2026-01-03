@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="options_title">OpenIn 设置</title>
+  <style>
+    :root {
+      --primary-color: #333;
+      --accent-color: #0366d6;
+      --bg-color: #fafafa;
+      --card-bg: #ffffff;
+      --text-color: #333;
+      --text-secondary: #666;
+      --border-color: #eaeaea;
+      --font-serif: Georgia, 'Times New Roman', Times, serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-serif);
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 40px 60px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      animation: fadeIn 0.6s ease-out;
+      margin: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: normal;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      font-family: var(--font-sans);
+    }
+
+    .section {
+      margin-bottom: 40px;
+      animation: fadeIn 0.6s ease-out;
+      animation-fill-mode: both;
+    }
+
+    .section:nth-child(2) { animation-delay: 0.1s; }
+    .section:nth-child(3) { animation-delay: 0.2s; }
+    .section:nth-child(4) { animation-delay: 0.3s; }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: normal;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--primary-color);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text-color);
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      background: #fff;
+      transition: border-color 0.2s;
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px top 50%;
+      background-size: 10px auto;
+      padding-right: 30px;
+      cursor: pointer;
+    }
+
+    select:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: var(--accent-color);
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .checkbox-item input[type="checkbox"],
+    .checkbox-item input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin: 0;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .checkbox-item input[type="checkbox"]:checked,
+    .checkbox-item input[type="radio"]:checked {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+
+    .checkbox-item input[type="radio"] {
+      border-radius: 50%;
+    }
+
+    .checkbox-item input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 2px;
+      width: 4px;
+      height: 8px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .checkbox-item input[type="radio"]:checked::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .checkbox-text {
+      font-family: var(--font-sans);
+      font-size: 14px;
+    }
+
+    .sub-options {
+      margin-left: 26px;
+      margin-top: 10px;
+      padding-left: 15px;
+      border-left: 2px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .info-box {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      transition: opacity 0.2s;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    button.secondary {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+    }
+
+    button.secondary:hover {
+      background: #f5f5f5;
+      color: var(--text-color);
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 15px;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    li:hover {
+      border-color: #ccc;
+    }
+
+    .delete-btn {
+      padding: 4px 8px;
+      background: transparent;
+      color: #999;
+      font-size: 12px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .delete-btn:hover {
+      color: #d73a49;
+    }
+
+    .message {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 24px;
+      border-radius: 6px;
+      background: #333;
+      color: white;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      display: none;
+      animation: slideIn 0.3s ease-out;
+      z-index: 100;
+    }
+
+    .message.success { background: #28a745; }
+    .message.error { background: #d73a49; }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .advanced-section {
+      border-top: 1px dashed var(--border-color);
+      padding-top: 20px;
+    }
+
+    .advanced-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+      color: var(--primary-color);
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .advanced-header:hover {
+      color: var(--accent-color);
+    }
+
+    .advanced-toggle {
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+
+    .advanced-toggle.collapsed {
+      transform: rotate(-90deg);
+    }
+
+    .advanced-content {
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+      max-height: 2000px;
+      opacity: 1;
+      margin-top: 20px;
+    }
+
+    .advanced-content.collapsed {
+      max-height: 0;
+      opacity: 0;
+      margin-top: 0;
+    }
+
+    .empty-state {
+      text-align: center;
+      color: #999;
+      padding: 20px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div id="message" class="message"></div>
+
+  <div class="container">
+    <header>
+      <h1 data-i18n="extensionName">OpenIn</h1>
+      <div class="subtitle" data-i18n="options_subtitle">简约高效的代码仓库跳转工具</div>
+    </header>
+
+    <div class="section">
+      <h2 data-i18n="default_platform">默认平台</h2>
+      <div class="info-box" data-i18n="default_platform_info">
+        当输入不包含平台关键词时，将默认使用此平台进行搜索或跳转。
+      </div>
+      <div class="form-group">
+        <select id="defaultPlatform">
+          <option value="github">GitHub</option>
+          <option value="gitlab">GitLab</option>
+          <option value="bitbucket">Bitbucket</option>
+          <option value="gitee">Gitee</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 data-i18n="feature_switches">功能开关</h2>
+      <div class="checkbox-group">
+        <label class="checkbox-item">
+          <input type="checkbox" id="featureOmnibox">
+          <span class="checkbox-text" data-i18n="enable_omnibox">启用地址栏快捷命令 (open + 空格)</span>
+        </label>
+
+        <label class="checkbox-item">
+          <input type="checkbox" id="featureSearchRedirect">
+          <span class="checkbox-text" data-i18n="enable_search_redirect">启用搜索引擎自动跳转</span>
+        </label>
+
+        <div id="searchRedirectOptions" class="sub-options">
+          <label class="checkbox-item">
+            <input type="radio" name="searchMode" id="searchModeAutoJump" value="autoJump">
+            <span class="checkbox-text" data-i18n="auto_jump">自动跳转 (推荐)</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="radio" name="searchMode" id="searchModeTabJump" value="tabJump">
+            <span class="checkbox-text" data-i18n="tab_jump">按 Tab 键跳转</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="radio" name="searchMode" id="searchModeNewTab" value="newTab">
+            <span class="checkbox-text" data-i18n="new_tab">在新标签页打开</span>
+          </label>
+        </div>
+
+        <label class="checkbox-item">
+          <input type="checkbox" id="featureDnsIntercept">
+          <span class="checkbox-text" data-i18n="enable_dns_intercept">自动跳转识别为链接的仓库</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="section advanced-section">
+      <h2 id="advancedToggle" class="advanced-header">
+        <span class="advanced-toggle collapsed">▼</span>
+        <span data-i18n="advanced_settings">高级设置</span>
+      </h2>
+
+      <div id="advancedContent" class="advanced-content collapsed">
+        <div class="info-box" data-i18n="advanced_info">
+          以下域名或关键字将不会触发自动跳转。
+        </div>
+
+        <div class="input-group">
+          <input type="text" id="patternInput" data-i18n-placeholder="placeholder_pattern" placeholder="输入域名或关键字 (如: localhost)">
+          <button id="addBtn" data-i18n="add_btn">添加</button>
+        </div>
+
+        <ul id="customPatternsList">
+          <!-- 自定义规则将在这里动态生成 -->
+        </ul>
+
+        <div style="margin-top: 20px;">
+          <h3 style="font-size: 14px; color: #666; margin-bottom: 10px; font-family: var(--font-sans);" data-i18n="default_whitelist">默认白名单 (不可编辑)</h3>
+          <ul id="defaultPatternsList" style="opacity: 0.7;">
+            <!-- 默认规则 -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+      <a href="https://wuyuan.dev" target="_blank" rel="noopener noreferrer" class="developer-card">
+        <img src="https://wuyuan.dev/assets/avatar-BaAHNEC0.svg" alt="孙悟元" class="dev-avatar">
+        <div class="dev-info">
+          <div class="dev-name">孙悟元</div>
+          <div class="dev-link">wuyuan.dev</div>
+        </div>
+        <div class="dev-role">
+          <span data-i18n="visit_homepage">访问主页</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+      <style>
+        .developer-card {
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          background: #f8f9fa;
+          padding: 16px 20px;
+          border-radius: 10px;
+          border: 1px solid transparent;
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          cursor: pointer;
+        }
+
+        .developer-card:hover {
+          background: #fff;
+          border-color: var(--border-color);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+          transform: translateY(-2px);
+        }
+
+        .dev-avatar {
+          width: 42px;
+          height: 42px;
+          border-radius: 10px;
+          margin-right: 16px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          object-fit: cover;
+        }
+
+        .dev-info {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
+
+        .dev-name {
+          font-family: var(--font-sans);
+          font-weight: 600;
+          font-size: 16px;
+          color: var(--primary-color);
+        }
+
+        .dev-link {
+          font-family: var(--font-sans);
+          font-size: 13px;
+          color: var(--text-secondary);
+        }
+
+        .dev-role {
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          color: var(--text-secondary);
+          font-size: 13px;
+          font-family: var(--font-sans);
+          opacity: 0;
+          transform: translateX(-10px);
+          transition: all 0.3s ease;
+        }
+
+        .developer-card:hover .dev-role {
+          opacity: 1;
+          transform: translateX(0);
+          color: var(--accent-color);
+        }
+      </style>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

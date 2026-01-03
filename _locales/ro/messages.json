@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Suportă platforme precum GitHub, GitLab, Bitbucket, npm, Docker etc.; navigare rapidă prin introducerea în bara de adrese."
+  },
+  "options_title": {
+    "message": "Setări OpenIn"
+  },
+  "options_subtitle": {
+    "message": "Redirecționări către depozite de cod"
+  },
+  "default_platform": {
+    "message": "Platformă implicită"
+  },
+  "default_platform_info": {
+    "message": "Când introducerea nu conține cuvinte-cheie ale platformei, se va utiliza implicit această platformă."
+  },
+  "feature_switches": {
+    "message": "Comutatoare de funcții"
+  },
+  "enable_omnibox": {
+    "message": "Activează comenzile rapide din bara de adrese (open + spațiu)"
+  },
+  "enable_search_redirect": {
+    "message": "Activează redirecționarea automată în timpul căutării"
+  },
+  "auto_jump": {
+    "message": "Salt automat, apăsați Tab pentru a reveni"
+  },
+  "tab_jump": {
+    "message": "Salt cu Tab"
+  },
+  "new_tab": {
+    "message": "Deschide în filă nouă"
+  },
+  "enable_dns_intercept": {
+    "message": "Detectare automată a depozitul ca link pentru redirecționare"
+  },
+  "advanced_settings": {
+    "message": "Setări avansate"
+  },
+  "advanced_info": {
+    "message": "Domeniile sau cuvintele-cheie de mai jos nu vor activa redirecționarea automată."
+  },
+  "placeholder_pattern": {
+    "message": "Introduceți domeniu sau cuvânt-cheie (ex: localhost)"
+  },
+  "add_btn": {
+    "message": "Adaugă"
+  },
+  "default_whitelist": {
+    "message": "Listă albă implicită"
+  },
+  "visit_homepage": {
+    "message": "Accesează pagina principală"
+  },
+  "no_custom_rules": {
+    "message": "Nu există reguli personalizate"
+  },
+  "delete": {
+    "message": "Șterge"
+  },
+  "saved_success": {
+    "message": "Setările au fost salvate"
+  },
+  "enter_pattern_error": {
+    "message": "Introduceți șablonul de adresă de excludere"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Introduceți numele depozitului sau al pachetului"
+  },
+  "detected_repo": {
+    "message": "Depozitul detectat:"
+  },
+  "press_tab_to_jump": {
+    "message": "Apăsați Tab pentru a sări ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Redirecționat din căutare către $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Înapoi la căutare (Tab)"
+  }
+}

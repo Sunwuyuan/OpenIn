@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "GitHub, GitLab, Bitbucket, npm, Docker 등 플랫폼을 지원하며, 주소창에 입력하면 빠르게 이동합니다"
+  },
+  "options_title": {
+    "message": "OpenIn 설정"
+  },
+  "options_subtitle": {
+    "message": "코드 저장소로 이동"
+  },
+  "default_platform": {
+    "message": "기본 플랫폼"
+  },
+  "default_platform_info": {
+    "message": "입력에 플랫폼 키워드가 포함되어 있지 않으면 기본적으로 이 플랫폼을 사용합니다."
+  },
+  "feature_switches": {
+    "message": "기능 스위치"
+  },
+  "enable_omnibox": {
+    "message": "주소창 단축 명령 사용(open + 스페이스)"
+  },
+  "enable_search_redirect": {
+    "message": "검색 시 자동으로 이동하도록 활성화"
+  },
+  "auto_jump": {
+    "message": "자동으로 이동하며, Tab 키를 눌러 돌아갑니다"
+  },
+  "tab_jump": {
+    "message": "Tab 키로 이동"
+  },
+  "new_tab": {
+    "message": "새 탭에서 열기"
+  },
+  "enable_dns_intercept": {
+    "message": "링크로 인식된 저장소에 대해 자동 이동"
+  },
+  "advanced_settings": {
+    "message": "고급 설정"
+  },
+  "advanced_info": {
+    "message": "다음 도메인 이름이나 키워드는 자동 이동을 트리거하지 않습니다."
+  },
+  "placeholder_pattern": {
+    "message": "도메인 이름이나 키워드를 입력하세요 (예: localhost)"
+  },
+  "add_btn": {
+    "message": "추가"
+  },
+  "default_whitelist": {
+    "message": "기본 화이트리스트"
+  },
+  "visit_homepage": {
+    "message": "홈페이지 방문"
+  },
+  "no_custom_rules": {
+    "message": "사용자 정의 규칙이 없습니다"
+  },
+  "delete": {
+    "message": "삭제"
+  },
+  "saved_success": {
+    "message": "설정이 저장되었습니다"
+  },
+  "enter_pattern_error": {
+    "message": "제외할 주소 패턴을 입력해 주세요"
+  },
+  "omnibox_default_suggestion": {
+    "message": "저장소 이름 또는 패키지 이름을 입력"
+  },
+  "detected_repo": {
+    "message": "감지된 저장소:"
+  },
+  "press_tab_to_jump": {
+    "message": "Tab 키로 이동 ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 검색에서 $PLATFORM$으로 이동",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← 검색으로 돌아가기 (Tab)"
+  }
+}

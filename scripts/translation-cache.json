@@ -1,0 +1,32 @@
+{
+  "zh_CN": {
+    "extensionName": "OpenIn",
+    "extensionDescription": "支持 GitHub、GitLab、Bitbucket、npm、Docker 等平台，在地址栏输入快速跳转",
+    "options_title": "OpenIn 设置",
+    "options_subtitle": "代码仓库跳转",
+    "default_platform": "默认平台",
+    "default_platform_info": "当输入不包含平台关键词时，将默认使用此平台。",
+    "feature_switches": "功能开关",
+    "enable_omnibox": "启用地址栏快捷命令 (open + 空格)",
+    "enable_search_redirect": "启用搜索时自动跳转",
+    "auto_jump": "自动跳转，按 Tab 键返回",
+    "tab_jump": "按 Tab 键跳转",
+    "new_tab": "在新标签页打开",
+    "enable_dns_intercept": "自动跳转识别为链接的仓库",
+    "advanced_settings": "高级设置",
+    "advanced_info": "以下域名或关键字将不会触发自动跳转。",
+    "placeholder_pattern": "输入域名或关键字 (如: localhost)",
+    "add_btn": "添加",
+    "default_whitelist": "默认白名单",
+    "visit_homepage": "访问主页",
+    "no_custom_rules": "暂无自定义规则",
+    "delete": "删除",
+    "saved_success": "设置已保存",
+    "enter_pattern_error": "请输入要排除的地址模式",
+    "omnibox_default_suggestion": "输入仓库名或包名",
+    "detected_repo": "检测到仓库:",
+    "press_tab_to_jump": "按 Tab 跳转 ⚡",
+    "jumped_from_search": "🔍 由搜索跳转到 $PLATFORM$",
+    "back_to_search": "← 返回搜索 (Tab)"
+  }
+}

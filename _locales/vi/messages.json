@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Hỗ trợ GitHub, GitLab, Bitbucket, npm, Docker và các nền tảng khác; nhập từ thanh địa chỉ để chuyển nhanh đến kho lưu trữ."
+  },
+  "options_title": {
+    "message": "Cài đặt OpenIn"
+  },
+  "options_subtitle": {
+    "message": "Chuyển đến kho lưu trữ mã nguồn"
+  },
+  "default_platform": {
+    "message": "Nền tảng mặc định"
+  },
+  "default_platform_info": {
+    "message": "Khi nhập không chứa từ khóa nền tảng, nền tảng này sẽ được dùng làm mặc định."
+  },
+  "feature_switches": {
+    "message": "Công tắc chức năng"
+  },
+  "enable_omnibox": {
+    "message": "Kích hoạt lệnh nhanh trên thanh địa chỉ (open + phím cách)"
+  },
+  "enable_search_redirect": {
+    "message": "Bật tự động chuyển hướng khi tìm kiếm"
+  },
+  "auto_jump": {
+    "message": "Nhảy tự động, nhấn Tab để quay lại"
+  },
+  "tab_jump": {
+    "message": "Nhảy bằng phím Tab"
+  },
+  "new_tab": {
+    "message": "Mở trên tab mới"
+  },
+  "enable_dns_intercept": {
+    "message": "Tự động nhận diện kho lưu trữ từ liên kết để chuyển hướng"
+  },
+  "advanced_settings": {
+    "message": "Cài đặt nâng cao"
+  },
+  "advanced_info": {
+    "message": "Các tên miền hoặc từ khóa dưới đây sẽ không kích hoạt chuyển hướng tự động."
+  },
+  "placeholder_pattern": {
+    "message": "Nhập tên miền hoặc từ khóa (ví dụ: localhost)"
+  },
+  "add_btn": {
+    "message": "Thêm"
+  },
+  "default_whitelist": {
+    "message": "Danh sách trắng mặc định"
+  },
+  "visit_homepage": {
+    "message": "Truy cập trang chủ"
+  },
+  "no_custom_rules": {
+    "message": "Chưa có quy tắc tùy chỉnh"
+  },
+  "delete": {
+    "message": "Xóa"
+  },
+  "saved_success": {
+    "message": "Cài đặt đã được lưu"
+  },
+  "enter_pattern_error": {
+    "message": "Vui lòng nhập mẫu địa chỉ cần loại bỏ"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Nhập tên kho lưu trữ hoặc package"
+  },
+  "detected_repo": {
+    "message": "Đã phát hiện kho lưu trữ:"
+  },
+  "press_tab_to_jump": {
+    "message": "Nhấn Tab để nhảy ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Được chuyển từ tìm kiếm đến $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Quay lại tìm kiếm (Tab)"
+  }
+}

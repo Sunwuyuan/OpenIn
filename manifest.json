@@ -1,0 +1,76 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extensionName__",
+  "short_name": "openin",
+  "version": "1.0.0",
+  "description": "__MSG_extensionDescription__",
+  "default_locale": "zh_CN",
+  "permissions": [
+    "webRequest",
+    "webNavigation",
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "optional_permissions": [
+    "webRequestBlocking"
+  ],
+  "omnibox": {
+    "keyword": "open"
+  },
+  "action": {},
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*/*",
+        "https://gitlab.com/*/*",
+        "https://bitbucket.org/*/*",
+        "https://gitee.com/*/*",
+        "https://www.npmjs.com/package/*",
+        "https://hub.docker.com/r/*/*",
+        "https://pypi.org/project/*",
+        "https://rubygems.org/gems/*",
+        "https://packagist.org/packages/*/*",
+        "https://crates.io/crates/*",
+        "https://www.nuget.org/packages/*",
+        "https://search.maven.org/artifact/*/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["search-hint.js"],
+      "run_at": "document_idle",
+      "exclude_matches": [
+        "https://github.com/*",
+        "https://gitlab.com/*",
+        "https://bitbucket.org/*",
+        "https://gitee.com/*",
+        "https://www.npmjs.com/*",
+        "https://hub.docker.com/*",
+        "https://pypi.org/*",
+        "https://rubygems.org/*",
+        "https://packagist.org/*",
+        "https://crates.io/*",
+        "https://www.nuget.org/*",
+        "https://search.maven.org/*"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "small-logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  }
+}

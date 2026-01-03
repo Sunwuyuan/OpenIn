@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Suporta plataformas como GitHub, GitLab, Bitbucket, npm, Docker, entre outras; digite na barra de endereços para ir rapidamente."
+  },
+  "options_title": {
+    "message": "Configurações do OpenIn"
+  },
+  "options_subtitle": {
+    "message": "Redirecionamento de repositórios de código"
+  },
+  "default_platform": {
+    "message": "Plataforma padrão"
+  },
+  "default_platform_info": {
+    "message": "Quando a entrada não contiver palavras-chave de plataforma, este será o padrão utilizado."
+  },
+  "feature_switches": {
+    "message": "Interruptores de recursos"
+  },
+  "enable_omnibox": {
+    "message": "Ativar comando rápido da barra de endereço (open + espaço)"
+  },
+  "enable_search_redirect": {
+    "message": "Ativar redirecionamento automático ao pesquisar"
+  },
+  "auto_jump": {
+    "message": "Salto automático, pressione Tab para retornar"
+  },
+  "tab_jump": {
+    "message": "Navegar usando a tecla Tab"
+  },
+  "new_tab": {
+    "message": "Abrir em uma nova guia"
+  },
+  "enable_dns_intercept": {
+    "message": "Detectar automaticamente repositórios reconhecidos como links"
+  },
+  "advanced_settings": {
+    "message": "Configurações avançadas"
+  },
+  "advanced_info": {
+    "message": "Os seguintes domínios ou palavras-chave não acionarão o redirecionamento automático."
+  },
+  "placeholder_pattern": {
+    "message": "Digite um domínio ou palavra-chave (ex.: localhost)"
+  },
+  "add_btn": {
+    "message": "Adicionar"
+  },
+  "default_whitelist": {
+    "message": "Lista branca padrão"
+  },
+  "visit_homepage": {
+    "message": "Visitar página inicial"
+  },
+  "no_custom_rules": {
+    "message": "Sem regras personalizadas"
+  },
+  "delete": {
+    "message": "Excluir"
+  },
+  "saved_success": {
+    "message": "Configurações salvas"
+  },
+  "enter_pattern_error": {
+    "message": "Digite o padrão de endereço a ser excluído"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Digite o nome do repositório ou do pacote"
+  },
+  "detected_repo": {
+    "message": "Repositório detectado:"
+  },
+  "press_tab_to_jump": {
+    "message": "Pressione Tab para ir ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Redirecionado pela busca para $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Voltar à busca (Tab)"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Atbalsta GitHub, GitLab, Bitbucket, npm un Docker platformas; adrešu joslā ievadot ātri pāriet uz vietni"
+  },
+  "options_title": {
+    "message": "OpenIn iestatījumi"
+  },
+  "options_subtitle": {
+    "message": "Koda repozitoriju pāradresācija"
+  },
+  "default_platform": {
+    "message": "Noklusētā platforma"
+  },
+  "default_platform_info": {
+    "message": "Ja ievadē nav platformas atslēgvārda, tiks izmantota šī platforma kā noklusētā."
+  },
+  "feature_switches": {
+    "message": "Funkciju slēdži"
+  },
+  "enable_omnibox": {
+    "message": "Iespējot adrešu joslas ātrās komandas (open + Space)"
+  },
+  "enable_search_redirect": {
+    "message": "Iespējot automātisku pāradresāciju meklēšanas laikā"
+  },
+  "auto_jump": {
+    "message": "Automātiska pāradresācija, nospiežot Tab atgriezties"
+  },
+  "tab_jump": {
+    "message": "Nospiežot Tab, pāradresēt"
+  },
+  "new_tab": {
+    "message": "Atvērt jaunā cilnē"
+  },
+  "enable_dns_intercept": {
+    "message": "Automātiska pāradresācija; atpazīst kā saiti uz repozitoriju"
+  },
+  "advanced_settings": {
+    "message": "Papildu iestatījumi"
+  },
+  "advanced_info": {
+    "message": "Zemāk norādīto domēnu nosaukumu vai atslēgvārdu gadījumā netiks aktivēta automātiskā pāradresācija."
+  },
+  "placeholder_pattern": {
+    "message": "Ievadi domēna nosaukumu vai atslēgvārdu (piem., localhost)"
+  },
+  "add_btn": {
+    "message": "Pievienot"
+  },
+  "default_whitelist": {
+    "message": "Noklusētais baltais saraksts"
+  },
+  "visit_homepage": {
+    "message": "Apmeklēt sākumlapu"
+  },
+  "no_custom_rules": {
+    "message": "Nav pielāgotu noteikumu"
+  },
+  "delete": {
+    "message": "Dzēst"
+  },
+  "saved_success": {
+    "message": "Iestatījumi ir saglabāti"
+  },
+  "enter_pattern_error": {
+    "message": "Lūdzu ievadiet adreses modeļa formu, ko izslēgt"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Ievadiet repozitorijas nosaukumu vai pakotnes nosaukumu"
+  },
+  "detected_repo": {
+    "message": "Atklāts repozitorijs:"
+  },
+  "press_tab_to_jump": {
+    "message": "Nospiediet Tab, lai pāradresētu ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Pāradresēts no meklēšanas uz $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Atgriezties meklēšanā (Tab)"
+  }
+}

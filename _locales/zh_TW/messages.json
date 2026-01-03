@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "支持 GitHub、GitLab、Bitbucket、npm、Docker 等平台，在位址欄輸入快速跳轉"
+  },
+  "options_title": {
+    "message": "OpenIn 設定"
+  },
+  "options_subtitle": {
+    "message": "程式碼倉庫跳轉"
+  },
+  "default_platform": {
+    "message": "預設平台"
+  },
+  "default_platform_info": {
+    "message": "當輸入不包含平台關鍵字時，將預設使用此平台。"
+  },
+  "feature_switches": {
+    "message": "功能開關"
+  },
+  "enable_omnibox": {
+    "message": "啟用位址欄快速指令 (open + 空格)"
+  },
+  "enable_search_redirect": {
+    "message": "啟用搜尋時自動跳轉"
+  },
+  "auto_jump": {
+    "message": "自動跳轉，按 Tab 鍵返回"
+  },
+  "tab_jump": {
+    "message": "按 Tab 鍵跳轉"
+  },
+  "new_tab": {
+    "message": "在新分頁中開啟"
+  },
+  "enable_dns_intercept": {
+    "message": "自動跳轉識別為連結的倉庫"
+  },
+  "advanced_settings": {
+    "message": "進階設定"
+  },
+  "advanced_info": {
+    "message": "以下網域名稱或關鍵字將不會觸發自動跳轉。"
+  },
+  "placeholder_pattern": {
+    "message": "輸入網域名稱或關鍵字 (如: localhost)"
+  },
+  "add_btn": {
+    "message": "新增"
+  },
+  "default_whitelist": {
+    "message": "預設白名單"
+  },
+  "visit_homepage": {
+    "message": "前往首頁"
+  },
+  "no_custom_rules": {
+    "message": "尚無自訂規則"
+  },
+  "delete": {
+    "message": "刪除"
+  },
+  "saved_success": {
+    "message": "設定已儲存"
+  },
+  "enter_pattern_error": {
+    "message": "請輸入要排除的位址模式"
+  },
+  "omnibox_default_suggestion": {
+    "message": "輸入倉庫名稱或套件名稱"
+  },
+  "detected_repo": {
+    "message": "偵測到倉庫:"
+  },
+  "press_tab_to_jump": {
+    "message": "按 Tab 鍵跳轉 ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 由搜尋跳轉到 $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← 返回搜尋 (Tab)"
+  }
+}

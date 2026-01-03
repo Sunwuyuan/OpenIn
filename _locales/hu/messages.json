@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Támogatja a GitHub, GitLab, Bitbucket, npm, Docker és más platformokat; a címsorba írt bevitellel gyors átirányítást tesz lehetővé."
+  },
+  "options_title": {
+    "message": "OpenIn beállítások"
+  },
+  "options_subtitle": {
+    "message": "Kód tárolók átirányítása"
+  },
+  "default_platform": {
+    "message": "Alapértelmezett platform"
+  },
+  "default_platform_info": {
+    "message": "Ha a bevitel nem tartalmaz platform kulcsszót, ezt a platformot használja alapértelmezés szerint."
+  },
+  "feature_switches": {
+    "message": "Funkciókapcsolók"
+  },
+  "enable_omnibox": {
+    "message": "Címsor gyorsparancsok engedélyezése (open + szóköz)"
+  },
+  "enable_search_redirect": {
+    "message": "Keresés esetén automatikus átirányítás engedélyezése"
+  },
+  "auto_jump": {
+    "message": "Automatikus átirányítás, Tab gomb megnyomásával vissza"
+  },
+  "tab_jump": {
+    "message": "Tabgombbal történő átirányítás"
+  },
+  "new_tab": {
+    "message": "Új fülön megnyitás"
+  },
+  "enable_dns_intercept": {
+    "message": "Automatikus átirányítás – linkként felismerhető repo-k azonosítása"
+  },
+  "advanced_settings": {
+    "message": "Speciális beállítások"
+  },
+  "advanced_info": {
+    "message": "Az alábbi domain nevek vagy kulcsszavak nem váltanak ki automatikus átirányítást."
+  },
+  "placeholder_pattern": {
+    "message": "Írjon be domain nevet vagy kulcsszót (pl. localhost)"
+  },
+  "add_btn": {
+    "message": "Hozzáadás"
+  },
+  "default_whitelist": {
+    "message": "Alapértelmezett fehérlista"
+  },
+  "visit_homepage": {
+    "message": "Honlap megtekintése"
+  },
+  "no_custom_rules": {
+    "message": "Nincsenek egyéni szabályok"
+  },
+  "delete": {
+    "message": "Törlés"
+  },
+  "saved_success": {
+    "message": "Beállítások mentve"
+  },
+  "enter_pattern_error": {
+    "message": "Kérjük, adja meg a kizárandó címmintát"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Írjon be egy tárház nevét vagy csomagnévét"
+  },
+  "detected_repo": {
+    "message": "Detektált repo:"
+  },
+  "press_tab_to_jump": {
+    "message": "Tab gombbal ugrás ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Keresésből átirányítva a $PLATFORM$-re",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Vissza a kereséshez (Tab)"
+  }
+}

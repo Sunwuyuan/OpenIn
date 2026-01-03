@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Understøtter platforme som GitHub, GitLab, Bitbucket, npm, Docker og andre; indtast i adressefeltet for hurtig navigation"
+  },
+  "options_title": {
+    "message": "OpenIn indstillinger"
+  },
+  "options_subtitle": {
+    "message": "Spring til kildekode-repositories"
+  },
+  "default_platform": {
+    "message": "Standardplatform"
+  },
+  "default_platform_info": {
+    "message": "Når indtastningen ikke indeholder et platform-nøgleord, bruges denne platform som standard."
+  },
+  "feature_switches": {
+    "message": "Funktioner"
+  },
+  "enable_omnibox": {
+    "message": "Aktivér adressefeltets genvejskommandoer (open + mellemrum)"
+  },
+  "enable_search_redirect": {
+    "message": "Aktivér automatisk omdirigering ved søgning"
+  },
+  "auto_jump": {
+    "message": "Automatisk spring, tryk Tab for at gå tilbage"
+  },
+  "tab_jump": {
+    "message": "Spring ved at trykke på Tab"
+  },
+  "new_tab": {
+    "message": "Åbn i en ny fane"
+  },
+  "enable_dns_intercept": {
+    "message": "Automatisk omdirigering ved genkendelse af links til repositories"
+  },
+  "advanced_settings": {
+    "message": "Avancerede indstillinger"
+  },
+  "advanced_info": {
+    "message": "Følgende domæner eller nøgleord vil ikke udløse automatisk omdirigering."
+  },
+  "placeholder_pattern": {
+    "message": "Indtast domæne eller nøgleord (f.eks. localhost)"
+  },
+  "add_btn": {
+    "message": "Tilføj"
+  },
+  "default_whitelist": {
+    "message": "Standard hvidliste"
+  },
+  "visit_homepage": {
+    "message": "Besøg startsiden"
+  },
+  "no_custom_rules": {
+    "message": "Ingen brugerdefinerede regler endnu"
+  },
+  "delete": {
+    "message": "Slet"
+  },
+  "saved_success": {
+    "message": "Indstillingerne er gemt"
+  },
+  "enter_pattern_error": {
+    "message": "Indtast mønsteret for adresser, der skal udelukkes"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Indtast et repository-navn eller pakkenavn"
+  },
+  "detected_repo": {
+    "message": "Opdaget repository:"
+  },
+  "press_tab_to_jump": {
+    "message": "Tryk Tab for at springe ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Fra søgning til $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Tilbage til søgning (Tab)"
+  }
+}

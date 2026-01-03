@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Inasaidia majukwaa ya GitHub, GitLab, Bitbucket, npm, Docker na mengine; kwa kuingiza katika upau wa anwani, unaweza kwenda kwa haraka."
+  },
+  "options_title": {
+    "message": "Mipangilio ya OpenIn"
+  },
+  "options_subtitle": {
+    "message": "Uhamishaji wa hifadhi ya msimbo"
+  },
+  "default_platform": {
+    "message": "Jukwaa msingi"
+  },
+  "default_platform_info": {
+    "message": "Ikiwa maneno ya jukwaa hayapatikana wakati wa kuingiza, itatumia jukwaa hili kama chaguo-msingi."
+  },
+  "feature_switches": {
+    "message": "Mipangilio ya sifa"
+  },
+  "enable_omnibox": {
+    "message": "Washa amri ya upau wa anuani (open + space)"
+  },
+  "enable_search_redirect": {
+    "message": "Washa uhamishaji kiotomatiki wakati wa utafutaji"
+  },
+  "auto_jump": {
+    "message": "Uhamishaji kiotomatiki, bonyeza Tab kurudi"
+  },
+  "tab_jump": {
+    "message": "Uhamishaji kwa Tab key"
+  },
+  "new_tab": {
+    "message": "Fungua katika kichupo kipya"
+  },
+  "enable_dns_intercept": {
+    "message": "Uhamishaji kiotomatiki unapogundua kiungo cha hifadhi"
+  },
+  "advanced_settings": {
+    "message": "Mipangilio ya hali ya juu"
+  },
+  "advanced_info": {
+    "message": "Majina ya domaini au maneno muhimu yaliyo hapa chini hayatanzisha uhamishaji kiotomatiki."
+  },
+  "placeholder_pattern": {
+    "message": "Ingiza domaini au maneno muhimu (k.m.: localhost)"
+  },
+  "add_btn": {
+    "message": "Ongeza"
+  },
+  "default_whitelist": {
+    "message": "Orodha nyeupe ya msingi"
+  },
+  "visit_homepage": {
+    "message": "Tembelea ukurasa wa nyumbani"
+  },
+  "no_custom_rules": {
+    "message": "Hakuna sheria za kibinafsi zilizowekwa"
+  },
+  "delete": {
+    "message": "Futa"
+  },
+  "saved_success": {
+    "message": "Mipangilio yamehifadhiwa"
+  },
+  "enter_pattern_error": {
+    "message": "Ingiza muundo wa anuani wa kuepuka"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Ingiza jina la hifadhi au jina la kifurushi"
+  },
+  "detected_repo": {
+    "message": "Hifadhi iliyogunduliwa:"
+  },
+  "press_tab_to_jump": {
+    "message": "Bonyeza Tab kuhamia ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Imehamishwa kutoka kwa utafutaji kwenda $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Rudi kwa utafutaji (Tab)"
+  }
+}

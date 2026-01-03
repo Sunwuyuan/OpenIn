@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Supports platforms such as GitHub, GitLab, Bitbucket, npm, Docker, etc., with quick navigation by typing in the address bar."
+  },
+  "options_title": {
+    "message": "OpenIn settings"
+  },
+  "options_subtitle": {
+    "message": "Code repository navigation"
+  },
+  "default_platform": {
+    "message": "Default platform"
+  },
+  "default_platform_info": {
+    "message": "If the input does not contain a platform keyword, this platform will be used by default."
+  },
+  "feature_switches": {
+    "message": "Feature toggles"
+  },
+  "enable_omnibox": {
+    "message": "Enable the address bar shortcut (open + Space)"
+  },
+  "enable_search_redirect": {
+    "message": "Enable automatic jump on search"
+  },
+  "auto_jump": {
+    "message": "Automatic jump; press Tab to return"
+  },
+  "tab_jump": {
+    "message": "Jump using the Tab key"
+  },
+  "new_tab": {
+    "message": "Open in a new tab"
+  },
+  "enable_dns_intercept": {
+    "message": "Automatically jump when a repository link is detected"
+  },
+  "advanced_settings": {
+    "message": "Advanced settings"
+  },
+  "advanced_info": {
+    "message": "The following domains or keywords will not trigger automatic jumps."
+  },
+  "placeholder_pattern": {
+    "message": "Enter a domain name or keyword (e.g.: localhost)"
+  },
+  "add_btn": {
+    "message": "Add"
+  },
+  "default_whitelist": {
+    "message": "Default whitelist"
+  },
+  "visit_homepage": {
+    "message": "Visit homepage"
+  },
+  "no_custom_rules": {
+    "message": "No custom rules"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "saved_success": {
+    "message": "Settings saved"
+  },
+  "enter_pattern_error": {
+    "message": "Please enter the address pattern to exclude"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Enter repository name or package name"
+  },
+  "detected_repo": {
+    "message": "Detected repository:"
+  },
+  "press_tab_to_jump": {
+    "message": "Press Tab to jump ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Jumped to $PLATFORM$ from search",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Back to search (Tab)"
+  }
+}

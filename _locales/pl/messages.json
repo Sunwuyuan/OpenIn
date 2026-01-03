@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Wspiera platformy takie jak GitHub, GitLab, Bitbucket, npm, Docker i inne; wpisz w pasku adresu, aby szybko przejść."
+  },
+  "options_title": {
+    "message": "Ustawienia OpenIn"
+  },
+  "options_subtitle": {
+    "message": "Przekierowywanie do repozytoriów kodu"
+  },
+  "default_platform": {
+    "message": "Domyślna platforma"
+  },
+  "default_platform_info": {
+    "message": "Gdy wpis nie zawiera słów kluczowych platformy, zostanie użyta ta domyślna platforma."
+  },
+  "feature_switches": {
+    "message": "Przełączniki funkcji"
+  },
+  "enable_omnibox": {
+    "message": "Włącz skrót w pasku adresu (open + spacja)"
+  },
+  "enable_search_redirect": {
+    "message": "Włącz automatyczne przekierowywanie podczas wyszukiwania"
+  },
+  "auto_jump": {
+    "message": "Automatyczne przekierowanie, naciśnij Tab, aby wrócić"
+  },
+  "tab_jump": {
+    "message": "Przekieruj po naciśnięciu Tab"
+  },
+  "new_tab": {
+    "message": "Otwórz w nowej karcie"
+  },
+  "enable_dns_intercept": {
+    "message": "Automatyczne rozpoznawanie repozytoriów ze linków i przekierowywanie"
+  },
+  "advanced_settings": {
+    "message": "Ustawienia zaawansowane"
+  },
+  "advanced_info": {
+    "message": "Poniższe domeny lub słowa kluczowe nie będą powodować automatycznego przekierowania."
+  },
+  "placeholder_pattern": {
+    "message": "Wprowadź domenę lub słowo kluczowe (np. localhost)"
+  },
+  "add_btn": {
+    "message": "Dodaj"
+  },
+  "default_whitelist": {
+    "message": "Domyślna lista biała"
+  },
+  "visit_homepage": {
+    "message": "Odwiedź stronę główną"
+  },
+  "no_custom_rules": {
+    "message": "Brak niestandardowych reguł"
+  },
+  "delete": {
+    "message": "Usuń"
+  },
+  "saved_success": {
+    "message": "Ustawienia zostały zapisane"
+  },
+  "enter_pattern_error": {
+    "message": "Wprowadź wzorzec adresu do wykluczenia"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Wpisz nazwę repozytorium lub pakietu"
+  },
+  "detected_repo": {
+    "message": "Wykryto repozytorium:"
+  },
+  "press_tab_to_jump": {
+    "message": "Naciśnij Tab, aby przejść ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Przekierowano ze wyszukiwania do $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Powrót do wyszukiwania (Tab)"
+  }
+}

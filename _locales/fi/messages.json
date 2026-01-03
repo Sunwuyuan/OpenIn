@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "GitHubin, GitLabin, Bitbucketin, npm:n, Dockerin ja muiden alustojen tuki; osoiterivillä nopea siirtyminen."
+  },
+  "options_title": {
+    "message": "OpenIn Asetukset"
+  },
+  "options_subtitle": {
+    "message": "Koodivaraston uudelleenohjaus"
+  },
+  "default_platform": {
+    "message": "Oletusalusta"
+  },
+  "default_platform_info": {
+    "message": "Jos syötteessä ei ole alustan avainsanoja, käytetään oletusalustaa."
+  },
+  "feature_switches": {
+    "message": "Toimintavalinnat"
+  },
+  "enable_omnibox": {
+    "message": "Ota käyttöön osoiterivin pikakomentit (open + välilyönti)"
+  },
+  "enable_search_redirect": {
+    "message": "Ota haun yhteydessä automaattinen uudelleenohjaus käyttöön."
+  },
+  "auto_jump": {
+    "message": "Automaattinen siirtyminen, takaisin Tab-näppäimellä."
+  },
+  "tab_jump": {
+    "message": "Siirry Tab-näppäimellä"
+  },
+  "new_tab": {
+    "message": "Avaa uudessa välilehdessä"
+  },
+  "enable_dns_intercept": {
+    "message": "Automaattinen uudelleenohjaus tunnistaa linkkinä olevat repositoriot."
+  },
+  "advanced_settings": {
+    "message": "Edistyneet asetukset"
+  },
+  "advanced_info": {
+    "message": "Seuraavat verkkotunnukset tai avainsanat eivät laukaise automaattista uudelleenohjausta."
+  },
+  "placeholder_pattern": {
+    "message": "Syötä verkkotunnus tai avainsana (esim. localhost)"
+  },
+  "add_btn": {
+    "message": "Lisää"
+  },
+  "default_whitelist": {
+    "message": "Oletusvalkoinen lista"
+  },
+  "visit_homepage": {
+    "message": "Vieraile kotisivulla"
+  },
+  "no_custom_rules": {
+    "message": "Ei mukautettuja sääntöjä"
+  },
+  "delete": {
+    "message": "Poista"
+  },
+  "saved_success": {
+    "message": "Asetukset tallennettu."
+  },
+  "enter_pattern_error": {
+    "message": "Syötä poistettavan osoitemallin."
+  },
+  "omnibox_default_suggestion": {
+    "message": "Syötä varaston tai paketin nimi."
+  },
+  "detected_repo": {
+    "message": "Tunnistettu varasto:"
+  },
+  "press_tab_to_jump": {
+    "message": "Paina Tab siirtyä ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Hakujen kautta ohjattiin $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Palaa hakuun (Tab)"
+  }
+}

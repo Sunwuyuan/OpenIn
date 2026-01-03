@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Sumusuporta ang mga platform tulad ng GitHub, GitLab, Bitbucket, npm, Docker, atbp., para sa mabilisang pag-redirect kapag nagta-type sa address bar."
+  },
+  "options_title": {
+    "message": "Mga Setting ng OpenIn"
+  },
+  "options_subtitle": {
+    "message": "Paglipat ng mga repository ng code"
+  },
+  "default_platform": {
+    "message": "Pangunahing platform"
+  },
+  "default_platform_info": {
+    "message": "Kapag walang kasamang keyword ng platform ang input, gagamitin ang platform na ito bilang default."
+  },
+  "feature_switches": {
+    "message": "Mga switch ng mga tampok"
+  },
+  "enable_omnibox": {
+    "message": "Paganahin ang mabilisang utos sa address bar (open + space)"
+  },
+  "enable_search_redirect": {
+    "message": "Paganahin ang awtomatikong pag-redirect kapag nagsesearch"
+  },
+  "auto_jump": {
+    "message": "Awtomatikong pag-redirect, pindutin ang Tab upang bumalik"
+  },
+  "tab_jump": {
+    "message": "Pumunta gamit ang Tab key"
+  },
+  "new_tab": {
+    "message": "Buksan sa bagong tab"
+  },
+  "enable_dns_intercept": {
+    "message": "Awtomatikong i-redirect kapag kinikilala ang repository bilang link"
+  },
+  "advanced_settings": {
+    "message": "Mga advanced na setting"
+  },
+  "advanced_info": {
+    "message": "Ang mga sumusunod na domain o keyword ay hindi magti-trigger ng awtomatikong pag-redirect."
+  },
+  "placeholder_pattern": {
+    "message": "Ilagay ang domain o keyword (hal. localhost)"
+  },
+  "add_btn": {
+    "message": "Idagdag"
+  },
+  "default_whitelist": {
+    "message": "Pangunahing whitelist"
+  },
+  "visit_homepage": {
+    "message": "Bisitahin ang homepage"
+  },
+  "no_custom_rules": {
+    "message": "Walang sariling mga patakaran"
+  },
+  "delete": {
+    "message": "Tanggalin"
+  },
+  "saved_success": {
+    "message": "Nai-save na ang mga setting"
+  },
+  "enter_pattern_error": {
+    "message": "Mangyaring ilagay ang pattern ng address na dapat i-exclude"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Ilagay ang pangalan ng repository o package"
+  },
+  "detected_repo": {
+    "message": "Nadetek na repository:"
+  },
+  "press_tab_to_jump": {
+    "message": "Pindutin ang Tab para mag-jump ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Tinungo mula sa paghahanap patungo sa $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Bumalik sa paghahanap (Tab)"
+  }
+}

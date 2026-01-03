@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Menyokong platform GitHub, GitLab, Bitbucket, npm, Docker, dan lain-lain; taip di bar alamat untuk melompat dengan cepat"
+  },
+  "options_title": {
+    "message": "Tetapan OpenIn"
+  },
+  "options_subtitle": {
+    "message": "Pengalihan repositori kod"
+  },
+  "default_platform": {
+    "message": "Platform lalai"
+  },
+  "default_platform_info": {
+    "message": "Jika input tidak mengandungi kata kunci platform, platform ini akan digunakan secara lalai."
+  },
+  "feature_switches": {
+    "message": "Suis ciri"
+  },
+  "enable_omnibox": {
+    "message": "Aktifkan perintah pintasan bar alamat (open + ruang)"
+  },
+  "enable_search_redirect": {
+    "message": "Aktifkan pengalihan automatik semasa carian"
+  },
+  "auto_jump": {
+    "message": "Lompat automatik, tekan Tab untuk kembali"
+  },
+  "tab_jump": {
+    "message": "Lompat dengan Tab"
+  },
+  "new_tab": {
+    "message": "Buka di tab baru"
+  },
+  "enable_dns_intercept": {
+    "message": "Pengalihan automatik mengenal pasti repositori sebagai pautan"
+  },
+  "advanced_settings": {
+    "message": "Tetapan lanjutan"
+  },
+  "advanced_info": {
+    "message": "Domain atau kata kunci berikut tidak akan mencetuskan pengalihan automatik."
+  },
+  "placeholder_pattern": {
+    "message": "Masukkan domain atau kata kunci (contoh: localhost)"
+  },
+  "add_btn": {
+    "message": "Tambah"
+  },
+  "default_whitelist": {
+    "message": "Senarai putih lalai"
+  },
+  "visit_homepage": {
+    "message": "Lawati halaman utama"
+  },
+  "no_custom_rules": {
+    "message": "Tiada peraturan tersuai"
+  },
+  "delete": {
+    "message": "Padam"
+  },
+  "saved_success": {
+    "message": "Tetapan telah disimpan"
+  },
+  "enter_pattern_error": {
+    "message": "Sila masukkan pola alamat yang ingin dikecualikan"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Masukkan nama repositori atau pakej"
+  },
+  "detected_repo": {
+    "message": "Repositori dikesan:"
+  },
+  "press_tab_to_jump": {
+    "message": "Tekan Tab untuk lompat ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Melompat daripada carian ke $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Kembali ke carian (Tab)"
+  }
+}

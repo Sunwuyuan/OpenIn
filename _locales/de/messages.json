@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Unterstützt Plattformen wie GitHub, GitLab, Bitbucket, npm, Docker usw.; geben Sie in der Adresszeile ein, um schnell zu navigieren."
+  },
+  "options_title": {
+    "message": "OpenIn Einstellungen"
+  },
+  "options_subtitle": {
+    "message": "Code-Repository-Weiterleitung"
+  },
+  "default_platform": {
+    "message": "Standardplattform"
+  },
+  "default_platform_info": {
+    "message": "Wenn die Eingabe kein Plattform-Keyword enthält, wird standardmäßig diese Plattform verwendet."
+  },
+  "feature_switches": {
+    "message": "Funktionsschalter"
+  },
+  "enable_omnibox": {
+    "message": "Omnibox-Kurzbefehle aktivieren (open + Leertaste)"
+  },
+  "enable_search_redirect": {
+    "message": "Automatische Weiterleitung bei Suche aktivieren"
+  },
+  "auto_jump": {
+    "message": "Automatisches Weiterleiten, Tab zum Zurückkehren"
+  },
+  "tab_jump": {
+    "message": "Mit Tab springen"
+  },
+  "new_tab": {
+    "message": "In einem neuen Tab öffnen"
+  },
+  "enable_dns_intercept": {
+    "message": "Automatische Weiterleitung: Erkennung von Repositories als Links"
+  },
+  "advanced_settings": {
+    "message": "Erweiterte Einstellungen"
+  },
+  "advanced_info": {
+    "message": "Die folgenden Domains oder Schlüsselwörter lösen keine automatische Weiterleitung aus."
+  },
+  "placeholder_pattern": {
+    "message": "Gib Domainname oder Schlüsselwort ein (z. B.: localhost)"
+  },
+  "add_btn": {
+    "message": "Hinzufügen"
+  },
+  "default_whitelist": {
+    "message": "Standard-Whitelist"
+  },
+  "visit_homepage": {
+    "message": "Zur Homepage"
+  },
+  "no_custom_rules": {
+    "message": "Keine benutzerdefinierten Regeln vorhanden"
+  },
+  "delete": {
+    "message": "Löschen"
+  },
+  "saved_success": {
+    "message": "Einstellungen gespeichert"
+  },
+  "enter_pattern_error": {
+    "message": "Bitte geben Sie das auszuschließende Adressmuster ein"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Gib Repository- oder Paketnamen ein"
+  },
+  "detected_repo": {
+    "message": "Erkanntes Repository:"
+  },
+  "press_tab_to_jump": {
+    "message": "Drücke Tab zum Springen ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Von der Suche zu $PLATFORM$ weitergeleitet",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Zurück zur Suche (Tab)"
+  }
+}

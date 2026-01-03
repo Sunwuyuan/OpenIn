@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Støtter plattformer som GitHub, GitLab, Bitbucket, npm, Docker osv., og rask omdirigering ved å skrive i adressefeltet."
+  },
+  "options_title": {
+    "message": "OpenIn Innstillinger"
+  },
+  "options_subtitle": {
+    "message": "Omdirigering av kode-repositorier"
+  },
+  "default_platform": {
+    "message": "Standardplattform"
+  },
+  "default_platform_info": {
+    "message": "Når inndata ikke inneholder en plattformnøkkel, vil denne plattformen brukes som standard."
+  },
+  "feature_switches": {
+    "message": "Funksjonsbrytere"
+  },
+  "enable_omnibox": {
+    "message": "Aktiver adressefeltets hurtigtast (open + mellomrom)"
+  },
+  "enable_search_redirect": {
+    "message": "Aktiver automatisk omdirigering ved søk"
+  },
+  "auto_jump": {
+    "message": "Automatisk omdirigering, trykk Tab for å gå tilbake"
+  },
+  "tab_jump": {
+    "message": "Hopp ved å trykke Tab"
+  },
+  "new_tab": {
+    "message": "Åpne i ny fane"
+  },
+  "enable_dns_intercept": {
+    "message": "Automatisk omdirigering som gjenkjenner lenker til repositories"
+  },
+  "advanced_settings": {
+    "message": "Avanserte innstillinger"
+  },
+  "advanced_info": {
+    "message": "Følgende domener eller nøkkelord vil ikke utløse automatisk omdirigering."
+  },
+  "placeholder_pattern": {
+    "message": "Skriv inn domene eller nøkkelord (f.eks. localhost)"
+  },
+  "add_btn": {
+    "message": "Legg til"
+  },
+  "default_whitelist": {
+    "message": "Standard hviteliste"
+  },
+  "visit_homepage": {
+    "message": "Besøk hjemmeside"
+  },
+  "no_custom_rules": {
+    "message": "Ingen tilpassede regler"
+  },
+  "delete": {
+    "message": "Slett"
+  },
+  "saved_success": {
+    "message": "Innstillinger lagret"
+  },
+  "enter_pattern_error": {
+    "message": "Oppgi et adressemønster som skal ekskluderes."
+  },
+  "omnibox_default_suggestion": {
+    "message": "Skriv inn repositorynavn eller pakkenavn"
+  },
+  "detected_repo": {
+    "message": "Oppdaget repository:"
+  },
+  "press_tab_to_jump": {
+    "message": "Hopp ved å trykke Tab ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Omdirigert fra søk til $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Tilbake til søk (Tab)"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Podporuje platformy GitHub, GitLab, Bitbucket, npm, Docker a další; zadejte do adresního řádku pro rychlé přesměrování."
+  },
+  "options_title": {
+    "message": "OpenIn nastavení"
+  },
+  "options_subtitle": {
+    "message": "Přesměrování repozitářů kódu"
+  },
+  "default_platform": {
+    "message": "Výchozí platforma"
+  },
+  "default_platform_info": {
+    "message": "Pokud vstup neobsahuje klíčová slova platformy, bude použita tato platforma jako výchozí."
+  },
+  "feature_switches": {
+    "message": "Funkční přepínače"
+  },
+  "enable_omnibox": {
+    "message": "Povolit rychlé příkazy v adresním řádku (open + mezera)"
+  },
+  "enable_search_redirect": {
+    "message": "Povolit automatické přesměrování při vyhledávání"
+  },
+  "auto_jump": {
+    "message": "Automatické přesměrování, návrat stisknutím klávesy Tab"
+  },
+  "tab_jump": {
+    "message": "Přesměrování stiskem klávesy Tab"
+  },
+  "new_tab": {
+    "message": "Otevřít v nové záložce"
+  },
+  "enable_dns_intercept": {
+    "message": "Automatické rozpoznání odkazů na repozitáře pro přesměrování"
+  },
+  "advanced_settings": {
+    "message": "Pokročilé nastavení"
+  },
+  "advanced_info": {
+    "message": "Níže uvedené domény nebo klíčová slova nebudou spouštět automatické přesměrování."
+  },
+  "placeholder_pattern": {
+    "message": "Zadejte doménu nebo klíčové slovo (např. localhost)"
+  },
+  "add_btn": {
+    "message": "Přidat"
+  },
+  "default_whitelist": {
+    "message": "Výchozí bílý seznam"
+  },
+  "visit_homepage": {
+    "message": "Navštívit domovskou stránku"
+  },
+  "no_custom_rules": {
+    "message": "Žádná vlastní pravidla"
+  },
+  "delete": {
+    "message": "Smazat"
+  },
+  "saved_success": {
+    "message": "Nastavení uloženo"
+  },
+  "enter_pattern_error": {
+    "message": "Zadejte vzor adresy, který má být vyloučen."
+  },
+  "omnibox_default_suggestion": {
+    "message": "Zadejte název repozitáře nebo balíčku"
+  },
+  "detected_repo": {
+    "message": "Detekovaný repozitář:"
+  },
+  "press_tab_to_jump": {
+    "message": "Stiskněte Tab pro přesměrování ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Přesměrováno z vyhledávání na $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Zpět na vyhledávání (Tab)"
+  }
+}

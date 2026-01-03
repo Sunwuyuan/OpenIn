@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Ondersteunt platforms zoals GitHub, GitLab, Bitbucket, npm, Docker, enz., en maakt snelle navigatie via de adresbalk mogelijk."
+  },
+  "options_title": {
+    "message": "OpenIn Instellingen"
+  },
+  "options_subtitle": {
+    "message": "Navigeren in coderepositories"
+  },
+  "default_platform": {
+    "message": "Standaardplatform"
+  },
+  "default_platform_info": {
+    "message": "Wanneer de invoer geen platformnaam bevat, wordt dit platform standaard gebruikt."
+  },
+  "feature_switches": {
+    "message": "Functie-schakelaars"
+  },
+  "enable_omnibox": {
+    "message": "Adresbalk snelopdrachten inschakelen (open + spatie)"
+  },
+  "enable_search_redirect": {
+    "message": "Automatisch omleiden bij zoeken"
+  },
+  "auto_jump": {
+    "message": "Automatisch springen, druk op Tab om terug te gaan"
+  },
+  "tab_jump": {
+    "message": "Druk op Tab om te navigeren"
+  },
+  "new_tab": {
+    "message": "Openen in nieuw tabblad"
+  },
+  "enable_dns_intercept": {
+    "message": "Automatisch omleiden voor repositories die als link zijn herkend."
+  },
+  "advanced_settings": {
+    "message": "Geavanceerde instellingen"
+  },
+  "advanced_info": {
+    "message": "De onderstaande domeinnamen of sleutelwoorden zullen geen automatische omleiding activeren."
+  },
+  "placeholder_pattern": {
+    "message": "Voer een domeinnaam of sleutelwoord in (bijv.: localhost)"
+  },
+  "add_btn": {
+    "message": "Toevoegen"
+  },
+  "default_whitelist": {
+    "message": "Standaard whitelist"
+  },
+  "visit_homepage": {
+    "message": "Bezoek homepage"
+  },
+  "no_custom_rules": {
+    "message": "Nog geen aangepaste regels"
+  },
+  "delete": {
+    "message": "Verwijderen"
+  },
+  "saved_success": {
+    "message": "Instellingen opgeslagen"
+  },
+  "enter_pattern_error": {
+    "message": "Voer het uit te sluiten adrespatroon in"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Voer de repositorynaam of pakketnaam in"
+  },
+  "detected_repo": {
+    "message": "Repository gedetecteerd:"
+  },
+  "press_tab_to_jump": {
+    "message": "Druk op Tab om te navigeren ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Doorgestuurd vanuit zoekopdracht naar $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Terug naar zoeken (Tab)"
+  }
+}

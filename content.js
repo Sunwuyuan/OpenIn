@@ -1,0 +1,170 @@
+/**
+ * OpenInGitHub - Content Script
+ *
+ * 在代码托管平台页面上显示"返回搜索"提示
+ * 当用户从搜索引擎跳转到仓库页面时，显示返回按钮
+ */
+
+// ==================== 初始化 ====================
+
+// 检查是否由扩展打开且有返回来源
+(async () => {
+  // 检查功能是否开启（只在autoJump模式下启用Tab返回）
+  const result = await chrome.storage.sync.get({ searchRedirectMode: 'autoJump' });
+  if (result.searchRedirectMode !== 'autoJump') {
+    return;
+  }
+
+  const tabId = await getTabId();
+  if (!tabId) return;
+
+  const sourceResult = await chrome.storage.local.get(`repo_source_${tabId}`);
+  const sourceData = sourceResult[`repo_source_${tabId}`];
+
+  if (!sourceData) return;
+
+  // 检查时间戳，只显示最近5秒内的返回提示
+  const timeDiff = Date.now() - sourceData.timestamp;
+  if (timeDiff > 5000) {
+    // 清理过期数据
+    chrome.storage.local.remove(`repo_source_${tabId}`);
+    return;
+  }
+
+  // 显示返回搜索结果的提示
+  showBackToSearchHint(sourceData.url, sourceData.platform);
+
+  // 清理数据，避免重复显示
+  chrome.storage.local.remove(`repo_source_${tabId}`);
+})();
+
+// ==================== 工具函数 ====================
+
+/**
+ * 获取当前标签页ID
+ * 通过向background script发送消息来获取
+ * @returns {Promise<number|null>} 标签页ID或null
+ */
+async function getTabId() {
+  return new Promise((resolve) => {
+    chrome.runtime.sendMessage({ action: 'getTabId' }, (response) => {
+      resolve(response?.tabId);
+    });
+  });
+}
+
+// ==================== UI函数 ====================
+
+/**
+ * 显示返回搜索结果的提示UI
+ * 在页面右上角显示一个提示条，包含返回按钮和快捷键提示
+ *
+ * @param {string} sourceUrl - 来源URL（搜索引擎页面）
+ * @param {string} platform - 平台名称（用于显示）
+ */
+function showBackToSearchHint(sourceUrl, platform = 'GitHub') {
+  // 创建提示条
+  const hint = document.createElement('div');
+  hint.id = 'github-jump-back-hint';
+  hint.innerHTML = `
+    <div style="
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      z-index: 10000;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: slideIn 0.3s ease-out;
+    ">
+      <span style="flex: 1;">
+        ${chrome.i18n.getMessage('jumped_from_search', [platform])}
+      </span>
+      <button id="back-to-search-btn" style="
+        background: rgba(255,255,255,0.2);
+        border: 1px solid rgba(255,255,255,0.3);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 500;
+        transition: all 0.2s;
+      " onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
+        ${chrome.i18n.getMessage('back_to_search')}
+      </button>
+      <button id="close-hint-btn" style="
+        background: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 0 4px;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+      " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+        ✕
+      </button>
+    </div>
+  `;
+
+  // 添加动画样式
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes slideIn {
+      from {
+        transform: translateX(400px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+  document.body.appendChild(hint);
+
+  // 返回搜索按钮
+  const backBtn = document.getElementById('back-to-search-btn');
+  backBtn.addEventListener('click', () => {
+    window.location.href = sourceUrl;
+  });
+
+  // 关闭按钮
+  const closeBtn = document.getElementById('close-hint-btn');
+  closeBtn.addEventListener('click', () => {
+    hint.remove();
+  });
+
+  // Tab 键快捷返回
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab' && !e.shiftKey && !e.ctrlKey && !e.altKey && !e.metaKey) {
+      // 检查是否在输入框中
+      const activeElement = document.activeElement;
+      if (activeElement && (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA')) {
+        return;
+      }
+
+      e.preventDefault();
+      window.location.href = sourceUrl;
+    }
+  });
+
+  // 10秒后自动隐藏
+  setTimeout(() => {
+    if (hint.parentNode) {
+      hint.style.transition = 'opacity 0.3s, transform 0.3s';
+      hint.style.opacity = '0';
+      hint.style.transform = 'translateX(400px)';
+      setTimeout(() => hint.remove(), 300);
+    }
+  }, 10000);
+}

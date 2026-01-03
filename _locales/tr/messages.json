@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "GitHub, GitLab, Bitbucket, npm, Docker gibi platformları destekler; adres çubuğuna yazıldığında hızlı yönlendirme sağlar."
+  },
+  "options_title": {
+    "message": "OpenIn Ayarları"
+  },
+  "options_subtitle": {
+    "message": "Kod Deposu Yönlendirmesi"
+  },
+  "default_platform": {
+    "message": "Varsayılan platform"
+  },
+  "default_platform_info": {
+    "message": "Girişte platform anahtar kelimesi yoksa bu platform varsayılan olarak kullanılır."
+  },
+  "feature_switches": {
+    "message": "Özellik açma/kapama"
+  },
+  "enable_omnibox": {
+    "message": "Adres çubuğu kısayol komutlarını etkinleştir (open + Space)"
+  },
+  "enable_search_redirect": {
+    "message": "Arama yaparken otomatik yönlendirmeyi etkinleştir"
+  },
+  "auto_jump": {
+    "message": "Otomatik yönlendirme, geri dönmek için Tab tuşuna basın"
+  },
+  "tab_jump": {
+    "message": "Tab tuşuyla yönlendirme"
+  },
+  "new_tab": {
+    "message": "Yeni bir sekmede aç"
+  },
+  "enable_dns_intercept": {
+    "message": "Bağlantı olarak işaretlenen depolar için otomatik yönlendirmeyi etkinleştir"
+  },
+  "advanced_settings": {
+    "message": "Gelişmiş ayarlar"
+  },
+  "advanced_info": {
+    "message": "Aşağıdaki alan adları veya anahtar kelimeler otomatik yönlendirmeyi tetiklemez."
+  },
+  "placeholder_pattern": {
+    "message": "Bir alan adı veya anahtar kelime girin (ör. localhost)"
+  },
+  "add_btn": {
+    "message": "Ekle"
+  },
+  "default_whitelist": {
+    "message": "Varsayılan beyaz liste"
+  },
+  "visit_homepage": {
+    "message": "Ana sayfayı ziyaret et"
+  },
+  "no_custom_rules": {
+    "message": "Şu anda özel kural yok"
+  },
+  "delete": {
+    "message": "Sil"
+  },
+  "saved_success": {
+    "message": "Ayarlar kaydedildi"
+  },
+  "enter_pattern_error": {
+    "message": "Hariç tutmak istediğiniz adres desenini girin"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Depo adı veya paket adını girin"
+  },
+  "detected_repo": {
+    "message": "Tespit edilen depo:"
+  },
+  "press_tab_to_jump": {
+    "message": "Tab tuşuna basarak yönlendirin ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Aramadan $PLATFORM$'ye yönlendirildi",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Aramaya geri dön (Tab)"
+  }
+}

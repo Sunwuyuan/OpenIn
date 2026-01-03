@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Palaiko platformas GitHub、GitLab、Bitbucket、npm、Docker ir kt.; į adresų juostą įvedus – greitas perėjimas"
+  },
+  "options_title": {
+    "message": "OpenIn nustatymai"
+  },
+  "options_subtitle": {
+    "message": "Kodo saugyklų perėjimas"
+  },
+  "default_platform": {
+    "message": "Numatytoji platforma"
+  },
+  "default_platform_info": {
+    "message": "Kai įvedime nėra platformos raktažodžio, bus automatiškai naudojama ši platforma."
+  },
+  "feature_switches": {
+    "message": "Funkcijų jungikliai"
+  },
+  "enable_omnibox": {
+    "message": "Įjungti adresų juostos trumpuosius komandas (open + tarpas)"
+  },
+  "enable_search_redirect": {
+    "message": "Įjungti automatinį nukreipimą paieškoje"
+  },
+  "auto_jump": {
+    "message": "Automatiškai pereiti, grįžti paspaudus Tab"
+  },
+  "tab_jump": {
+    "message": "Perėjimas paspaudus Tab"
+  },
+  "new_tab": {
+    "message": "Atidaryti naujame skirtuke"
+  },
+  "enable_dns_intercept": {
+    "message": "Automatinis persijungimas atpažįsta nuorodas į saugyklas"
+  },
+  "advanced_settings": {
+    "message": "Išplėstiniai nustatymai"
+  },
+  "advanced_info": {
+    "message": "Toliau pateikti domenai arba raktažodžiai nebus naudojami automatinio persijungimo metu."
+  },
+  "placeholder_pattern": {
+    "message": "Įveskite domeną arba raktažodį (pvz.: localhost)"
+  },
+  "add_btn": {
+    "message": "Pridėti"
+  },
+  "default_whitelist": {
+    "message": "Numatytasis baltasis sąrašas"
+  },
+  "visit_homepage": {
+    "message": "Aplankyti pagrindinį puslapį"
+  },
+  "no_custom_rules": {
+    "message": "Nėra asmeninių taisyklių"
+  },
+  "delete": {
+    "message": "Ištrinti"
+  },
+  "saved_success": {
+    "message": "Nustatymai išsaugoti"
+  },
+  "enter_pattern_error": {
+    "message": "Įveskite adreso šabloną, kurį norite atmesti"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Įveskite saugyklos ar paketo pavadinimą"
+  },
+  "detected_repo": {
+    "message": "Aptikta saugykla:"
+  },
+  "press_tab_to_jump": {
+    "message": "Paspauskite Tab, kad pereitumėte ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Iš paieškos perėjote į $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Grįžti į paiešką (Tab)"
+  }
+}

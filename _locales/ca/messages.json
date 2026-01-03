@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Admet plataformes com GitHub、GitLab、Bitbucket、npm、Docker, entre d'altres; introdueix a la barra d'adreces per a una navegació ràpida."
+  },
+  "options_title": {
+    "message": "OpenIn Configuració"
+  },
+  "options_subtitle": {
+    "message": "Redirecció de repositoris de codi"
+  },
+  "default_platform": {
+    "message": "Plataforma predeterminada"
+  },
+  "default_platform_info": {
+    "message": "Quan l'entrada no contingui paraules clau de la plataforma, s'utilitzarà aquesta plataforma com a predeterminada."
+  },
+  "feature_switches": {
+    "message": "Interruptors de característiques"
+  },
+  "enable_omnibox": {
+    "message": "Activa comandes ràpides de la barra d'adreces (open + espai)"
+  },
+  "enable_search_redirect": {
+    "message": "Activa la redirecció automàtica al fer cerques"
+  },
+  "auto_jump": {
+    "message": "Salt automàtic, prem Tab per tornar"
+  },
+  "tab_jump": {
+    "message": "Salt amb Tab"
+  },
+  "new_tab": {
+    "message": "Obrir a una pestanya nova"
+  },
+  "enable_dns_intercept": {
+    "message": "Redirecció automàtica: identificar repositoris enllaçats"
+  },
+  "advanced_settings": {
+    "message": "Configuracions avançades"
+  },
+  "advanced_info": {
+    "message": "Els següents dominis o paraules clau no activaran la redirecció automàtica."
+  },
+  "placeholder_pattern": {
+    "message": "Introdueix domini o paraula clau (p. ex.: localhost)"
+  },
+  "add_btn": {
+    "message": "Afegeix"
+  },
+  "default_whitelist": {
+    "message": "Llista blanca predeterminada"
+  },
+  "visit_homepage": {
+    "message": "Visita la pàgina d'inici"
+  },
+  "no_custom_rules": {
+    "message": "Encara no hi ha regles personalitzades"
+  },
+  "delete": {
+    "message": "Esborrar"
+  },
+  "saved_success": {
+    "message": "Configuració desada"
+  },
+  "enter_pattern_error": {
+    "message": "Introdueix el patró d'adreces a excloure"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Introdueix el nom del repositori o del paquet"
+  },
+  "detected_repo": {
+    "message": "Repositori detectat:"
+  },
+  "press_tab_to_jump": {
+    "message": "Prem Tab per saltar ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Saltat des de la cerca a $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Torna a la cerca (Tab)"
+  }
+}

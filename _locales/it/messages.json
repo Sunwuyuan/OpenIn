@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Supporta GitHub, GitLab, Bitbucket, npm, Docker e altre piattaforme; digita nella barra degli indirizzi per un salto rapido"
+  },
+  "options_title": {
+    "message": "Impostazioni di OpenIn"
+  },
+  "options_subtitle": {
+    "message": "Navigazione tra repository di codice"
+  },
+  "default_platform": {
+    "message": "Piattaforma predefinita"
+  },
+  "default_platform_info": {
+    "message": "Quando l'input non contiene parole chiave della piattaforma, verrà utilizzata questa piattaforma come predefinita."
+  },
+  "feature_switches": {
+    "message": "Interruttori delle funzionalità"
+  },
+  "enable_omnibox": {
+    "message": "Abilita comandi rapidi della barra degli indirizzi (open + spazio)"
+  },
+  "enable_search_redirect": {
+    "message": "Abilita il reindirizzamento automatico durante la ricerca"
+  },
+  "auto_jump": {
+    "message": "Salto automatico, premi Tab per tornare"
+  },
+  "tab_jump": {
+    "message": "Salta usando Tab"
+  },
+  "new_tab": {
+    "message": "Apri nella nuova scheda"
+  },
+  "enable_dns_intercept": {
+    "message": "Rileva automaticamente i repository come link"
+  },
+  "advanced_settings": {
+    "message": "Impostazioni avanzate"
+  },
+  "advanced_info": {
+    "message": "I seguenti domini o parole chiave non attiveranno il salto automatico."
+  },
+  "placeholder_pattern": {
+    "message": "Inserisci un dominio o una parola chiave (es: localhost)"
+  },
+  "add_btn": {
+    "message": "Aggiungi"
+  },
+  "default_whitelist": {
+    "message": "Lista bianca predefinita"
+  },
+  "visit_homepage": {
+    "message": "Visita la pagina iniziale"
+  },
+  "no_custom_rules": {
+    "message": "Nessuna regola personalizzata al momento"
+  },
+  "delete": {
+    "message": "Elimina"
+  },
+  "saved_success": {
+    "message": "Impostazioni salvate con successo"
+  },
+  "enter_pattern_error": {
+    "message": "Immettere un modello di indirizzo da escludere"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Inserisci il nome del repository o del pacchetto"
+  },
+  "detected_repo": {
+    "message": "Repository rilevato:"
+  },
+  "press_tab_to_jump": {
+    "message": "Premi Tab per saltare ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Reindirizzato dalla ricerca a $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Torna alla ricerca (Tab)"
+  }
+}

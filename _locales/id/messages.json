@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Mendukung platform seperti GitHub, GitLab, Bitbucket, npm, Docker, dll., untuk melakukan navigasi cepat dengan mengetik di bilah alamat"
+  },
+  "options_title": {
+    "message": "OpenIn Pengaturan"
+  },
+  "options_subtitle": {
+    "message": "Pengalihan repositori kode"
+  },
+  "default_platform": {
+    "message": "Platform bawaan"
+  },
+  "default_platform_info": {
+    "message": "Saat masukan tidak mengandung kata kunci platform, platform ini akan digunakan secara default."
+  },
+  "feature_switches": {
+    "message": "Sakelar fitur"
+  },
+  "enable_omnibox": {
+    "message": "Aktifkan perintah pintas bilah alamat (open + spasi)"
+  },
+  "enable_search_redirect": {
+    "message": "Aktifkan pengalihan otomatis saat pencarian"
+  },
+  "auto_jump": {
+    "message": "Pengalihan otomatis, tekan tombol Tab untuk kembali"
+  },
+  "tab_jump": {
+    "message": "Lompat dengan menekan tombol Tab"
+  },
+  "new_tab": {
+    "message": "Buka di tab baru"
+  },
+  "enable_dns_intercept": {
+    "message": "Pengalihan otomatis mengenali repositori sebagai tautan"
+  },
+  "advanced_settings": {
+    "message": "Pengaturan lanjutan"
+  },
+  "advanced_info": {
+    "message": "Domain atau kata kunci berikut tidak akan memicu pengalihan otomatis."
+  },
+  "placeholder_pattern": {
+    "message": "Masukkan domain atau kata kunci (mis. localhost)"
+  },
+  "add_btn": {
+    "message": "Tambahkan"
+  },
+  "default_whitelist": {
+    "message": "Daftar putih bawaan"
+  },
+  "visit_homepage": {
+    "message": "Kunjungi halaman utama"
+  },
+  "no_custom_rules": {
+    "message": "Belum ada aturan khusus"
+  },
+  "delete": {
+    "message": "Hapus"
+  },
+  "saved_success": {
+    "message": "Pengaturan telah disimpan"
+  },
+  "enter_pattern_error": {
+    "message": "Masukkan pola alamat yang akan dikecualikan"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Masukkan nama repositori atau paket"
+  },
+  "detected_repo": {
+    "message": "Repositori terdeteksi:"
+  },
+  "press_tab_to_jump": {
+    "message": "Lompat dengan Tab ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Dialihkan dari pencarian ke $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Kembali ke pencarian (Tab)"
+  }
+}

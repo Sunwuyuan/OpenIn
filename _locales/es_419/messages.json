@@ -1,0 +1,91 @@
+{
+  "extensionName": {
+    "message": "OpenIn"
+  },
+  "extensionDescription": {
+    "message": "Soporta plataformas como GitHub, GitLab, Bitbucket, npm, Docker, etc.; escribe en la barra de direcciones para un acceso rápido"
+  },
+  "options_title": {
+    "message": "OpenIn configuración"
+  },
+  "options_subtitle": {
+    "message": "Saltos a repositorios de código"
+  },
+  "default_platform": {
+    "message": "Plataforma predeterminada"
+  },
+  "default_platform_info": {
+    "message": "Cuando la entrada no contiene palabras clave de la plataforma, se utilizará esta plataforma por defecto."
+  },
+  "feature_switches": {
+    "message": "Conmutadores de funciones"
+  },
+  "enable_omnibox": {
+    "message": "Habilitar comandos rápidos de la omnibox (open + espacio)"
+  },
+  "enable_search_redirect": {
+    "message": "Redirección automática al buscar"
+  },
+  "auto_jump": {
+    "message": "Saltos automáticos; presione Tab para volver"
+  },
+  "tab_jump": {
+    "message": "Saltar usando la tecla Tab"
+  },
+  "new_tab": {
+    "message": "Abrir en una nueva pestaña"
+  },
+  "enable_dns_intercept": {
+    "message": "Interceptación DNS para reconocer repositorios enlazados"
+  },
+  "advanced_settings": {
+    "message": "Configuración avanzada"
+  },
+  "advanced_info": {
+    "message": "A continuación, los siguientes dominios o palabras clave no activarán el salto automático."
+  },
+  "placeholder_pattern": {
+    "message": "Introduce un dominio o palabra clave (p. ej.: localhost)"
+  },
+  "add_btn": {
+    "message": "Agregar"
+  },
+  "default_whitelist": {
+    "message": "Lista blanca predeterminada"
+  },
+  "visit_homepage": {
+    "message": "Visitar la página de inicio"
+  },
+  "no_custom_rules": {
+    "message": "No hay reglas personalizadas"
+  },
+  "delete": {
+    "message": "Eliminar"
+  },
+  "saved_success": {
+    "message": "La configuración se ha guardado"
+  },
+  "enter_pattern_error": {
+    "message": "Ingrese el patrón de dirección que desea excluir"
+  },
+  "omnibox_default_suggestion": {
+    "message": "Ingrese el nombre del repositorio o del paquete"
+  },
+  "detected_repo": {
+    "message": "Repositorio detectado:"
+  },
+  "press_tab_to_jump": {
+    "message": "Presione Tab para saltar ⚡"
+  },
+  "jumped_from_search": {
+    "message": "🔍 Saltó desde la búsqueda a $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "back_to_search": {
+    "message": "← Volver a la búsqueda (Tab)"
+  }
+}

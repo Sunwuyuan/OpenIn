@@ -5,12 +5,15 @@
  * 当用户从搜索引擎跳转到仓库页面时，显示返回按钮
  */
 
+// ==================== 浏览器兼容层 ====================
+const browserAPI = globalThis.browser || globalThis.chrome;
+
 // ==================== 初始化 ====================
 
 // 检查是否由扩展打开且有返回来源
 (async () => {
   // 检查功能是否开启（只在autoJump模式下启用Tab返回）
-  const result = await chrome.storage.sync.get({ searchRedirectMode: 'autoJump' });
+  const result = await browserAPI.storage.sync.get({ searchRedirectMode: 'autoJump' });
   if (result.searchRedirectMode !== 'autoJump') {
     return;
   }
@@ -18,7 +21,7 @@
   const tabId = await getTabId();
   if (!tabId) return;
 
-  const sourceResult = await chrome.storage.local.get(`repo_source_${tabId}`);
+  const sourceResult = await browserAPI.storage.local.get(`repo_source_${tabId}`);
   const sourceData = sourceResult[`repo_source_${tabId}`];
 
   if (!sourceData) return;
@@ -27,7 +30,7 @@
   const timeDiff = Date.now() - sourceData.timestamp;
   if (timeDiff > 5000) {
     // 清理过期数据
-    chrome.storage.local.remove(`repo_source_${tabId}`);
+    browserAPI.storage.local.remove(`repo_source_${tabId}`);
     return;
   }
 
@@ -35,7 +38,7 @@
   showBackToSearchHint(sourceData.url, sourceData.platform);
 
   // 清理数据，避免重复显示
-  chrome.storage.local.remove(`repo_source_${tabId}`);
+  browserAPI.storage.local.remove(`repo_source_${tabId}`);
 })();
 
 // ==================== 工具函数 ====================
@@ -47,7 +50,7 @@
  */
 async function getTabId() {
   return new Promise((resolve) => {
-    chrome.runtime.sendMessage({ action: 'getTabId' }, (response) => {
+    browserAPI.runtime.sendMessage({ action: 'getTabId' }, (response) => {
       resolve(response?.tabId);
     });
   });
@@ -85,7 +88,7 @@ function showBackToSearchHint(sourceUrl, platform = 'GitHub') {
       animation: slideIn 0.3s ease-out;
     ">
       <span style="flex: 1;">
-        ${chrome.i18n.getMessage('jumped_from_search', [platform])}
+        ${browserAPI.i18n.getMessage('jumped_from_search', [platform])}
       </span>
       <button id="back-to-search-btn" style="
         background: rgba(255,255,255,0.2);
@@ -98,7 +101,7 @@ function showBackToSearchHint(sourceUrl, platform = 'GitHub') {
         font-weight: 500;
         transition: all 0.2s;
       " onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
-        ${chrome.i18n.getMessage('back_to_search')}
+        ${browserAPI.i18n.getMessage('back_to_search')}
       </button>
       <button id="close-hint-btn" style="
         background: transparent;
@@ -168,3 +171,4 @@ function showBackToSearchHint(sourceUrl, platform = 'GitHub') {
     }
   }, 10000);
 }
+

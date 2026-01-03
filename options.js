@@ -1,3 +1,6 @@
+// ==================== 浏览器兼容层 ====================
+const browserAPI = globalThis.browser || globalThis.chrome;
+
 // 默认的常见地址列表（与 background.js 保持一致）
 const DEFAULT_BYPASS_PATTERNS = [
   'localhost'
@@ -29,7 +32,7 @@ const AVAILABLE_DEFAULT_PLATFORMS = ['github', 'gitlab', 'bitbucket', 'gitee'];
 
 // 加载默认平台配置
 async function loadDefaultPlatform() {
-  const result = await chrome.storage.sync.get({
+  const result = await browserAPI.storage.sync.get({
     defaultPlatform: 'github'
   });
 
@@ -41,7 +44,7 @@ async function loadDefaultPlatform() {
 function localizeHtml() {
   // 翻译带有 data-i18n 属性的元素
   document.querySelectorAll('[data-i18n]').forEach(el => {
-    const message = chrome.i18n.getMessage(el.getAttribute('data-i18n'));
+    const message = browserAPI.i18n.getMessage(el.getAttribute('data-i18n'));
     if (message) {
       el.textContent = message;
     }
@@ -49,7 +52,7 @@ function localizeHtml() {
 
   // 翻译带有 data-i18n-placeholder 属性的元素
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const message = chrome.i18n.getMessage(el.getAttribute('data-i18n-placeholder'));
+    const message = browserAPI.i18n.getMessage(el.getAttribute('data-i18n-placeholder'));
     if (message) {
       el.placeholder = message;
     }
@@ -59,8 +62,8 @@ function localizeHtml() {
 // 保存默认平台配置
 async function saveDefaultPlatform() {
   const value = defaultPlatformSelect.value;
-  await chrome.storage.sync.set({ defaultPlatform: value });
-  showMessage(chrome.i18n.getMessage('saved_success'), 'success');
+  await browserAPI.storage.sync.set({ defaultPlatform: value });
+  showMessage(browserAPI.i18n.getMessage('saved_success'), 'success');
 }
 
 // 显示消息
@@ -76,19 +79,19 @@ function showMessage(text, type = 'success') {
 
 // 加载并显示自定义白名单
 async function loadCustomPatterns() {
-  const result = await chrome.storage.sync.get({
+  const result = await browserAPI.storage.sync.get({
     customBypassPatterns: []
   });
 
   const patterns = result.customBypassPatterns;
 
   if (patterns.length === 0) {
-    customPatternsList.innerHTML = `<div class="empty-state">${chrome.i18n.getMessage('no_custom_rules')}</div>`;
+    customPatternsList.innerHTML = `<div class="empty-state">${browserAPI.i18n.getMessage('no_custom_rules')}</div>`;
   } else {
     customPatternsList.innerHTML = patterns.map((pattern, index) => `
       <li class="pattern-item">
         <span class="pattern-text">${escapeHtml(pattern)}</span>
-        <button class="delete-btn" data-index="${index}">${chrome.i18n.getMessage('delete')}</button>
+        <button class="delete-btn" data-index="${index}">${browserAPI.i18n.getMessage('delete')}</button>
       </li>
     `).join('');
 
@@ -114,12 +117,12 @@ async function addPattern() {
   const pattern = patternInput.value.trim();
 
   if (!pattern) {
-    showMessage(chrome.i18n.getMessage('enter_pattern_error'), 'error');
+    showMessage(browserAPI.i18n.getMessage('enter_pattern_error'), 'error');
     return;
   }
 
   // 获取当前的自定义白名单
-  const result = await chrome.storage.sync.get({
+  const result = await browserAPI.storage.sync.get({
     customBypassPatterns: []
   });
 
@@ -135,7 +138,7 @@ async function addPattern() {
   patterns.push(pattern);
 
   // 保存到存储
-  await chrome.storage.sync.set({
+  await browserAPI.storage.sync.set({
     customBypassPatterns: patterns
   });
 
@@ -150,14 +153,14 @@ async function addPattern() {
 
 // 删除白名单规则
 async function deletePattern(index) {
-  const result = await chrome.storage.sync.get({
+  const result = await browserAPI.storage.sync.get({
     customBypassPatterns: []
   });
 
   const patterns = result.customBypassPatterns;
   patterns.splice(index, 1);
 
-  await chrome.storage.sync.set({
+  await browserAPI.storage.sync.set({
     customBypassPatterns: patterns
   });
 
@@ -189,7 +192,7 @@ defaultPlatformSelect.addEventListener('change', saveDefaultPlatform);
 
 // 加载功能开关配置
 async function loadFeatureToggles() {
-  const result = await chrome.storage.sync.get({
+  const result = await browserAPI.storage.sync.get({
     featureOmnibox: true,
     featureSearchRedirect: true,
     featureDnsIntercept: true,
@@ -213,12 +216,12 @@ async function loadFeatureToggles() {
 
 // 保存功能开关配置
 async function saveFeatureToggles() {
-  await chrome.storage.sync.set({
+  await browserAPI.storage.sync.set({
     featureOmnibox: featureOmnibox.checked,
     featureSearchRedirect: featureSearchRedirect.checked,
     featureDnsIntercept: featureDnsIntercept.checked
   });
-  showMessage(chrome.i18n.getMessage('saved_success'), 'success');
+  showMessage(browserAPI.i18n.getMessage('saved_success'), 'success');
 }
 
 // 保存搜索跳转模式
@@ -232,10 +235,10 @@ async function saveSearchRedirectMode() {
     mode = 'newTab';
   }
 
-  await chrome.storage.sync.set({
+  await browserAPI.storage.sync.set({
     searchRedirectMode: mode
   });
-  showMessage(chrome.i18n.getMessage('saved_success'), 'success');
+  showMessage(browserAPI.i18n.getMessage('saved_success'), 'success');
 }
 
 // 更新搜索跳转选项 UI 状态
@@ -284,3 +287,4 @@ document.addEventListener('DOMContentLoaded', () => {
   loadDefaultPlatform();
   loadFeatureToggles();
 });
+

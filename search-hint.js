@@ -5,6 +5,9 @@
  * 仅在Tab跳转模式下激活
  */
 
+// ==================== 浏览器兼容层 ====================
+const browserAPI = globalThis.browser || globalThis.chrome;
+
 // ==================== 初始化 ====================
 
 (async () => {
@@ -13,7 +16,7 @@
   if (!tabId) return;
 
   // 检查是否有待跳转的仓库信息
-  const result = await chrome.storage.local.get(`search_jump_${tabId}`);
+  const result = await browserAPI.storage.local.get(`search_jump_${tabId}`);
   const jumpData = result[`search_jump_${tabId}`];
 
   if (!jumpData) return;
@@ -22,7 +25,7 @@
   const timeDiff = Date.now() - jumpData.timestamp;
   if (timeDiff > 3000) {
     // 清理过期数据
-    chrome.storage.local.remove(`search_jump_${tabId}`);
+    browserAPI.storage.local.remove(`search_jump_${tabId}`);
     return;
   }
 
@@ -41,15 +44,15 @@
       e.preventDefault();
 
       // 重新检查是否还有跳转数据
-      const currentResult = await chrome.storage.local.get(`search_jump_${tabId}`);
+      const currentResult = await browserAPI.storage.local.get(`search_jump_${tabId}`);
       const currentJumpData = currentResult[`search_jump_${tabId}`];
 
       if (currentJumpData) {
         // 清理数据
-        chrome.storage.local.remove(`search_jump_${tabId}`);
+        browserAPI.storage.local.remove(`search_jump_${tabId}`);
 
         // 通知background执行跳转
-        chrome.runtime.sendMessage({
+        browserAPI.runtime.sendMessage({
           action: 'executeSearchJump',
           data: currentJumpData
         });
@@ -66,7 +69,7 @@
  */
 async function getTabId() {
   return new Promise((resolve) => {
-    chrome.runtime.sendMessage({ action: 'getTabId' }, (response) => {
+    browserAPI.runtime.sendMessage({ action: 'getTabId' }, (response) => {
       resolve(response?.tabId);
     });
   });
@@ -107,7 +110,7 @@ function showTabJumpHint(jumpData) {
       animation: slideIn 0.3s ease-out;
     ">
       <span style="flex: 1;">
-        ${platformEmoji} ${chrome.i18n.getMessage('detected_repo')} <strong>${repoText}</strong>
+        ${platformEmoji} ${browserAPI.i18n.getMessage('detected_repo')} <strong>${repoText}</strong>
       </span>
       <span style="
         background: rgba(255,255,255,0.2);
@@ -117,7 +120,7 @@ function showTabJumpHint(jumpData) {
         font-size: 13px;
         font-weight: 500;
       ">
-        ${chrome.i18n.getMessage('press_tab_to_jump')}
+        ${browserAPI.i18n.getMessage('press_tab_to_jump')}
       </span>
       <button id="close-tab-hint-btn" style="
         background: transparent;
@@ -158,7 +161,7 @@ function showTabJumpHint(jumpData) {
     // 清理跳转数据
     const tabId = await getTabId();
     if (tabId) {
-      chrome.storage.local.remove(`search_jump_${tabId}`);
+      browserAPI.storage.local.remove(`search_jump_${tabId}`);
     }
   });
 
@@ -196,3 +199,4 @@ function getPlatformEmoji(platform) {
   };
   return emojis[platform] || '📦';
 }
+

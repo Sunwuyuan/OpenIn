@@ -5,6 +5,12 @@
   "version": "1.0.0",
   "description": "__MSG_extensionDescription__",
   "default_locale": "zh_CN",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "openin@wuyuan.dev",
+      "strict_min_version": "109.0"
+    }
+  },
   "permissions": [
     "webRequest",
     "webNavigation",

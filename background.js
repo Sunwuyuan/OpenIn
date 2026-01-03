@@ -1,3 +1,7 @@
+// ==================== 浏览器兼容层 ====================
+// 支持 Chrome 和 Firefox
+const browserAPI = globalThis.browser || globalThis.chrome;
+
 // ==================== 导入平台配置 ====================
 // Service Worker 使用 importScripts 导入外部脚本
 importScripts('platforms.js');
@@ -17,7 +21,7 @@ const DEFAULT_BYPASS_PATTERNS = [
  * @returns {Promise<string[]>} 白名单数组
  */
 async function getBypassPatterns() {
-  const result = await chrome.storage.sync.get({
+  const result = await browserAPI.storage.sync.get({
     customBypassPatterns: []
   });
   return [...DEFAULT_BYPASS_PATTERNS, ...result.customBypassPatterns];
@@ -28,7 +32,7 @@ async function getBypassPatterns() {
  * @returns {Promise<Object>} 功能开关对象
  */
 async function getFeatureToggles() {
-  const result = await chrome.storage.sync.get({
+  const result = await browserAPI.storage.sync.get({
     featureOmnibox: true,
     featureSearchRedirect: true,
     featureDnsIntercept: true,
@@ -41,7 +45,7 @@ async function getFeatureToggles() {
  * 从存储加载默认平台配置
  */
 function loadDefaultPlatform() {
-  chrome.storage.sync.get({ defaultPlatform: 'github' }, (result) => {
+  browserAPI.storage.sync.get({ defaultPlatform: 'github' }, (result) => {
     const value = result.defaultPlatform;
     if (PLATFORMS[value]) {
       DEFAULT_PLATFORM = value;
@@ -56,8 +60,8 @@ function loadDefaultPlatform() {
  */
 function updateDefaultSuggestion() {
   const defaultCfg = PLATFORMS[DEFAULT_PLATFORM] || PLATFORMS.github;
-  chrome.omnibox.setDefaultSuggestion({
-    description: `${defaultCfg.name}: <match>${chrome.i18n.getMessage('omnibox_default_suggestion')}</match>`
+  browserAPI.omnibox.setDefaultSuggestion({
+    description: `${defaultCfg.name}: <match>${browserAPI.i18n.getMessage('omnibox_default_suggestion')}</match>`
   });
 }
 
@@ -115,7 +119,7 @@ async function openRepoUnified(params) {
   if (finalDisposition === 'currentTab' && tabId) {
     // 当前标签页打开，记录来源以便返回（仅在autoJump模式下）
     if (sourceUrl && searchRedirectMode === 'autoJump') {
-      await chrome.storage.local.set({
+      await browserAPI.storage.local.set({
         [`repo_source_${tabId}`]: {
           url: sourceUrl,
           platform: platformInfo.name,
@@ -123,13 +127,13 @@ async function openRepoUnified(params) {
         }
       });
     }
-    chrome.tabs.update(tabId, { url: repoUrl });
+    browserAPI.tabs.update(tabId, { url: repoUrl });
   } else if (finalDisposition === 'newBackgroundTab') {
     // 后台新标签页打开
-    chrome.tabs.create({ url: repoUrl, active: false });
+    browserAPI.tabs.create({ url: repoUrl, active: false });
   } else {
     // 前台新标签页打开（默认）
-    chrome.tabs.create({ url: repoUrl });
+    browserAPI.tabs.create({ url: repoUrl });
   }
 
   log('====================================');
@@ -304,7 +308,7 @@ function recordJump(platform, owner, repo) {
  * 监听导航事件 - 拦截搜索引擎搜索
  * 当用户在搜索引擎搜索仓库名时，自动跳转到对应平台
  */
-chrome.webNavigation.onBeforeNavigate.addListener(
+browserAPI.webNavigation.onBeforeNavigate.addListener(
   async (details) => {
     // 只处理主框架
     if (details.frameId !== 0) {
@@ -350,7 +354,7 @@ chrome.webNavigation.onBeforeNavigate.addListener(
         // 检查搜索跳转模式
         if (features.searchRedirectMode === 'tabJump') {
           // Tab跳转模式：存储跳转信息，不立即跳转
-          await chrome.storage.local.set({
+          await browserAPI.storage.local.set({
             [`search_jump_${details.tabId}`]: {
               platform,
               owner,
@@ -385,7 +389,7 @@ chrome.webNavigation.onBeforeNavigate.addListener(
 
 // 尝试在 DNS 查询之前拦截（可能因权限不足而失败）
 try {
-  chrome.webRequest.onBeforeRequest.addListener(
+  browserAPI.webRequest.onBeforeRequest.addListener(
     async (details) => {
       // 只处理主框架请求
       if (details.type !== 'main_frame') {
@@ -435,7 +439,7 @@ try {
  * 监听DNS错误事件 - 拦截域名解析失败
  * 当用户在地址栏输入仓库名（如 owner/repo）导致DNS失败时，跳转到对应平台
  */
-chrome.webNavigation.onErrorOccurred.addListener(
+browserAPI.webNavigation.onErrorOccurred.addListener(
   async (details) => {
     // 只处理主框架
     if (details.frameId !== 0) {
@@ -512,10 +516,10 @@ chrome.webNavigation.onErrorOccurred.addListener(
 /**
  * 监听插件安装或更新事件
  */
-chrome.runtime.onInstalled.addListener((details) => {
+browserAPI.runtime.onInstalled.addListener((details) => {
   if (details.reason === 'install') {
     // 首次安装，初始化存储
-    chrome.storage.sync.set({
+    browserAPI.storage.sync.set({
       customBypassPatterns: [],
       defaultPlatform: 'github', // 默认平台 GitHub
       featureOmnibox: true, // Omnibox功能默认开启
@@ -525,7 +529,7 @@ chrome.runtime.onInstalled.addListener((details) => {
     });
 
     // 打开选项页面
-    chrome.runtime.openOptionsPage();
+    browserAPI.runtime.openOptionsPage();
   }
 
   // 无论是安装还是更新，启动时都加载一次默认平台
@@ -535,7 +539,7 @@ chrome.runtime.onInstalled.addListener((details) => {
 /**
  * 监听存储变化 - 响应用户配置更新
  */
-chrome.storage.onChanged.addListener((changes, areaName) => {
+browserAPI.storage.onChanged.addListener((changes, areaName) => {
   if (areaName === 'sync' && changes.defaultPlatform) {
     const value = changes.defaultPlatform.newValue;
     if (PLATFORMS[value]) {
@@ -555,7 +559,7 @@ chrome.storage.onChanged.addListener((changes, areaName) => {
  */
 updateDefaultSuggestion();
 
-chrome.omnibox.onInputChanged.addListener((text, suggest) => {
+browserAPI.omnibox.onInputChanged.addListener((text, suggest) => {
   const trimmedText = text.trim();
 
   if (!trimmedText) {
@@ -637,7 +641,7 @@ chrome.omnibox.onInputChanged.addListener((text, suggest) => {
       const url = buildRepoUrl(platform, owner, repo, path);
 
       // 动态更新默认建议
-      chrome.omnibox.setDefaultSuggestion({
+      browserAPI.omnibox.setDefaultSuggestion({
         description: `${platformInfo.name}: <match>${owner}/${repo}</match>${path}`
       });
 
@@ -676,7 +680,7 @@ chrome.omnibox.onInputChanged.addListener((text, suggest) => {
 
     if (isSingleName) {
       // 单一包名平台 - 动态更新默认建议
-      chrome.omnibox.setDefaultSuggestion({
+      browserAPI.omnibox.setDefaultSuggestion({
         description: `${platformInfo.name}: <match>${inputName}</match>`
       });
 
@@ -694,7 +698,7 @@ chrome.omnibox.onInputChanged.addListener((text, suggest) => {
         const path = repoMatch[3] || '';
 
         // 动态更新默认建议
-        chrome.omnibox.setDefaultSuggestion({
+        browserAPI.omnibox.setDefaultSuggestion({
           description: `${platformInfo.name}: <match>${owner}/${repo}</match>${path}`
         });
 
@@ -705,7 +709,7 @@ chrome.omnibox.onInputChanged.addListener((text, suggest) => {
         });
       } else {
         // 没有 / 符号，当作用户名处理
-        chrome.omnibox.setDefaultSuggestion({
+        browserAPI.omnibox.setDefaultSuggestion({
           description: `${platformInfo.name}: <match>${inputName}</match>`
         });
 
@@ -732,7 +736,7 @@ chrome.omnibox.onInputChanged.addListener((text, suggest) => {
 
     // 动态更新默认建议为默认平台
     const defaultCfg = PLATFORMS[DEFAULT_PLATFORM] || PLATFORMS.github;
-    chrome.omnibox.setDefaultSuggestion({
+    browserAPI.omnibox.setDefaultSuggestion({
       description: `${defaultCfg.name}: <match>${owner}/${repo}</match>${path}`
     });
 
@@ -760,7 +764,7 @@ chrome.omnibox.onInputChanged.addListener((text, suggest) => {
     const hasAt = inputName.includes('@');
     // 动态更新默认建议为默认平台的用户页
     const defaultCfg = PLATFORMS[DEFAULT_PLATFORM] || PLATFORMS.github;
-    chrome.omnibox.setDefaultSuggestion({
+    browserAPI.omnibox.setDefaultSuggestion({
       description: `${defaultCfg.name}: <match>${inputName}</match>`
     });
     // 代码托管平台用户页：github.com/name, gitlab.com/name ...
@@ -805,7 +809,7 @@ chrome.omnibox.onInputChanged.addListener((text, suggest) => {
   suggest(suggestions);
 });
 
-chrome.omnibox.onInputEntered.addListener(async (text, disposition) => {
+browserAPI.omnibox.onInputEntered.addListener(async (text, disposition) => {
   // 检查功能是否开启
   const features = await getFeatureToggles();
   if (!features.featureOmnibox) {
@@ -928,19 +932,19 @@ function openUrl(url, disposition) {
   log('Omnibox 打开URL:', url, '方式:', disposition);
 
   if (disposition === 'currentTab') {
-    chrome.tabs.update({ url });
+    browserAPI.tabs.update({ url });
   } else if (disposition === 'newForegroundTab') {
-    chrome.tabs.create({ url });
+    browserAPI.tabs.create({ url });
   } else {
     // newBackgroundTab
-    chrome.tabs.create({ url, active: false });
+    browserAPI.tabs.create({ url, active: false });
   }
 }
 
 /**
  * 监听来自content script的消息
  */
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+browserAPI.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'getTabId') {
     sendResponse({ tabId: sender.tab?.id });
   } else if (request.action === 'executeSearchJump') {
@@ -967,6 +971,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 /**
  * 监听扩展图标点击事件 - 打开设置页面
  */
-chrome.action.onClicked.addListener(() => {
-  chrome.runtime.openOptionsPage();
+browserAPI.action.onClicked.addListener(() => {
+  browserAPI.runtime.openOptionsPage();
 });
+

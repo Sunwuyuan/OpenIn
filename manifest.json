@@ -8,7 +8,10 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "openin@wuyuan.dev",
-      "strict_min_version": "109.0"
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": ["websiteActivity","websiteContent","searchTerms","browsingActivity"]
+      }
     }
   },
   "permissions": [
@@ -75,8 +78,8 @@
     "open_in_tab": true
   },
   "icons": {
-    "16": "small-logo.png",
-    "48": "logo.png",
-    "128": "logo.png"
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
   }
 }

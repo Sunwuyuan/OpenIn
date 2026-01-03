@@ -91,51 +91,65 @@ function showTabJumpHint(jumpData) {
   // 创建提示条
   const hint = document.createElement('div');
   hint.id = 'github-tab-jump-hint';
-  hint.innerHTML = `
-    <div style="
-      position: fixed;
-      top: 60px;
-      right: 20px;
-      z-index: 10000;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      animation: slideIn 0.3s ease-out;
-    ">
-      <span style="flex: 1;">
-        ${platformEmoji} ${browserAPI.i18n.getMessage('detected_repo')} <strong>${repoText}</strong>
-      </span>
-      <span style="
-        background: rgba(255,255,255,0.2);
-        border: 1px solid rgba(255,255,255,0.3);
-        padding: 6px 12px;
-        border-radius: 4px;
-        font-size: 13px;
-        font-weight: 500;
-      ">
-        ${browserAPI.i18n.getMessage('press_tab_to_jump')}
-      </span>
-      <button id="close-tab-hint-btn" style="
-        background: transparent;
-        border: none;
-        color: white;
-        cursor: pointer;
-        font-size: 18px;
-        padding: 0 4px;
-        opacity: 0.7;
-        transition: opacity 0.2s;
-      " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
-        ✕
-      </button>
-    </div>
+
+  const container = document.createElement('div');
+  container.style.cssText = `
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    z-index: 10000;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: slideIn 0.3s ease-out;
   `;
+
+  const message = document.createElement('span');
+  message.style.flex = '1';
+  const repoMsg = browserAPI.i18n.getMessage('detected_repo');
+  message.textContent = `${platformEmoji} ${repoMsg} `;
+  const strong = document.createElement('strong');
+  strong.textContent = repoText;
+  message.appendChild(strong);
+
+  const tabHint = document.createElement('span');
+  tabHint.style.cssText = `
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+  `;
+  tabHint.textContent = browserAPI.i18n.getMessage('press_tab_to_jump');
+
+  const closeBtn = document.createElement('button');
+  closeBtn.id = 'close-tab-hint-btn';
+  closeBtn.style.cssText = `
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0 4px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  `;
+  closeBtn.textContent = '✕';
+  closeBtn.onmouseover = () => closeBtn.style.opacity = '1';
+  closeBtn.onmouseout = () => closeBtn.style.opacity = '0.7';
+
+  container.appendChild(message);
+  container.appendChild(tabHint);
+  container.appendChild(closeBtn);
+  hint.appendChild(container);
 
   // 添加动画样式
   const style = document.createElement('style');
@@ -155,7 +169,6 @@ function showTabJumpHint(jumpData) {
   document.body.appendChild(hint);
 
   // 关闭按钮
-  const closeBtn = document.getElementById('close-tab-hint-btn');
   closeBtn.addEventListener('click', async () => {
     hint.remove();
     // 清理跳转数据

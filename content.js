@@ -69,54 +69,73 @@ function showBackToSearchHint(sourceUrl, platform = 'GitHub') {
   // 创建提示条
   const hint = document.createElement('div');
   hint.id = 'github-jump-back-hint';
-  hint.innerHTML = `
-    <div style="
-      position: fixed;
-      top: 60px;
-      right: 20px;
-      z-index: 10000;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      animation: slideIn 0.3s ease-out;
-    ">
-      <span style="flex: 1;">
-        ${browserAPI.i18n.getMessage('jumped_from_search', [platform])}
-      </span>
-      <button id="back-to-search-btn" style="
-        background: rgba(255,255,255,0.2);
-        border: 1px solid rgba(255,255,255,0.3);
-        color: white;
-        padding: 6px 12px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 13px;
-        font-weight: 500;
-        transition: all 0.2s;
-      " onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
-        ${browserAPI.i18n.getMessage('back_to_search')}
-      </button>
-      <button id="close-hint-btn" style="
-        background: transparent;
-        border: none;
-        color: white;
-        cursor: pointer;
-        font-size: 18px;
-        padding: 0 4px;
-        opacity: 0.7;
-        transition: opacity 0.2s;
-      " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
-        ✕
-      </button>
-    </div>
+
+  const container = document.createElement('div');
+  container.style.cssText = `
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    z-index: 10000;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: slideIn 0.3s ease-out;
   `;
+
+  const message = document.createElement('span');
+  message.style.flex = '1';
+  message.textContent = browserAPI.i18n.getMessage('jumped_from_search', [platform]);
+
+  const backBtn = document.createElement('button');
+  backBtn.id = 'back-to-search-btn';
+  backBtn.style.cssText = `
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s;
+  `;
+  backBtn.textContent = browserAPI.i18n.getMessage('back_to_search');
+  backBtn.onmouseover = () => backBtn.style.background = 'rgba(255,255,255,0.3)';
+  backBtn.onmouseout = () => backBtn.style.background = 'rgba(255,255,255,0.2)';
+  backBtn.addEventListener('click', () => {
+    window.location.href = sourceUrl;
+  });
+
+  const closeBtn = document.createElement('button');
+  closeBtn.id = 'close-hint-btn';
+  closeBtn.style.cssText = `
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0 4px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  `;
+  closeBtn.textContent = '✕';
+  closeBtn.onmouseover = () => closeBtn.style.opacity = '1';
+  closeBtn.onmouseout = () => closeBtn.style.opacity = '0.7';
+  closeBtn.addEventListener('click', () => {
+    hint.remove();
+  });
+
+  container.appendChild(message);
+  container.appendChild(backBtn);
+  container.appendChild(closeBtn);
+  hint.appendChild(container);
 
   // 添加动画样式
   const style = document.createElement('style');
@@ -134,18 +153,6 @@ function showBackToSearchHint(sourceUrl, platform = 'GitHub') {
   `;
   document.head.appendChild(style);
   document.body.appendChild(hint);
-
-  // 返回搜索按钮
-  const backBtn = document.getElementById('back-to-search-btn');
-  backBtn.addEventListener('click', () => {
-    window.location.href = sourceUrl;
-  });
-
-  // 关闭按钮
-  const closeBtn = document.getElementById('close-hint-btn');
-  closeBtn.addEventListener('click', () => {
-    hint.remove();
-  });
 
   // Tab 键快捷返回
   document.addEventListener('keydown', (e) => {

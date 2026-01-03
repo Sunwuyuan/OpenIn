@@ -86,30 +86,45 @@ async function loadCustomPatterns() {
   const patterns = result.customBypassPatterns;
 
   if (patterns.length === 0) {
-    customPatternsList.innerHTML = `<div class="empty-state">${browserAPI.i18n.getMessage('no_custom_rules')}</div>`;
+    const emptyDiv = document.createElement('div');
+    emptyDiv.className = 'empty-state';
+    emptyDiv.textContent = browserAPI.i18n.getMessage('no_custom_rules');
+    customPatternsList.innerHTML = '';
+    customPatternsList.appendChild(emptyDiv);
   } else {
-    customPatternsList.innerHTML = patterns.map((pattern, index) => `
-      <li class="pattern-item">
-        <span class="pattern-text">${escapeHtml(pattern)}</span>
-        <button class="delete-btn" data-index="${index}">${browserAPI.i18n.getMessage('delete')}</button>
-      </li>
-    `).join('');
+    customPatternsList.innerHTML = '';
+    patterns.forEach((pattern, index) => {
+      const li = document.createElement('li');
+      li.className = 'pattern-item';
 
-    // 绑定删除按钮事件
-    document.querySelectorAll('.delete-btn').forEach(btn => {
+      const span = document.createElement('span');
+      span.className = 'pattern-text';
+      span.textContent = pattern;
+
+      const btn = document.createElement('button');
+      btn.className = 'delete-btn';
+      btn.dataset.index = index;
+      btn.textContent = browserAPI.i18n.getMessage('delete');
       btn.addEventListener('click', async (e) => {
-        const index = parseInt(e.target.dataset.index);
-        await deletePattern(index);
+        const idx = parseInt(e.target.dataset.index);
+        await deletePattern(idx);
       });
+
+      li.appendChild(span);
+      li.appendChild(btn);
+      customPatternsList.appendChild(li);
     });
   }
 }
 
 // 显示默认白名单
 function loadDefaultPatterns() {
-  defaultPatternsList.innerHTML = DEFAULT_BYPASS_PATTERNS.map(pattern =>
-    `<li>${escapeHtml(pattern)}</li>`
-  ).join('');
+  defaultPatternsList.innerHTML = '';
+  DEFAULT_BYPASS_PATTERNS.forEach(pattern => {
+    const li = document.createElement('li');
+    li.textContent = pattern;
+    defaultPatternsList.appendChild(li);
+  });
 }
 
 // 添加新的白名单规则

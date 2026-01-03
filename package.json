@@ -1,6 +1,6 @@
 {
   "name": "openin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "支持 GitHub、GitLab、Bitbucket、npm、Docker 等平台，在地址栏输入快速跳转",
   "private": true,
   "scripts": {

@@ -19,15 +19,27 @@ const EXCLUDE = [
   'README.md'
 ];
 
-// 获取版本号
+// 获取版本号（从 package.json）
 function getVersion() {
-  const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
-  return manifest.version;
+  const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+  return pkg.version;
+}
+
+// 同步版本号到 manifest.json
+function syncVersionToManifest(version) {
+  const manifestPath = 'manifest.json';
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+  manifest.version = version;
+  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
+  console.log(`📝 版本号已同步到 manifest.json: ${version}`);
 }
 
 // 主函数
 async function build() {
   const version = getVersion();
+
+  // 同步版本号到 manifest.json
+  syncVersionToManifest(version);
   const distDir = 'dist';
 
   console.log(`\n📦 打包 v${version}\n`);

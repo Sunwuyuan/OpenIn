@@ -21,7 +21,7 @@
     "message": "ವೈಶಿಷ್ಟ್ಯ ಸ್ವಿಚ್ಗಳು"
   },
   "enable_omnibox": {
-    "message": "ವಿಳಾಸ ಬಾರ್‌ಗೆ ಶಾರ್ಟ್ ಕಮಾಂಡ್ಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ (open + space)"
+    "message": "ವಿಳಾಸ ಬಾರ್‌ಗೆ ಶಾರ್ಟ್ ಕಮಾಂಡ್ಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ (o + space)"
   },
   "enable_search_redirect": {
     "message": "ಶೋಧನೆಯಾಗುವಾಗ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಜಂಪ್ ಆಗಲು ಸಕ್ರಿಯಗೊಳಿಸಿ"
@@ -75,10 +75,10 @@
     "message": "ಪತ್ತೆಯಾದ ರೆಪೊಸಿಟರಿ:"
   },
   "press_tab_to_jump": {
-    "message": "Tab ಒತ್ತಿದಾಗ ಜಂಪ್ ಮಾಡಿ ⚡"
+    "message": "Tab ಒತ್ತಿದಾಗ ಜಂಪ್ ಮಾಡಿ"
   },
   "jumped_from_search": {
-    "message": "🔍 ಶೋಧನಿಂದ $PLATFORM$ ಗೆ ಜಂಪ್ ಮಾಡಲಾಗಿದೆ",
+    "message": "ಶೋಧನಿಂದ $PLATFORM$ ಗೆ ಜಂಪ್ ಮಾಡಲಾಗಿದೆ",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← ಶೋಧನೆಗೆ ಹಿಂತಿರುಗಿ (Tab)"
+    "message": "ಶೋಧನೆಗೆ ಹಿಂತಿರುಗಿ"
   }
 }

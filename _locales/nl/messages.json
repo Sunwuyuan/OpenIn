@@ -21,7 +21,7 @@
     "message": "Functie-schakelaars"
   },
   "enable_omnibox": {
-    "message": "Adresbalk snelopdrachten inschakelen (open + spatie)"
+    "message": "Adresbalk snelopdrachten inschakelen (o + spatie)"
   },
   "enable_search_redirect": {
     "message": "Automatisch omleiden bij zoeken"
@@ -75,10 +75,10 @@
     "message": "Repository gedetecteerd:"
   },
   "press_tab_to_jump": {
-    "message": "Druk op Tab om te navigeren ⚡"
+    "message": "Druk op Tab om te navigeren"
   },
   "jumped_from_search": {
-    "message": "🔍 Doorgestuurd vanuit zoekopdracht naar $PLATFORM$",
+    "message": "Doorgestuurd vanuit zoekopdracht naar $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Terug naar zoeken (Tab)"
+    "message": "Terug naar zoeken"
   }
 }

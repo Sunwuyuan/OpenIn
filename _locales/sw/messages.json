@@ -21,7 +21,7 @@
     "message": "Mipangilio ya sifa"
   },
   "enable_omnibox": {
-    "message": "Washa amri ya upau wa anuani (open + space)"
+    "message": "Washa amri ya upau wa anuani (o + space)"
   },
   "enable_search_redirect": {
     "message": "Washa uhamishaji kiotomatiki wakati wa utafutaji"
@@ -75,10 +75,10 @@
     "message": "Hifadhi iliyogunduliwa:"
   },
   "press_tab_to_jump": {
-    "message": "Bonyeza Tab kuhamia ⚡"
+    "message": "Bonyeza Tab kuhamia"
   },
   "jumped_from_search": {
-    "message": "🔍 Imehamishwa kutoka kwa utafutaji kwenda $PLATFORM$",
+    "message": "Imehamishwa kutoka kwa utafutaji kwenda $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Rudi kwa utafutaji (Tab)"
+    "message": "Rudi kwa utafutaji"
   }
 }

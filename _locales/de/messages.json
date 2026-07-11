@@ -21,7 +21,7 @@
     "message": "Funktionsschalter"
   },
   "enable_omnibox": {
-    "message": "Omnibox-Kurzbefehle aktivieren (open + Leertaste)"
+    "message": "Omnibox-Kurzbefehle aktivieren (o + Leertaste)"
   },
   "enable_search_redirect": {
     "message": "Automatische Weiterleitung bei Suche aktivieren"
@@ -75,10 +75,10 @@
     "message": "Erkanntes Repository:"
   },
   "press_tab_to_jump": {
-    "message": "Drücke Tab zum Springen ⚡"
+    "message": "Drücke Tab zum Springen"
   },
   "jumped_from_search": {
-    "message": "🔍 Von der Suche zu $PLATFORM$ weitergeleitet",
+    "message": "Von der Suche zu $PLATFORM$ weitergeleitet",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Zurück zur Suche (Tab)"
+    "message": "Zurück zur Suche"
   }
 }

@@ -21,7 +21,7 @@
     "message": "ఫీచర్ స్విచ్స్"
   },
   "enable_omnibox": {
-    "message": "అడ్రస్ బార్ కోసం షార్ట్‌కట్ కమాండ్‌ను సక్రియం చేయండి (open + స్పేస్)"
+    "message": "అడ్రస్ బార్ కోసం షార్ట్‌కట్ కమాండ్‌ను సక్రియం చేయండి (o + స్పేస్)"
   },
   "enable_search_redirect": {
     "message": "శోధన సమయంలో ఆటో-జంప్ సక్రియం చేయండి"
@@ -75,10 +75,10 @@
     "message": "గుర్తించబడిన రెపో:"
   },
   "press_tab_to_jump": {
-    "message": "Tab కీ నొక్కి జంప్ చేయండి ⚡"
+    "message": "Tab కీ నొక్కి జంప్ చేయండి"
   },
   "jumped_from_search": {
-    "message": "🔍 శోధన ద్వారా $PLATFORM$ కి జంప్",
+    "message": "శోధన ద్వారా $PLATFORM$ కి జంప్",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← శోధనకు తిరిగి (Tab)"
+    "message": "శోధనకు తిరిగి"
   }
 }

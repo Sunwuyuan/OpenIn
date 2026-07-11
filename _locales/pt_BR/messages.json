@@ -21,7 +21,7 @@
     "message": "Interruptores de recursos"
   },
   "enable_omnibox": {
-    "message": "Ativar comando rápido da barra de endereço (open + espaço)"
+    "message": "Ativar comando rápido da barra de endereço (o + espaço)"
   },
   "enable_search_redirect": {
     "message": "Ativar redirecionamento automático ao pesquisar"
@@ -75,10 +75,10 @@
     "message": "Repositório detectado:"
   },
   "press_tab_to_jump": {
-    "message": "Pressione Tab para ir ⚡"
+    "message": "Pressione Tab para ir"
   },
   "jumped_from_search": {
-    "message": "🔍 Redirecionado pela busca para $PLATFORM$",
+    "message": "Redirecionado pela busca para $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Voltar à busca (Tab)"
+    "message": "Voltar à busca"
   }
 }

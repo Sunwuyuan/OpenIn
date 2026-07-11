@@ -21,7 +21,7 @@
     "message": "Funkčné prepínače"
   },
   "enable_omnibox": {
-    "message": "Povoliť príkazy v adresnom riadku (open + medzera)"
+    "message": "Povoliť príkazy v adresnom riadku (o + medzera)"
   },
   "enable_search_redirect": {
     "message": "Povoliť automatické presmerovanie pri vyhľadávaní"
@@ -75,10 +75,10 @@
     "message": "Zistený repozitár:"
   },
   "press_tab_to_jump": {
-    "message": "Stlačte Tab pre presmerovanie ⚡"
+    "message": "Stlačte Tab pre presmerovanie"
   },
   "jumped_from_search": {
-    "message": "🔍 Z vyhľadávania na $PLATFORM$",
+    "message": "Z vyhľadávania na $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "Späť na vyhľadávanie (Tab)"
+    "message": "Späť na vyhľadávanie"
   }
 }

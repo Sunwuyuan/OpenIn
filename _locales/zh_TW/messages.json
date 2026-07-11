@@ -21,7 +21,7 @@
     "message": "功能開關"
   },
   "enable_omnibox": {
-    "message": "啟用位址欄快速指令 (open + 空格)"
+    "message": "啟用位址欄快速指令 (o + 空格)"
   },
   "enable_search_redirect": {
     "message": "啟用搜尋時自動跳轉"
@@ -75,10 +75,10 @@
     "message": "偵測到倉庫:"
   },
   "press_tab_to_jump": {
-    "message": "按 Tab 鍵跳轉 ⚡"
+    "message": "按 Tab 鍵跳轉"
   },
   "jumped_from_search": {
-    "message": "🔍 由搜尋跳轉到 $PLATFORM$",
+    "message": "由搜尋跳轉到 $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← 返回搜尋 (Tab)"
+    "message": "返回搜尋"
   }
 }

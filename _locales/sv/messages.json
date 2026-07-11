@@ -21,7 +21,7 @@
     "message": "Funktioner"
   },
   "enable_omnibox": {
-    "message": "Aktivera adressfältets snabbkommando (open + mellanslag)"
+    "message": "Aktivera adressfältets snabbkommando (o + mellanslag)"
   },
   "enable_search_redirect": {
     "message": "Aktivera automatisk omdirigering vid sökning"
@@ -75,10 +75,10 @@
     "message": "Upptäckt repository:"
   },
   "press_tab_to_jump": {
-    "message": "Tryck Tab för att hoppa ⚡"
+    "message": "Tryck Tab för att hoppa"
   },
   "jumped_from_search": {
-    "message": "🔍 Omdirigerad från sökning till $PLATFORM$",
+    "message": "Omdirigerad från sökning till $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Tillbaka till sökningen (Tab)"
+    "message": "Tillbaka till sökningen"
   }
 }

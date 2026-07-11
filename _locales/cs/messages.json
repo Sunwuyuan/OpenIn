@@ -21,7 +21,7 @@
     "message": "Funkční přepínače"
   },
   "enable_omnibox": {
-    "message": "Povolit rychlé příkazy v adresním řádku (open + mezera)"
+    "message": "Povolit rychlé příkazy v adresním řádku (o + mezera)"
   },
   "enable_search_redirect": {
     "message": "Povolit automatické přesměrování při vyhledávání"
@@ -75,10 +75,10 @@
     "message": "Detekovaný repozitář:"
   },
   "press_tab_to_jump": {
-    "message": "Stiskněte Tab pro přesměrování ⚡"
+    "message": "Stiskněte Tab pro přesměrování"
   },
   "jumped_from_search": {
-    "message": "🔍 Přesměrováno z vyhledávání na $PLATFORM$",
+    "message": "Přesměrováno z vyhledávání na $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Zpět na vyhledávání (Tab)"
+    "message": "Zpět na vyhledávání"
   }
 }

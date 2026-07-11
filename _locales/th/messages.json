@@ -21,7 +21,7 @@
     "message": "สวิตช์ฟีเจอร์"
   },
   "enable_omnibox": {
-    "message": "เปิดใช้งานคำสั่งด่วนในแถบที่อยู่ (open + Space)"
+    "message": "เปิดใช้งานคำสั่งด่วนในแถบที่อยู่ (o + Space)"
   },
   "enable_search_redirect": {
     "message": "เปิดการนำทางอัตโนมัติเมื่อค้นหา"
@@ -75,10 +75,10 @@
     "message": "พบที่เก็บ:"
   },
   "press_tab_to_jump": {
-    "message": "กด Tab เพื่อไปยัง ⚡"
+    "message": "กด Tab เพื่อไปยัง"
   },
   "jumped_from_search": {
-    "message": "🔍 เปลี่ยนเส้นทางจากการค้นหาไปยัง $PLATFORM$",
+    "message": "เปลี่ยนเส้นทางจากการค้นหาไปยัง $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← กลับไปยังการค้นหา (Tab)"
+    "message": "กลับไปยังการค้นหา"
   }
 }

@@ -21,7 +21,7 @@
     "message": "Toimintavalinnat"
   },
   "enable_omnibox": {
-    "message": "Ota käyttöön osoiterivin pikakomentit (open + välilyönti)"
+    "message": "Ota käyttöön osoiterivin pikakomentit (o + välilyönti)"
   },
   "enable_search_redirect": {
     "message": "Ota haun yhteydessä automaattinen uudelleenohjaus käyttöön."
@@ -75,10 +75,10 @@
     "message": "Tunnistettu varasto:"
   },
   "press_tab_to_jump": {
-    "message": "Paina Tab siirtyä ⚡"
+    "message": "Paina Tab siirtyä"
   },
   "jumped_from_search": {
-    "message": "🔍 Hakujen kautta ohjattiin $PLATFORM$",
+    "message": "Hakujen kautta ohjattiin $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Palaa hakuun (Tab)"
+    "message": "Palaa hakuun"
   }
 }

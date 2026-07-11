@@ -21,7 +21,7 @@
     "message": "Funksjonsbrytere"
   },
   "enable_omnibox": {
-    "message": "Aktiver adressefeltets hurtigtast (open + mellomrom)"
+    "message": "Aktiver adressefeltets hurtigtast (o + mellomrom)"
   },
   "enable_search_redirect": {
     "message": "Aktiver automatisk omdirigering ved søk"
@@ -75,10 +75,10 @@
     "message": "Oppdaget repository:"
   },
   "press_tab_to_jump": {
-    "message": "Hopp ved å trykke Tab ⚡"
+    "message": "Hopp ved å trykke Tab"
   },
   "jumped_from_search": {
-    "message": "🔍 Omdirigert fra søk til $PLATFORM$",
+    "message": "Omdirigert fra søk til $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Tilbake til søk (Tab)"
+    "message": "Tilbake til søk"
   }
 }

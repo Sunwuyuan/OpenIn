@@ -21,7 +21,7 @@
     "message": "Feature switches"
   },
   "enable_omnibox": {
-    "message": "Enable address bar shortcut (open + Space)"
+    "message": "Enable address bar shortcut (o + Space)"
   },
   "enable_search_redirect": {
     "message": "Enable automatic redirection on search"
@@ -75,10 +75,10 @@
     "message": "Detected repository:"
   },
   "press_tab_to_jump": {
-    "message": "Press Tab to jump ⚡"
+    "message": "Press Tab to jump"
   },
   "jumped_from_search": {
-    "message": "🔍 Jumped from search to $PLATFORM$",
+    "message": "Jumped from search to $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Back to search (Tab)"
+    "message": "Back to search"
   }
 }

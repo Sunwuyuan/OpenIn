@@ -21,7 +21,7 @@
     "message": "फ़ीचर स्विचेस"
   },
   "enable_omnibox": {
-    "message": "एड्रेस बार शॉर्टकट चालू करें (open + स्पेस)"
+    "message": "एड्रेस बार शॉर्टकट चालू करें (o + स्पेस)"
   },
   "enable_search_redirect": {
     "message": "खोज के दौरान स्वचालित जंप सक्षम करें"
@@ -75,10 +75,10 @@
     "message": "पहचानी गई रिपॉज़िटरी:"
   },
   "press_tab_to_jump": {
-    "message": "Tab दबाकर जंप करें ⚡"
+    "message": "Tab दबाकर जंप करें"
   },
   "jumped_from_search": {
-    "message": "🔍 खोज से $PLATFORM$ पर जंप",
+    "message": "खोज से $PLATFORM$ पर जंप",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← खोज पर वापस जाएँ (Tab)"
+    "message": "खोज पर वापस जाएँ"
   }
 }

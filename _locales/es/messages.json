@@ -21,7 +21,7 @@
     "message": "Conmutadores de funciones"
   },
   "enable_omnibox": {
-    "message": "Habilitar comandos rápidos en la barra de direcciones (open + Espacio)"
+    "message": "Habilitar comandos rápidos en la barra de direcciones (o + Espacio)"
   },
   "enable_search_redirect": {
     "message": "Habilitar redirección automática al buscar"
@@ -75,10 +75,10 @@
     "message": "Repositorio detectado:"
   },
   "press_tab_to_jump": {
-    "message": "Presiona Tab para saltar ⚡"
+    "message": "Presiona Tab para saltar"
   },
   "jumped_from_search": {
-    "message": "🔍 Saltó desde la búsqueda a $PLATFORM$",
+    "message": "Saltó desde la búsqueda a $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Volver a la búsqueda (Tab)"
+    "message": "Volver a la búsqueda"
   }
 }

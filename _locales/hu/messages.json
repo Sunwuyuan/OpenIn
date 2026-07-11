@@ -21,7 +21,7 @@
     "message": "Funkciókapcsolók"
   },
   "enable_omnibox": {
-    "message": "Címsor gyorsparancsok engedélyezése (open + szóköz)"
+    "message": "Címsor gyorsparancsok engedélyezése (o + szóköz)"
   },
   "enable_search_redirect": {
     "message": "Keresés esetén automatikus átirányítás engedélyezése"
@@ -75,10 +75,10 @@
     "message": "Detektált repo:"
   },
   "press_tab_to_jump": {
-    "message": "Tab gombbal ugrás ⚡"
+    "message": "Tab gombbal ugrás"
   },
   "jumped_from_search": {
-    "message": "🔍 Keresésből átirányítva a $PLATFORM$-re",
+    "message": "Keresésből átirányítva a $PLATFORM$-re",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Vissza a kereséshez (Tab)"
+    "message": "Vissza a kereséshez"
   }
 }

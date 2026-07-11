@@ -21,7 +21,7 @@
     "message": "Funkcijų jungikliai"
   },
   "enable_omnibox": {
-    "message": "Įjungti adresų juostos trumpuosius komandas (open + tarpas)"
+    "message": "Įjungti adresų juostos trumpuosius komandas (o + tarpas)"
   },
   "enable_search_redirect": {
     "message": "Įjungti automatinį nukreipimą paieškoje"
@@ -75,10 +75,10 @@
     "message": "Aptikta saugykla:"
   },
   "press_tab_to_jump": {
-    "message": "Paspauskite Tab, kad pereitumėte ⚡"
+    "message": "Paspauskite Tab, kad pereitumėte"
   },
   "jumped_from_search": {
-    "message": "🔍 Iš paieškos perėjote į $PLATFORM$",
+    "message": "Iš paieškos perėjote į $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Grįžti į paiešką (Tab)"
+    "message": "Grįžti į paiešką"
   }
 }

@@ -21,7 +21,7 @@
     "message": "Przełączniki funkcji"
   },
   "enable_omnibox": {
-    "message": "Włącz skrót w pasku adresu (open + spacja)"
+    "message": "Włącz skrót w pasku adresu (o + spacja)"
   },
   "enable_search_redirect": {
     "message": "Włącz automatyczne przekierowywanie podczas wyszukiwania"
@@ -75,10 +75,10 @@
     "message": "Wykryto repozytorium:"
   },
   "press_tab_to_jump": {
-    "message": "Naciśnij Tab, aby przejść ⚡"
+    "message": "Naciśnij Tab, aby przejść"
   },
   "jumped_from_search": {
-    "message": "🔍 Przekierowano ze wyszukiwania do $PLATFORM$",
+    "message": "Przekierowano ze wyszukiwania do $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Powrót do wyszukiwania (Tab)"
+    "message": "Powrót do wyszukiwania"
   }
 }

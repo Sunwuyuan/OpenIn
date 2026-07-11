@@ -21,7 +21,7 @@
     "message": "Перемикачі функцій"
   },
   "enable_omnibox": {
-    "message": "Увімкнути швидкі команди адресного рядка (open + пробіл)"
+    "message": "Увімкнути швидкі команди адресного рядка (o + пробіл)"
   },
   "enable_search_redirect": {
     "message": "Увімкнути автоматичний перехід під час пошуку"
@@ -75,10 +75,10 @@
     "message": "Виявлено репозиторій:"
   },
   "press_tab_to_jump": {
-    "message": "Натисніть Tab для переходу ⚡"
+    "message": "Натисніть Tab для переходу"
   },
   "jumped_from_search": {
-    "message": "🔍 Перехід з пошуку до $PLATFORM$",
+    "message": "Перехід з пошуку до $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Повернутися до пошуку (Tab)"
+    "message": "Повернутися до пошуку"
   }
 }

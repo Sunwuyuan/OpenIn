@@ -21,7 +21,7 @@
     "message": "기능 스위치"
   },
   "enable_omnibox": {
-    "message": "주소창 단축 명령 사용(open + 스페이스)"
+    "message": "주소창 단축 명령 사용(o + 스페이스)"
   },
   "enable_search_redirect": {
     "message": "검색 시 자동으로 이동하도록 활성화"
@@ -75,10 +75,10 @@
     "message": "감지된 저장소:"
   },
   "press_tab_to_jump": {
-    "message": "Tab 키로 이동 ⚡"
+    "message": "Tab 키로 이동"
   },
   "jumped_from_search": {
-    "message": "🔍 검색에서 $PLATFORM$으로 이동",
+    "message": "검색에서 $PLATFORM$으로 이동",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← 검색으로 돌아가기 (Tab)"
+    "message": "검색으로 돌아가기"
   }
 }

@@ -15,7 +15,6 @@
  * - urlPattern: URL模板
  * - domain: 域名
  * - color: 主题色
- * - icon: 图标emoji
  * - singleName: 是否为单一名称（无需owner/repo格式）
  * - allowAt: 是否支持@符号（用于scoped包）
  */
@@ -25,32 +24,28 @@ const PLATFORMS = {
     keywords: ['github', 'gh'],
     urlPattern: 'https://github.com/{owner}/{repo}{path}',
     domain: 'github.com',
-    color: '#24292e',
-    icon: '🐙'
+    color: '#24292e'
   },
   gitlab: {
     name: 'GitLab',
     keywords: ['gitlab', 'gl'],
     urlPattern: 'https://gitlab.com/{owner}/{repo}{path}',
     domain: 'gitlab.com',
-    color: '#fc6d26',
-    icon: '🦊'
+    color: '#fc6d26'
   },
   bitbucket: {
     name: 'Bitbucket',
     keywords: ['bitbucket', 'bb'],
     urlPattern: 'https://bitbucket.org/{owner}/{repo}{path}',
     domain: 'bitbucket.org',
-    color: '#0052cc',
-    icon: '🪣'
+    color: '#0052cc'
   },
   gitee: {
     name: 'Gitee',
     keywords: ['gitee', 'ge'],
     urlPattern: 'https://gitee.com/{owner}/{repo}{path}',
     domain: 'gitee.com',
-    color: '#c71d23',
-    icon: '🇨🇳'
+    color: '#c71d23'
   },
   npm: {
     name: 'npm',
@@ -58,7 +53,6 @@ const PLATFORMS = {
     urlPattern: 'https://www.npmjs.com/package/{owner}{path}',
     domain: 'npmjs.com',
     color: '#cb3837',
-    icon: '📦',
     singleName: true,  // npm 包名不需要 owner/repo 格式
     allowAt: true      // 支持 @scope/package 格式
   },
@@ -67,8 +61,7 @@ const PLATFORMS = {
     keywords: ['docker', 'dockerhub'],
     urlPattern: 'https://hub.docker.com/r/{owner}/{repo}{path}',
     domain: 'hub.docker.com',
-    color: '#2496ed',
-    icon: '🐳'
+    color: '#2496ed'
   },
   pypi: {
     name: 'PyPI',
@@ -76,7 +69,6 @@ const PLATFORMS = {
     urlPattern: 'https://pypi.org/project/{owner}{path}',
     domain: 'pypi.org',
     color: '#3775a9',
-    icon: '🐍',
     singleName: true,
     allowAt: true
   },
@@ -86,7 +78,6 @@ const PLATFORMS = {
     urlPattern: 'https://rubygems.org/gems/{owner}{path}',
     domain: 'rubygems.org',
     color: '#cc342d',
-    icon: '💎',
     singleName: true
   },
   packagist: {
@@ -94,8 +85,7 @@ const PLATFORMS = {
     keywords: ['packagist', 'composer', 'php'],
     urlPattern: 'https://packagist.org/packages/{owner}/{repo}{path}',
     domain: 'packagist.org',
-    color: '#f28d1a',
-    icon: '🎼'
+    color: '#f28d1a'
   },
   crates: {
     name: 'crates.io',
@@ -103,7 +93,6 @@ const PLATFORMS = {
     urlPattern: 'https://crates.io/crates/{owner}{path}',
     domain: 'crates.io',
     color: '#f74b00',
-    icon: '🦀',
     singleName: true
   },
   nuget: {
@@ -112,7 +101,6 @@ const PLATFORMS = {
     urlPattern: 'https://www.nuget.org/packages/{owner}{path}',
     domain: 'nuget.org',
     color: '#004880',
-    icon: '📘',
     singleName: true
   },
   maven: {
@@ -120,16 +108,14 @@ const PLATFORMS = {
     keywords: ['maven', 'mvn', 'java'],
     urlPattern: 'https://search.maven.org/artifact/{owner}/{repo}{path}',
     domain: 'search.maven.org',
-    color: '#c71a36',
-    icon: '☕'
+    color: '#c71a36'
   },
   zerocat: {
     name: 'ZeroCat',
     keywords: ['zerocat', 'zc'],
     urlPattern: 'https://zerocat.dev/{owner}/{repo}{path}',
     domain: 'zerocat.dev',
-    color: '#ff6600',
-    icon: '🐱'
+    color: '#ff6600'
   }
 };
 
@@ -151,6 +137,48 @@ const REPO_WITH_PATH_PATTERN = /^([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,37}[a-zA-Z0-9])?)
  * 匹配完整URL：https://github.com/owner/repo 或 github.com/owner/repo
  */
 const FULL_URL_PATTERN = /^(?:https?:\/\/)?(?:www\.)?([a-zA-Z0-9.-]+)\/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,37}[a-zA-Z0-9])?)\/([\w.-]+)(\/.*)?$/;
+
+/**
+ * 从文本中提取零散通用 URL（http/https）
+ */
+const GENERIC_INLINE_URL_PATTERN = /https?:\/\/[^\s<>"'`\u4e00-\u9fff\u3002\uff01\uff09】）、]+/gi;
+
+/**
+ * 去除 URL 末尾标点
+ * @param {string} url
+ * @returns {string}
+ */
+function trimUrlTrailingPunctuation(url) {
+  return url.replace(/[.,;:!?)\]}>】、，。；！？]+$/u, '');
+}
+
+/**
+ * 规范化为可打开的完整 URL
+ * @param {string} matchedText
+ * @returns {string}
+ */
+function normalizeGenericUrl(matchedText) {
+  let url = trimUrlTrailingPunctuation(matchedText.trim());
+  if (!/^https?:\/\//i.test(url)) {
+    url = `https://${url}`;
+  }
+  return url;
+}
+
+/**
+ * 判断是否为独立的通用 URL 输入
+ * @param {string} text
+ * @returns {boolean}
+ */
+function isStandaloneGenericUrl(text) {
+  const trimmed = text.trim();
+  return /^https?:\/\/.+/i.test(trimmed);
+}
+
+/**
+ * 从文本中提取零散仓库 URL（非整行匹配）
+ */
+const INLINE_REPO_URL_PATTERN = /(?:https?:\/\/)?(?:www\.)?([a-zA-Z0-9.-]+)\/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,37}[a-zA-Z0-9])?)\/([\w.-]+)(\/[^\s]*)?/g;
 
 // ==================== 解析函数 ====================
 
@@ -194,6 +222,97 @@ function parseRepoInput(input) {
   }
 
   return null;
+}
+
+/**
+ * 从文本中按出现顺序提取零散 URL（仓库链接 + 通用链接）
+ * @param {string} input - 用户输入
+ * @returns {Array<{type: 'repo'|'generic', matchedText: string, url: string, platform?: string, owner?: string, repo?: string, path?: string}>}
+ */
+function extractAllInlineUrls(input) {
+  if (!input || typeof input !== 'string') return [];
+
+  const results = [];
+  const claimed = [];
+
+  function overlaps(start, end) {
+    return claimed.some(([s, e]) => start < e && end > s);
+  }
+
+  function add(start, end, item) {
+    if (overlaps(start, end)) return;
+    claimed.push([start, end]);
+    results.push({ ...item, index: start });
+  }
+
+  const repoPattern = new RegExp(INLINE_REPO_URL_PATTERN.source, 'g');
+  let match;
+  while ((match = repoPattern.exec(input)) !== null) {
+    const [matchedText, domain, owner, repo, path = ''] = match;
+    const platform = findPlatformByDomain(domain);
+    if (!platform) continue;
+
+    add(match.index, match.index + matchedText.length, {
+      type: 'repo',
+      matchedText,
+      platform,
+      owner,
+      repo,
+      path,
+      url: buildRepoUrl(platform, owner, repo, path)
+    });
+  }
+
+  const genericPattern = new RegExp(GENERIC_INLINE_URL_PATTERN.source, 'gi');
+  while ((match = genericPattern.exec(input)) !== null) {
+    const raw = match[0];
+    const matchedText = trimUrlTrailingPunctuation(raw);
+    const start = match.index;
+    const end = start + raw.length;
+    if (overlaps(start, end)) continue;
+
+    add(start, end, {
+      type: 'generic',
+      matchedText,
+      url: normalizeGenericUrl(matchedText)
+    });
+  }
+
+  results.sort((a, b) => a.index - b.index);
+  return results;
+}
+
+/** @deprecated 使用 extractAllInlineUrls */
+function extractInlineUrls(input) {
+  return extractAllInlineUrls(input);
+}
+
+/**
+ * 是否应展示零散 URL 建议
+ * @param {string} text
+ * @param {Array} inlineUrls
+ * @returns {boolean}
+ */
+function shouldShowInlineUrlSuggestions(text, inlineUrls) {
+  if (inlineUrls.length === 0) return false;
+  if (inlineUrls.length > 1) return true;
+  if (hasExtraNonUrlContent(text, inlineUrls)) return true;
+  if (inlineUrls[0].type === 'generic') return true;
+  return false;
+}
+
+/**
+ * 判断文本在去除已匹配 URL 后是否仍含非 URL 内容
+ * @param {string} text - 用户输入
+ * @param {Array} inlineUrls - extractInlineUrls 的返回值
+ * @returns {boolean}
+ */
+function hasExtraNonUrlContent(text, inlineUrls) {
+  let remainder = text;
+  for (const { matchedText } of inlineUrls) {
+    remainder = remainder.replace(matchedText, ' ');
+  }
+  return remainder.replace(/\s+/g, '').length > 0;
 }
 
 /**

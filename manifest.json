@@ -20,17 +20,13 @@
     }
   },
   "permissions": [
-    "webRequest",
     "webNavigation",
     "storage",
     "tabs",
     "scripting"
   ],
-  "optional_permissions": [
-    "webRequestBlocking"
-  ],
   "omnibox": {
-    "keyword": "open"
+    "keyword": "o"
   },
   "action": {},
   "content_scripts": [
@@ -50,7 +46,9 @@
         "https://search.maven.org/artifact/*/*"
       ],
       "js": [
-        "content.js"
+        "content/lib/openin-core.js",
+        "content/lib/openin-toast.js",
+        "content/back-hint.js"
       ],
       "run_at": "document_end"
     },
@@ -59,7 +57,9 @@
         "<all_urls>"
       ],
       "js": [
-        "search-hint.js"
+        "content/lib/openin-core.js",
+        "content/lib/openin-toast.js",
+        "content/search-hint.js"
       ],
       "run_at": "document_idle",
       "exclude_matches": [

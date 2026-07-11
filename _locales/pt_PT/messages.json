@@ -21,7 +21,7 @@
     "message": "Comutadores de funcionalidades"
   },
   "enable_omnibox": {
-    "message": "Ativar comando rápido da barra de endereços (open + espaço)"
+    "message": "Ativar comando rápido da barra de endereços (o + espaço)"
   },
   "enable_search_redirect": {
     "message": "Ativar redirecionamento automático ao pesquisar"
@@ -75,10 +75,10 @@
     "message": "Repositório detectado:"
   },
   "press_tab_to_jump": {
-    "message": "Navegar usando Tab ⚡"
+    "message": "Navegar usando Tab"
   },
   "jumped_from_search": {
-    "message": "🔍 Redirecionado(a) pela pesquisa para $PLATFORM$",
+    "message": "Redirecionado(a) pela pesquisa para $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Voltar à pesquisa (Tab)"
+    "message": "Voltar à pesquisa"
   }
 }

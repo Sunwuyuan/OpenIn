@@ -12,6 +12,8 @@ const addBtn = document.getElementById('addBtn');
 const customPatternsList = document.getElementById('customPatternsList');
 const defaultPatternsList = document.getElementById('defaultPatternsList');
 const messageDiv = document.getElementById('message');
+const messageText = messageDiv.querySelector('.message-text');
+let messageTimer = null;
 const defaultPlatformSelect = document.getElementById('defaultPlatform');
 
 // 功能开关 DOM 元素
@@ -68,12 +70,27 @@ async function saveDefaultPlatform() {
 
 // 显示消息
 function showMessage(text, type = 'success') {
-  messageDiv.textContent = text;
-  messageDiv.className = `message ${type}`;
-  messageDiv.style.display = 'block';
+  if (messageTimer) {
+    clearTimeout(messageTimer);
+    messageTimer = null;
+  }
 
-  setTimeout(() => {
-    messageDiv.style.display = 'none';
+  messageText.textContent = text;
+  messageDiv.className = `message ${type}`;
+
+  requestAnimationFrame(() => {
+    messageDiv.classList.add('is-visible');
+  });
+
+  messageTimer = setTimeout(() => {
+    messageDiv.classList.add('is-leaving');
+    messageDiv.classList.remove('is-visible');
+
+    messageTimer = setTimeout(() => {
+      messageDiv.className = 'message';
+      messageDiv.classList.remove('is-leaving');
+      messageTimer = null;
+    }, 320);
   }, 3000);
 }
 

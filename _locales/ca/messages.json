@@ -21,7 +21,7 @@
     "message": "Interruptors de característiques"
   },
   "enable_omnibox": {
-    "message": "Activa comandes ràpides de la barra d'adreces (open + espai)"
+    "message": "Activa comandes ràpides de la barra d'adreces (o + espai)"
   },
   "enable_search_redirect": {
     "message": "Activa la redirecció automàtica al fer cerques"
@@ -75,10 +75,10 @@
     "message": "Repositori detectat:"
   },
   "press_tab_to_jump": {
-    "message": "Prem Tab per saltar ⚡"
+    "message": "Prem Tab per saltar"
   },
   "jumped_from_search": {
-    "message": "🔍 Saltat des de la cerca a $PLATFORM$",
+    "message": "Saltat des de la cerca a $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Torna a la cerca (Tab)"
+    "message": "Torna a la cerca"
   }
 }

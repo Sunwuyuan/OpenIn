@@ -97,7 +97,7 @@ async function openRepoUnified(params) {
 
   const platformInfo = PLATFORMS[platform];
   log('========== 统一打开处理 ==========');
-  log('平台:', platformInfo.name, platformInfo.icon);
+  log('平台:', platformInfo.name);
   log('目标:', `${owner}${repo ? '/' + repo : ''}${path}`);
   log('URL:', repoUrl);
 
@@ -302,138 +302,159 @@ function recordJump(platform, owner, repo) {
   }, 10000);
 }
 
+/**
+ * 处理搜索引擎跳转
+ * @param {chrome.webNavigation.WebNavigationParentedCallbackDetails} details
+ * @returns {Promise<boolean>} 是否已处理
+ */
+async function handleSearchEngineRedirect(details) {
+  const features = await getFeatureToggles();
+  if (!features.featureSearchRedirect) {
+    return false;
+  }
+
+  log('导航到:', details.url);
+
+  if (!isPossibleSearchEngine(details.url)) {
+    return false;
+  }
+
+  const searchQuery = extractSearchQuery(details.url);
+  if (!searchQuery) {
+    log('未找到搜索关键词');
+    return false;
+  }
+
+  log('搜索关键词:', searchQuery);
+
+  const parsed = parseSearchQuery(searchQuery);
+  if (!parsed) {
+    return false;
+  }
+
+  const { platform, owner, repo, path } = parsed;
+  log('从搜索引擎匹配到仓库:', `${platform}:${owner}/${repo}${path}`);
+
+  if (isRecentJump(platform, owner, repo)) {
+    return true;
+  }
+
+  if (features.searchRedirectMode === 'tabJump') {
+    await browserAPI.storage.local.set({
+      [`search_jump_${details.tabId}`]: {
+        platform,
+        owner,
+        repo,
+        path,
+        timestamp: Date.now()
+      }
+    });
+    log('Tab跳转模式：已存储跳转信息，等待用户按Tab');
+    return true;
+  }
+
+  recordJump(platform, owner, repo);
+  await openRepoUnified({
+    platform,
+    owner,
+    repo,
+    path,
+    tabId: details.tabId,
+    sourceUrl: details.url,
+    searchRedirectMode: features.searchRedirectMode
+  });
+  return true;
+}
+
+/**
+ * 处理地址栏 owner/repo 简写跳转（MV3 兼容，替代 webRequest blocking）
+ * 例如用户输入 microsoft/vscode 被解析为 http://microsoft/vscode
+ * @param {chrome.webNavigation.WebNavigationParentedCallbackDetails} details
+ * @returns {Promise<boolean>} 是否已处理
+ */
+async function handleShorthandRepoRedirect(details) {
+  const features = await getFeatureToggles();
+  if (!features.featureDnsIntercept) {
+    return false;
+  }
+
+  if (!/^https?:/i.test(details.url)) {
+    return false;
+  }
+
+  const urlObj = new URL(details.url);
+
+  if (urlObj.protocol === 'chrome:' || urlObj.protocol === 'chrome-extension:' || urlObj.protocol === 'about:') {
+    return false;
+  }
+
+  if (urlObj.hostname === 'github.com' || urlObj.hostname === 'www.github.com') {
+    return false;
+  }
+
+  if (findPlatformByDomain(urlObj.hostname)) {
+    return false;
+  }
+
+  if (isPossibleSearchEngine(details.url)) {
+    return false;
+  }
+
+  const bypassPatterns = await getBypassPatterns();
+  if (shouldBypass(details.url, bypassPatterns)) {
+    return false;
+  }
+
+  const fullPath = (urlObj.hostname + urlObj.pathname).replace(/^\//, '').replace(/\/$/, '');
+  const parsed = parseRepoInput(fullPath);
+  if (!parsed) {
+    return false;
+  }
+
+  const { platform, owner, repo, path } = parsed;
+
+  if (isRecentJump(platform, owner, repo)) {
+    return true;
+  }
+
+  log('简写仓库导航拦截:', fullPath, '->', platform);
+  recordJump(platform, owner, repo);
+
+  await openRepoUnified({
+    platform,
+    owner,
+    repo,
+    path,
+    tabId: details.tabId,
+    sourceUrl: details.url,
+    searchRedirectMode: 'autoJump'
+  });
+  return true;
+}
+
 // ==================== 事件监听器 ====================
 
 /**
- * 监听导航事件 - 拦截搜索引擎搜索
- * 当用户在搜索引擎搜索仓库名时，自动跳转到对应平台
+ * 监听导航事件 - 搜索引擎跳转 & 简写仓库跳转（MV3 兼容）
  */
 browserAPI.webNavigation.onBeforeNavigate.addListener(
   async (details) => {
-    // 只处理主框架
     if (details.frameId !== 0) {
       return;
     }
 
     try {
-      // 检查功能是否开启
-      const features = await getFeatureToggles();
-      if (!features.featureSearchRedirect) {
+      const handledBySearch = await handleSearchEngineRedirect(details);
+      if (handledBySearch) {
         return;
       }
 
-      log('导航到:', details.url);
-
-      // 检查是否可能是搜索引擎
-      if (!isPossibleSearchEngine(details.url)) {
-        return;
-      }
-
-      // 提取搜索关键词
-      const searchQuery = extractSearchQuery(details.url);
-      if (!searchQuery) {
-        log('未找到搜索关键词');
-        return;
-      }
-
-      log('搜索关键词:', searchQuery);
-
-      // 解析搜索查询（支持平台关键词）
-      const parsed = parseSearchQuery(searchQuery);
-
-      if (parsed) {
-        const { platform, owner, repo, path } = parsed;
-
-        log('从搜索引擎匹配到仓库:', `${platform}:${owner}/${repo}${path}`);
-
-        // 检查是否是最近刚跳转过的（避免返回后再次跳转）
-        if (isRecentJump(platform, owner, repo)) {
-          return;
-        }
-
-        // 检查搜索跳转模式
-        if (features.searchRedirectMode === 'tabJump') {
-          // Tab跳转模式：存储跳转信息，不立即跳转
-          await browserAPI.storage.local.set({
-            [`search_jump_${details.tabId}`]: {
-              platform,
-              owner,
-              repo,
-              path,
-              timestamp: Date.now()
-            }
-          });
-          log('Tab跳转模式：已存储跳转信息，等待用户按Tab');
-          return;
-        }
-
-        // 自动跳转模式：记录并立即跳转
-        recordJump(platform, owner, repo);
-
-        // 使用统一的打开处理函数
-        await openRepoUnified({
-          platform,
-          owner,
-          repo,
-          path,
-          tabId: details.tabId,
-          sourceUrl: details.url,
-          searchRedirectMode: features.searchRedirectMode
-        });
-      }
+      await handleShorthandRepoRedirect(details);
     } catch (e) {
-      log('处理搜索错误:', e);
+      log('导航处理错误:', e);
     }
   }
 );
-
-// 尝试在 DNS 查询之前拦截（可能因权限不足而失败）
-try {
-  browserAPI.webRequest.onBeforeRequest.addListener(
-    async (details) => {
-      // 只处理主框架请求
-      if (details.type !== 'main_frame') {
-        return;
-      }
-
-      try {
-        log('尝试拦截请求:', details.url);
-        const url = new URL(details.url);
-
-        // 如果已经是 github.com，跳过
-        if (url.hostname === 'github.com' || url.hostname === 'www.github.com') {
-          return;
-        }
-
-        // 获取白名单
-        const bypassPatterns = await getBypassPatterns();
-        if (shouldBypass(details.url, bypassPatterns)) {
-          return;
-        }
-
-        // 提取可能的仓库名
-        const fullPath = (url.hostname + url.pathname).replace(/^\//, '').replace(/\/$/, '');
-        const repoMatch = fullPath.match(REPO_PATTERN);
-
-        if (repoMatch) {
-          const owner = repoMatch[1];
-          const repo = repoMatch[2];
-          const githubUrl = `https://github.com/${owner}/${repo}`;
-
-          log('webRequest 拦截成功，重定向到:', githubUrl);
-          return { redirectUrl: githubUrl };
-        }
-      } catch (e) {
-        log('webRequest 处理错误:', e);
-      }
-    },
-    { urls: ['<all_urls>'] },
-    ['blocking']
-  );
-  log('webRequest 拦截器注册成功');
-} catch (e) {
-  log('webRequest 拦截器注册失败（正常，因为 Manifest V3 限制）:', e.message);
-}
 
 /**
  * 监听DNS错误事件 - 拦截域名解析失败
@@ -551,7 +572,15 @@ browserAPI.storage.onChanged.addListener((changes, areaName) => {
 });
 
 // ==================== Omnibox API ====================
-// 地址栏关键词触发（输入 'open' + 空格）
+// 地址栏关键词触发（输入 'o' + 空格）
+
+function omniboxDesc(platformName, matchText) {
+  return `${platformName}: <match>${matchText}</match>`;
+}
+
+function omniboxUrlDesc(url) {
+  return `<match>${url}</match>`;
+}
 
 // 初始默认提示（会在加载默认平台后动态更新）
 /**
@@ -563,38 +592,8 @@ browserAPI.omnibox.onInputChanged.addListener((text, suggest) => {
   const trimmedText = text.trim();
 
   if (!trimmedText) {
-    // 重置为默认建议
     updateDefaultSuggestion();
-
-    const items = [];
-
-    // 1. 第一项：按当前默认平台生成的实际打开项（纯“平台: 文本”格式）
-    const defaultCfg = PLATFORMS[DEFAULT_PLATFORM] || PLATFORMS.github;
-    const sampleName = 'microsoft/vscode';
-    items.push({
-      content: sampleName,
-      description: `${defaultCfg.name}: <match>${sampleName}</match>`
-    });
-
-    // 2. 第二项：同样模式的示例，保持“平台: 文本”格式
-    items.push({
-      content: 'facebook/react',
-      description: `${defaultCfg.name}: <match>facebook/react</match>`
-    });
-
-    // 3. 额外示例（仍然正常行为，不是提示语）
-    items.push({
-      content: 'https://gitlab.com/owner/repo',
-      description: 'GitLab: <match>https://gitlab.com/owner/repo</match>'
-    });
-
-    // 4. 最后一项：单独的“使用提示/文档”项
-    items.push({
-      content: 'https://docs.wuyuan.dev',
-      description: '📖 使用提示与更多示例：<match>docs.wuyuan.dev</match>'
-    });
-
-    suggest(items);
+    suggest([]);
     return;
   }
 
@@ -618,11 +617,10 @@ browserAPI.omnibox.onInputChanged.addListener((text, suggest) => {
         return 0;
       });
 
-      matchedPlatforms.forEach(([key, cfg], index) => {
-        const url = `https://${cfg.domain}/`;
+      matchedPlatforms.forEach(([key, cfg]) => {
         suggestions.push({
           content: trimmedText,
-          description: `${cfg.icon} ${cfg.name}: 打开 <match>${url}</match>`
+          description: omniboxDesc(cfg.name, cfg.domain)
         });
       });
 
@@ -647,11 +645,45 @@ browserAPI.omnibox.onInputChanged.addListener((text, suggest) => {
 
       suggestions.push({
         content: trimmedText,
-        description: `${platformInfo.icon} ${platformInfo.name}: <match>${owner}/${repo}</match>${path} - ${url}`
+        description: omniboxDesc(platformInfo.name, `${owner}/${repo}${path}`)
       });
       suggest(suggestions);
       return;
     }
+  }
+
+  // 1b. 文本中含链接（仓库或通用 URL，如 B 站、文章链接等）
+  const inlineUrls = extractAllInlineUrls(trimmedText);
+  if (shouldShowInlineUrlSuggestions(trimmedText, inlineUrls)) {
+    const first = inlineUrls[0];
+    if (first.type === 'repo') {
+      const firstInfo = PLATFORMS[first.platform];
+      browserAPI.omnibox.setDefaultSuggestion({
+        description: `${firstInfo.name}: <match>${first.owner}/${first.repo}</match>${first.path}`
+      });
+    } else {
+      browserAPI.omnibox.setDefaultSuggestion({
+        description: omniboxUrlDesc(first.url)
+      });
+    }
+
+    inlineUrls.forEach((item) => {
+      if (item.type === 'repo') {
+        const platformInfo = PLATFORMS[item.platform];
+        suggestions.push({
+          content: item.matchedText,
+          description: omniboxDesc(platformInfo.name, `${item.owner}/${item.repo}${item.path}`)
+        });
+      } else {
+        suggestions.push({
+          content: item.url,
+          description: omniboxUrlDesc(item.url)
+        });
+      }
+    });
+
+    suggest(suggestions);
+    return;
   }
 
   // 2. 检查是否包含空格（平台名 + 仓库名）
@@ -681,13 +713,13 @@ browserAPI.omnibox.onInputChanged.addListener((text, suggest) => {
     if (isSingleName) {
       // 单一包名平台 - 动态更新默认建议
       browserAPI.omnibox.setDefaultSuggestion({
-        description: `${platformInfo.name}: <match>${inputName}</match>`
+        description: omniboxDesc(platformInfo.name, inputName)
       });
 
       const url = buildRepoUrl(detectedPlatform, inputName, '', '');
       suggestions.push({
         content: trimmedText,
-        description: `${platformInfo.icon} ${platformInfo.name}: <match>${inputName}</match> - ${url}`
+        description: omniboxDesc(platformInfo.name, inputName)
       });
     } else {
       // 需要 owner/repo 格式
@@ -705,18 +737,16 @@ browserAPI.omnibox.onInputChanged.addListener((text, suggest) => {
         const url = buildRepoUrl(detectedPlatform, owner, repo, path);
         suggestions.push({
           content: trimmedText,
-          description: `${platformInfo.icon} ${platformInfo.name}: <match>${owner}/${repo}</match>${path} - ${url}`
+          description: omniboxDesc(platformInfo.name, `${owner}/${repo}${path}`)
         });
       } else {
-        // 没有 / 符号，当作用户名处理
         browserAPI.omnibox.setDefaultSuggestion({
-          description: `${platformInfo.name}: <match>${inputName}</match>`
+          description: omniboxDesc(platformInfo.name, inputName)
         });
 
-        const url = `https://${platformInfo.domain}/${inputName}`;
         suggestions.push({
           content: trimmedText,
-          description: `${platformInfo.icon} ${platformInfo.name}: <match>${inputName}</match> - ${url}`
+          description: omniboxDesc(platformInfo.name, inputName)
         });
       }
     }
@@ -747,16 +777,14 @@ browserAPI.omnibox.onInputChanged.addListener((text, suggest) => {
       const url = buildRepoUrl(platformKey, owner, repo, path);
       suggestions.push({
         content: `${inputName} ${platformInfo.keywords[0]}`,
-        description: `${platformInfo.icon} ${platformInfo.name}: <match>${owner}/${repo}</match>${path}`
+        description: omniboxDesc(platformInfo.name, `${owner}/${repo}${path}`)
       });
     });
 
-    // Docker Hub 也支持 owner/repo 格式
     const dockerInfo = PLATFORMS['docker'];
-    const dockerUrl = buildRepoUrl('docker', owner, repo, path);
     suggestions.push({
       content: `${inputName} docker`,
-      description: `${dockerInfo.icon} ${dockerInfo.name}: <match>${owner}/${repo}</match>`
+      description: omniboxDesc(dockerInfo.name, `${owner}/${repo}`)
     });
   } else {
     // 单一名称：优先按“用户/组织名”给出代码托管平台，再给包管理平台
@@ -771,10 +799,9 @@ browserAPI.omnibox.onInputChanged.addListener((text, suggest) => {
     const codePlatforms = ['github', 'gitlab', 'bitbucket', 'gitee'];
     codePlatforms.forEach((platformKey, index) => {
       const cfg = PLATFORMS[platformKey];
-      const url = `https://${cfg.domain}/${inputName}`;
       suggestions.push({
         content: index === 0 ? inputName : `${inputName} ${cfg.keywords[0]}`,
-        description: `${cfg.icon} ${cfg.name}: <match>${inputName}</match> - ${url}`
+        description: omniboxDesc(cfg.name, inputName)
       });
     });
 
@@ -785,11 +812,10 @@ browserAPI.omnibox.onInputChanged.addListener((text, suggest) => {
       const packagePlatforms = ['npm', 'pypi', 'rubygems', 'crates', 'nuget'];
       packagePlatforms.forEach(platformKey => {
         const cfg = PLATFORMS[platformKey];
-        if (hasAt && !cfg.allowAt) return; // 含 @ 时只保留支持 @ 的平台
-        const url = buildRepoUrl(platformKey, inputName, '', '');
+        if (hasAt && !cfg.allowAt) return;
         suggestions.push({
           content: `${inputName} ${cfg.keywords[0]}`,
-          description: `${cfg.icon} ${cfg.name}: <match>${inputName}</match> - ${url}`
+          description: omniboxDesc(cfg.name, inputName)
         });
       });
     }
@@ -797,9 +823,10 @@ browserAPI.omnibox.onInputChanged.addListener((text, suggest) => {
 
   // 如果没有任何建议，显示帮助信息
   if (suggestions.length === 0) {
+    const defaultCfg = PLATFORMS[DEFAULT_PLATFORM] || PLATFORMS.github;
     suggestions.push({
-      content: 'microsoft/vscode',
-      description: '💡 示例格式: <match>owner/repo</match> 或 <match>包名 平台名</match>'
+      content: 'owner/repo',
+      description: omniboxDesc(defaultCfg.name, 'owner/repo')
     });
   }
 
@@ -818,6 +845,12 @@ browserAPI.omnibox.onInputEntered.addListener(async (text, disposition) => {
 
   const trimmedText = text.trim();
   if (!trimmedText) return;
+
+  // 0. 独立通用 URL（如 https://www.bilibili.com/...）
+  if (isStandaloneGenericUrl(trimmedText)) {
+    openUrl(normalizeGenericUrl(trimmedText), disposition);
+    return;
+  }
 
   let platform = DEFAULT_PLATFORM;
   let inputName = trimmedText;
@@ -839,6 +872,15 @@ browserAPI.omnibox.onInputEntered.addListener(async (text, disposition) => {
   } else {
     const hasSlash = trimmedText.includes('/');
     const hasSpace = /\s/.test(trimmedText);
+
+    // 1b. 文本中含零散 URL：打开第一个匹配项
+    const inlineUrls = extractAllInlineUrls(trimmedText);
+    if (shouldShowInlineUrlSuggestions(trimmedText, inlineUrls)) {
+      const first = inlineUrls[0];
+      log('Omnibox 零散 URL 触发，跳转到:', first.url);
+      openUrl(first.url, disposition);
+      return;
+    }
 
     // 2. 如果是单词（无空格无 /）：
     if (!hasSlash && !hasSpace) {

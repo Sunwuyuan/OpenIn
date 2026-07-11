@@ -21,7 +21,7 @@
     "message": "Sakelar fitur"
   },
   "enable_omnibox": {
-    "message": "Aktifkan perintah pintas bilah alamat (open + spasi)"
+    "message": "Aktifkan perintah pintas bilah alamat (o + spasi)"
   },
   "enable_search_redirect": {
     "message": "Aktifkan pengalihan otomatis saat pencarian"
@@ -75,10 +75,10 @@
     "message": "Repositori terdeteksi:"
   },
   "press_tab_to_jump": {
-    "message": "Lompat dengan Tab ⚡"
+    "message": "Lompat dengan Tab"
   },
   "jumped_from_search": {
-    "message": "🔍 Dialihkan dari pencarian ke $PLATFORM$",
+    "message": "Dialihkan dari pencarian ke $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Kembali ke pencarian (Tab)"
+    "message": "Kembali ke pencarian"
   }
 }

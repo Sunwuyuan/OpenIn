@@ -21,7 +21,7 @@
     "message": "Suis ciri"
   },
   "enable_omnibox": {
-    "message": "Aktifkan perintah pintasan bar alamat (open + ruang)"
+    "message": "Aktifkan perintah pintasan bar alamat (o + ruang)"
   },
   "enable_search_redirect": {
     "message": "Aktifkan pengalihan automatik semasa carian"
@@ -75,10 +75,10 @@
     "message": "Repositori dikesan:"
   },
   "press_tab_to_jump": {
-    "message": "Tekan Tab untuk lompat ⚡"
+    "message": "Tekan Tab untuk lompat"
   },
   "jumped_from_search": {
-    "message": "🔍 Melompat daripada carian ke $PLATFORM$",
+    "message": "Melompat daripada carian ke $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Kembali ke carian (Tab)"
+    "message": "Kembali ke carian"
   }
 }

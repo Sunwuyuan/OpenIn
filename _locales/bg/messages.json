@@ -21,7 +21,7 @@
     "message": "Функционални превключватели"
   },
   "enable_omnibox": {
-    "message": "Активирайте бързи команди в адресната лента (open + space)"
+    "message": "Активирайте бързи команди в адресната лента (o + space)"
   },
   "enable_search_redirect": {
     "message": "Автоматично пренасочване при търсене"
@@ -75,10 +75,10 @@
     "message": "Открито хранилище:"
   },
   "press_tab_to_jump": {
-    "message": "Натиснете Tab за пренасочване ⚡"
+    "message": "Натиснете Tab за пренасочване"
   },
   "jumped_from_search": {
-    "message": "🔍 Пренасочено от търсене към $PLATFORM$",
+    "message": "Пренасочено от търсене към $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Върнете към търсенето (Tab)"
+    "message": "Върнете към търсенето"
   }
 }

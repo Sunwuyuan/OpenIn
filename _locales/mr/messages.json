@@ -21,7 +21,7 @@
     "message": "फीचर स्विचेस"
   },
   "enable_omnibox": {
-    "message": "अॅड्रेस बार जलद आदेश सक्षम करा (open + space)"
+    "message": "अॅड्रेस बार जलद आदेश सक्षम करा (o + space)"
   },
   "enable_search_redirect": {
     "message": "शोध वापरतांना स्वयंचलित पुनर्निर्देशन सक्षम करा"
@@ -75,10 +75,10 @@
     "message": "रेपॉजिटरी सापडले:"
   },
   "press_tab_to_jump": {
-    "message": "Tab दाबून जंप करा ⚡"
+    "message": "Tab दाबून जंप करा"
   },
   "jumped_from_search": {
-    "message": "🔍 शोधाने $PLATFORM$ कडे जंप केला",
+    "message": "शोधाने $PLATFORM$ कडे जंप केला",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← शोधाकडे परत (Tab)"
+    "message": "शोधाकडे परत"
   }
 }

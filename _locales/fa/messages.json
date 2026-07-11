@@ -21,7 +21,7 @@
     "message": "کلیدهای ویژگی"
   },
   "enable_omnibox": {
-    "message": "فعالسازی فرمان‌های سریع نوار آدرس (open + فاصله)"
+    "message": "فعالسازی فرمان‌های سریع نوار آدرس (o + فاصله)"
   },
   "enable_search_redirect": {
     "message": "فعال‌سازی هدایت خودکار هنگام جستجو"
@@ -75,10 +75,10 @@
     "message": "مخزن تشخیص داده شد:"
   },
   "press_tab_to_jump": {
-    "message": "برای پرش از طریق کلید Tab فشار دهید ⚡"
+    "message": "برای پرش از طریق کلید Tab فشار دهید"
   },
   "jumped_from_search": {
-    "message": "🔍 از طریق جستجو به $PLATFORM$ هدایت شد",
+    "message": "از طریق جستجو به $PLATFORM$ هدایت شد",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← بازگشت به جستجو (Tab)"
+    "message": "بازگشت به جستجو"
   }
 }

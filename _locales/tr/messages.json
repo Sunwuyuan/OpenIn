@@ -21,7 +21,7 @@
     "message": "Özellik açma/kapama"
   },
   "enable_omnibox": {
-    "message": "Adres çubuğu kısayol komutlarını etkinleştir (open + Space)"
+    "message": "Adres çubuğu kısayol komutlarını etkinleştir (o + Space)"
   },
   "enable_search_redirect": {
     "message": "Arama yaparken otomatik yönlendirmeyi etkinleştir"
@@ -75,10 +75,10 @@
     "message": "Tespit edilen depo:"
   },
   "press_tab_to_jump": {
-    "message": "Tab tuşuna basarak yönlendirin ⚡"
+    "message": "Tab tuşuna basarak yönlendirin"
   },
   "jumped_from_search": {
-    "message": "🔍 Aramadan $PLATFORM$'ye yönlendirildi",
+    "message": "Aramadan $PLATFORM$'ye yönlendirildi",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Aramaya geri dön (Tab)"
+    "message": "Aramaya geri dön"
   }
 }

@@ -33,7 +33,7 @@
     "message": "مفاتيح الميزات"
   },
   "enable_omnibox": {
-    "message": "تمكين أوامر شريط العناوين السريعة (open + المسافة)"
+    "message": "تمكين أوامر شريط العناوين السريعة (o + المسافة)"
   },
   "tab_jump": {
     "message": "الانتقال عند الضغط على مفتاح Tab"
@@ -75,10 +75,10 @@
     "message": "تم الكشف عن المستودع:"
   },
   "press_tab_to_jump": {
-    "message": "اضغط Tab للانتقال ⚡"
+    "message": "اضغط Tab للانتقال"
   },
   "jumped_from_search": {
-    "message": "🔍 تم الانتقال من البحث إلى $PLATFORM$",
+    "message": "تم الانتقال من البحث إلى $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← العودة إلى البحث (Tab)"
+    "message": "العودة إلى البحث"
   }
 }

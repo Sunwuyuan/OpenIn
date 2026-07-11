@@ -21,7 +21,7 @@
     "message": "Preklopniki funkcij"
   },
   "enable_omnibox": {
-    "message": "Omogoči hitre ukaze v naslovni vrstici (open + presledek)"
+    "message": "Omogoči hitre ukaze v naslovni vrstici (o + presledek)"
   },
   "enable_search_redirect": {
     "message": "Omogoči samodejno preusmerjanje pri iskanju"
@@ -75,10 +75,10 @@
     "message": "Zaznano skladišče:"
   },
   "press_tab_to_jump": {
-    "message": "Pritisni Tab za preusmeritev ⚡"
+    "message": "Pritisni Tab za preusmeritev"
   },
   "jumped_from_search": {
-    "message": "🔍 Preusmerjeno iz iskanja na $PLATFORM$",
+    "message": "Preusmerjeno iz iskanja na $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Nazaj na iskanje (Tab)"
+    "message": "Nazaj na iskanje"
   }
 }

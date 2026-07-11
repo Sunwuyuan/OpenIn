@@ -21,7 +21,7 @@
     "message": "Funktsioonilülitid"
   },
   "enable_omnibox": {
-    "message": "Luba aadressiriba kiirkäsk (open + tühik)"
+    "message": "Luba aadressiriba kiirkäsk (o + tühik)"
   },
   "enable_search_redirect": {
     "message": "Luba otsingul automaatset suunamist"
@@ -75,10 +75,10 @@
     "message": "Tuvastatud hoidla:"
   },
   "press_tab_to_jump": {
-    "message": "Vajutage Tab-klahvi, et hüpata ⚡"
+    "message": "Vajutage Tab-klahvi, et hüpata"
   },
   "jumped_from_search": {
-    "message": "🔍 Otsingust suunatud $PLATFORM$",
+    "message": "Otsingust suunatud $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Tagasi otsingusse (Tab)"
+    "message": "Tagasi otsingusse"
   }
 }

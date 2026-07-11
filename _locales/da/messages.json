@@ -21,7 +21,7 @@
     "message": "Funktioner"
   },
   "enable_omnibox": {
-    "message": "Aktivér adressefeltets genvejskommandoer (open + mellemrum)"
+    "message": "Aktivér adressefeltets genvejskommandoer (o + mellemrum)"
   },
   "enable_search_redirect": {
     "message": "Aktivér automatisk omdirigering ved søgning"
@@ -75,10 +75,10 @@
     "message": "Opdaget repository:"
   },
   "press_tab_to_jump": {
-    "message": "Tryk Tab for at springe ⚡"
+    "message": "Tryk Tab for at springe"
   },
   "jumped_from_search": {
-    "message": "🔍 Fra søgning til $PLATFORM$",
+    "message": "Fra søgning til $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Tilbage til søgning (Tab)"
+    "message": "Tilbage til søgning"
   }
 }

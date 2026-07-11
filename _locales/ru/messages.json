@@ -21,7 +21,7 @@
     "message": "Переключатели функций"
   },
   "enable_omnibox": {
-    "message": "Включить команды адресной строки (open + пробел)"
+    "message": "Включить команды адресной строки (o + пробел)"
   },
   "enable_search_redirect": {
     "message": "Автоматическая переадресация при поиске"
@@ -75,10 +75,10 @@
     "message": "Обнаружен репозиторий:"
   },
   "press_tab_to_jump": {
-    "message": "Нажмите Tab, чтобы перейти ⚡"
+    "message": "Нажмите Tab, чтобы перейти"
   },
   "jumped_from_search": {
-    "message": "🔍 Перешёл(а) из поиска на $PLATFORM$",
+    "message": "Перешёл(а) из поиска на $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Вернуться к поиску (Tab)"
+    "message": "Вернуться к поиску"
   }
 }

@@ -21,7 +21,7 @@
     "message": "הפעלת תכונות"
   },
   "enable_omnibox": {
-    "message": "הפעל פקודות מהשורת הכתובת (open + רווח)"
+    "message": "הפעל פקודות מהשורת הכתובת (o + רווח)"
   },
   "enable_search_redirect": {
     "message": "הפעל הפניית חיפוש אוטומטית"
@@ -75,10 +75,10 @@
     "message": "זוהה מאגר:"
   },
   "press_tab_to_jump": {
-    "message": "הקש Tab כדי לעבור ⚡"
+    "message": "הקש Tab כדי לעבור"
   },
   "jumped_from_search": {
-    "message": "🔍 הופנה מהחיפוש ל-$PLATFORM$",
+    "message": "הופנה מהחיפוש ל-$PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← חזרה לחיפוש (Tab)"
+    "message": "חזרה לחיפוש"
   }
 }

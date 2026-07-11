@@ -21,7 +21,7 @@
     "message": "Commutateurs de fonctionnalités"
   },
   "enable_omnibox": {
-    "message": "Activer les commandes rapides de la barre d'adresse (open + espace)"
+    "message": "Activer les commandes rapides de la barre d'adresse (o + espace)"
   },
   "enable_search_redirect": {
     "message": "Activer la redirection automatique lors de la recherche"
@@ -75,10 +75,10 @@
     "message": "Dépôt détecté :"
   },
   "press_tab_to_jump": {
-    "message": "Appuyez sur Tab pour sauter ⚡"
+    "message": "Appuyez sur Tab pour sauter"
   },
   "jumped_from_search": {
-    "message": "🔍 Redirigé depuis la recherche vers $PLATFORM$",
+    "message": "Redirigé depuis la recherche vers $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Retour à la recherche (Tab)"
+    "message": "Retour à la recherche"
   }
 }

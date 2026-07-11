@@ -21,7 +21,7 @@
     "message": "Mga switch ng mga tampok"
   },
   "enable_omnibox": {
-    "message": "Paganahin ang mabilisang utos sa address bar (open + space)"
+    "message": "Paganahin ang mabilisang utos sa address bar (o + space)"
   },
   "enable_search_redirect": {
     "message": "Paganahin ang awtomatikong pag-redirect kapag nagsesearch"
@@ -75,10 +75,10 @@
     "message": "Nadetek na repository:"
   },
   "press_tab_to_jump": {
-    "message": "Pindutin ang Tab para mag-jump ⚡"
+    "message": "Pindutin ang Tab para mag-jump"
   },
   "jumped_from_search": {
-    "message": "🔍 Tinungo mula sa paghahanap patungo sa $PLATFORM$",
+    "message": "Tinungo mula sa paghahanap patungo sa $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Bumalik sa paghahanap (Tab)"
+    "message": "Bumalik sa paghahanap"
   }
 }

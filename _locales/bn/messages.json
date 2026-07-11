@@ -21,7 +21,7 @@
     "message": "বৈশিষ্ট্য সুইচসমূহ"
   },
   "enable_omnibox": {
-    "message": "ঠিকানা বার শর্টকাট চালু করুন (open + স্পেস)"
+    "message": "ঠিকানা বার শর্টকাট চালু করুন (o + স্পেস)"
   },
   "enable_search_redirect": {
     "message": "খোঁজ করার সময় স্বয়ংক্রিয়ভাবে জাম্প সক্ষম করুন"
@@ -75,10 +75,10 @@
     "message": "রিপোজিটরি সনাক্ত হয়েছে:"
   },
   "press_tab_to_jump": {
-    "message": "Tab চাপলে জাম্প করুন ⚡"
+    "message": "Tab চাপলে জাম্প করুন"
   },
   "jumped_from_search": {
-    "message": "🔍 সার্চ থেকে $PLATFORM$-এ জাম্প হয়েছে",
+    "message": "সার্চ থেকে $PLATFORM$-এ জাম্প হয়েছে",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← সার্চে ফিরে যান (Tab)"
+    "message": "সার্চে ফিরে যান"
   }
 }

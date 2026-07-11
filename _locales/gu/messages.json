@@ -21,7 +21,7 @@
     "message": "ફીચર સ્વીચીસ"
   },
   "enable_omnibox": {
-    "message": "એડ્રેસ બારમાં ટૂંકા કmánડ સક્રિય કરો (open + સ્પેસ)"
+    "message": "એડ્રેસ બારમાં ટૂંકા કmánડ સક્રિય કરો (o + સ્પેસ)"
   },
   "enable_search_redirect": {
     "message": "સર્ચ કરતી વખતે ઓટોમેટિક જમ્પ સક્રિય કરો"
@@ -75,10 +75,10 @@
     "message": "ડિટેક્ટ કરેલ રિપોઝિટરી:"
   },
   "press_tab_to_jump": {
-    "message": "Tab દબાવીને જમ્પ કરો ⚡"
+    "message": "Tab દબાવીને જમ્પ કરો"
   },
   "jumped_from_search": {
-    "message": "🔍 શોધ દ્વારા $PLATFORM$ પર જમ્પ થયું",
+    "message": "શોધ દ્વારા $PLATFORM$ પર જમ્પ થયું",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← શોધ પર પાછા (Tab)"
+    "message": "શોધ પર પાછા"
   }
 }

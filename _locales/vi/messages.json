@@ -21,7 +21,7 @@
     "message": "Công tắc chức năng"
   },
   "enable_omnibox": {
-    "message": "Kích hoạt lệnh nhanh trên thanh địa chỉ (open + phím cách)"
+    "message": "Kích hoạt lệnh nhanh trên thanh địa chỉ (o + phím cách)"
   },
   "enable_search_redirect": {
     "message": "Bật tự động chuyển hướng khi tìm kiếm"
@@ -75,10 +75,10 @@
     "message": "Đã phát hiện kho lưu trữ:"
   },
   "press_tab_to_jump": {
-    "message": "Nhấn Tab để nhảy ⚡"
+    "message": "Nhấn Tab để nhảy"
   },
   "jumped_from_search": {
-    "message": "🔍 Được chuyển từ tìm kiếm đến $PLATFORM$",
+    "message": "Được chuyển từ tìm kiếm đến $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Quay lại tìm kiếm (Tab)"
+    "message": "Quay lại tìm kiếm"
   }
 }

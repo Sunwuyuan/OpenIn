@@ -21,7 +21,7 @@
     "message": "機能スイッチ"
   },
   "enable_omnibox": {
-    "message": "アドレスバーのクイックコマンドを有効化（open + スペース）"
+    "message": "アドレスバーのクイックコマンドを有効化（o + スペース）"
   },
   "enable_search_redirect": {
     "message": "検索時の自動ジャンプを有効にする"
@@ -75,10 +75,10 @@
     "message": "検出されたリポジトリ:"
   },
   "press_tab_to_jump": {
-    "message": "Tab を押してジャンプ ⚡"
+    "message": "Tab を押してジャンプ"
   },
   "jumped_from_search": {
-    "message": "🔍 検索から $PLATFORM$ にジャンプしました",
+    "message": "検索から $PLATFORM$ にジャンプしました",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← 検索に戻る (Tab)"
+    "message": "検索に戻る"
   }
 }

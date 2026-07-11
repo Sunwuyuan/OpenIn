@@ -21,7 +21,7 @@
     "message": "Prekidači značajki"
   },
   "enable_omnibox": {
-    "message": "Omogući prečac u adresnoj traci (open + razmaknica)"
+    "message": "Omogući prečac u adresnoj traci (o + razmaknica)"
   },
   "enable_search_redirect": {
     "message": "Omogući automatsko preusmjeravanje pri pretraživanju"
@@ -75,10 +75,10 @@
     "message": "Otkriveno spremište:"
   },
   "press_tab_to_jump": {
-    "message": "Pritisnite Tab za skok ⚡"
+    "message": "Pritisnite Tab za skok"
   },
   "jumped_from_search": {
-    "message": "🔍 Preusmjeren iz pretraživanja na $PLATFORM$",
+    "message": "Preusmjeren iz pretraživanja na $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Vrati se na pretraživanje (Tab)"
+    "message": "Vrati se na pretraživanje"
   }
 }

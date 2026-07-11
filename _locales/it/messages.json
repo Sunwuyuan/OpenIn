@@ -21,7 +21,7 @@
     "message": "Interruttori delle funzionalità"
   },
   "enable_omnibox": {
-    "message": "Abilita comandi rapidi della barra degli indirizzi (open + spazio)"
+    "message": "Abilita comandi rapidi della barra degli indirizzi (o + spazio)"
   },
   "enable_search_redirect": {
     "message": "Abilita il reindirizzamento automatico durante la ricerca"
@@ -75,10 +75,10 @@
     "message": "Repository rilevato:"
   },
   "press_tab_to_jump": {
-    "message": "Premi Tab per saltare ⚡"
+    "message": "Premi Tab per saltare"
   },
   "jumped_from_search": {
-    "message": "🔍 Reindirizzato dalla ricerca a $PLATFORM$",
+    "message": "Reindirizzato dalla ricerca a $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Torna alla ricerca (Tab)"
+    "message": "Torna alla ricerca"
   }
 }

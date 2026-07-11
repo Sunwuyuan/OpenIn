@@ -21,7 +21,7 @@
     "message": "Funkcijski prekidači"
   },
   "enable_omnibox": {
-    "message": "Omogući brze komande u adresnoj traci (open + space)"
+    "message": "Omogući brze komande u adresnoj traci (o + space)"
   },
   "enable_search_redirect": {
     "message": "Omogući automatsko preusmeravanje pri pretrazi"
@@ -75,10 +75,10 @@
     "message": "Otkriven repozitorijum:"
   },
   "press_tab_to_jump": {
-    "message": "Pritisnite Tab za skok ⚡"
+    "message": "Pritisnite Tab za skok"
   },
   "jumped_from_search": {
-    "message": "🔍 Preusmeren iz pretrage na $PLATFORM$",
+    "message": "Preusmeren iz pretrage na $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Vratite se na pretragu (Tab)"
+    "message": "Vratite se na pretragu"
   }
 }

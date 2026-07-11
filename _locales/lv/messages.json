@@ -21,7 +21,7 @@
     "message": "Funkciju slēdži"
   },
   "enable_omnibox": {
-    "message": "Iespējot adrešu joslas ātrās komandas (open + Space)"
+    "message": "Iespējot adrešu joslas ātrās komandas (o + Space)"
   },
   "enable_search_redirect": {
     "message": "Iespējot automātisku pāradresāciju meklēšanas laikā"
@@ -75,10 +75,10 @@
     "message": "Atklāts repozitorijs:"
   },
   "press_tab_to_jump": {
-    "message": "Nospiediet Tab, lai pāradresētu ⚡"
+    "message": "Nospiediet Tab, lai pāradresētu"
   },
   "jumped_from_search": {
-    "message": "🔍 Pāradresēts no meklēšanas uz $PLATFORM$",
+    "message": "Pāradresēts no meklēšanas uz $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Atgriezties meklēšanā (Tab)"
+    "message": "Atgriezties meklēšanā"
   }
 }

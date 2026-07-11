@@ -21,7 +21,7 @@
     "message": "Comutatoare de funcții"
   },
   "enable_omnibox": {
-    "message": "Activează comenzile rapide din bara de adrese (open + spațiu)"
+    "message": "Activează comenzile rapide din bara de adrese (o + spațiu)"
   },
   "enable_search_redirect": {
     "message": "Activează redirecționarea automată în timpul căutării"
@@ -75,10 +75,10 @@
     "message": "Depozitul detectat:"
   },
   "press_tab_to_jump": {
-    "message": "Apăsați Tab pentru a sări ⚡"
+    "message": "Apăsați Tab pentru a sări"
   },
   "jumped_from_search": {
-    "message": "🔍 Redirecționat din căutare către $PLATFORM$",
+    "message": "Redirecționat din căutare către $PLATFORM$",
     "placeholders": {
       "platform": {
         "content": "$1"
@@ -86,6 +86,6 @@
     }
   },
   "back_to_search": {
-    "message": "← Înapoi la căutare (Tab)"
+    "message": "Înapoi la căutare"
   }
 }
